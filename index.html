@@ -4,686 +4,714 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Materi 5 – Cerita atau Laporan | Kelas 3 SD-CQ</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#1a1040;
-  --bg2:#221550;
-  --bg3:#2a1a60;
-  --panel:#2d1e6e;
-  --panel2:#241660;
-  --card:#321d78;
-  --border:#3d2a8a;
-  --border2:#4a35a0;
-
-  --pink:#ff6eb4;
-  --pink2:#ff4da6;
-  --yellow:#ffe033;
-  --yellow2:#ffca00;
-  --cyan:#00e5ff;
-  --cyan2:#00c8e0;
-  --mint:#00ffb3;
-  --lav:#c084fc;
-  --lav2:#a855f7;
-  --orange:#ff9a3c;
-  --red:#ff5c6a;
-  --white:#f0eaff;
-  --text:#c8b8f0;
-  --text2:#8870c0;
-  --text3:#5a4490;
-
-  --glow-p:0 0 20px rgba(255,110,180,.4);
-  --glow-y:0 0 20px rgba(255,224,51,.4);
-  --glow-c:0 0 20px rgba(0,229,255,.4);
-  --rad:18px;
-  --rad2:12px;
+:root {
+  --bg: #0a0e1a;
+  --bg2: #0f1628;
+  --panel: #131e35;
+  --panel2: #1a2845;
+  --border: #1e3258;
+  --border2: #2a4070;
+  --neon: #00f5ff;
+  --neon2: #00c8e0;
+  --pink: #ff4fa3;
+  --pink2: #d93d8a;
+  --green: #00ffb3;
+  --green2: #00cc8f;
+  --amber: #ffcc00;
+  --amber2: #e6b800;
+  --purple: #a855f7;
+  --purple2: #8b3de0;
+  --rose: #ff5574;
+  --text: #c8daf5;
+  --text2: #7a99cc;
+  --text3: #4a6090;
+  --white: #eaf3ff;
+  --glow-n: 0 0 24px rgba(0,245,255,.4);
+  --glow-p: 0 0 24px rgba(255,79,163,.4);
+  --glow-g: 0 0 24px rgba(0,255,179,.4);
+  --glow-a: 0 0 24px rgba(255,204,0,.4);
+  --rad: 16px;
+  --rad2: 12px;
+  --rad3: 8px;
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Nunito',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  min-height:100vh;
-  overflow-x:hidden;
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* ===== STARS BG ===== */
-body::before{
-  content:'';
-  position:fixed;top:0;left:0;right:0;bottom:0;
+/* ── BG EFFECTS ── */
+.bg-layer {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+}
+.bg-grid {
   background-image:
-    radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,.6) 0%, transparent 100%),
-    radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,.4) 0%, transparent 100%),
-    radial-gradient(2px 2px at 40% 10%, rgba(255,255,255,.5) 0%, transparent 100%),
-    radial-gradient(1px 1px at 55% 60%, rgba(255,255,255,.3) 0%, transparent 100%),
-    radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,.6) 0%, transparent 100%),
-    radial-gradient(2px 2px at 80% 70%, rgba(255,255,255,.4) 0%, transparent 100%),
-    radial-gradient(1px 1px at 90% 45%, rgba(255,255,255,.5) 0%, transparent 100%),
-    radial-gradient(1px 1px at 15% 75%, rgba(255,255,255,.3) 0%, transparent 100%),
-    radial-gradient(1px 1px at 60% 85%, rgba(255,255,255,.5) 0%, transparent 100%),
-    radial-gradient(2px 2px at 35% 90%, rgba(255,255,255,.3) 0%, transparent 100%),
-    radial-gradient(1px 1px at 48% 30%, rgba(200,180,255,.5) 0%, transparent 100%),
-    radial-gradient(1px 1px at 72% 55%, rgba(0,229,255,.4) 0%, transparent 100%),
-    radial-gradient(1px 1px at 88% 20%, rgba(255,110,180,.4) 0%, transparent 100%),
-    radial-gradient(1px 1px at 5% 55%, rgba(255,224,51,.3) 0%, transparent 100%);
-  pointer-events:none;z-index:0;
+    linear-gradient(rgba(0,245,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,245,255,.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  position: absolute; inset: 0;
 }
-body::after{
-  content:'';
-  position:fixed;top:0;left:0;right:0;bottom:0;
+.bg-glow {
+  position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 20% 0%, rgba(192,132,252,.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 100%, rgba(0,229,255,.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(255,110,180,.05) 0%, transparent 60%);
-  pointer-events:none;z-index:0;
+    radial-gradient(ellipse 60% 40% at 15% 20%, rgba(0,245,255,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 85% 75%, rgba(255,79,163,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(168,85,247,.04) 0%, transparent 60%);
+}
+.star {
+  position: absolute; width: 2px; height: 2px; border-radius: 50%;
+  background: white; animation: twinkle var(--t, 3s) infinite;
+  opacity: var(--o, .5);
+}
+@keyframes twinkle {
+  0%,100%{opacity:var(--o,.5)} 50%{opacity:.1}
 }
 
-/* ===== FLOATING ELEMENTS ===== */
-.floaty{
-  position:fixed;pointer-events:none;z-index:0;font-size:22px;
-  animation:floatUp 6s ease-in-out infinite;opacity:.15;
+/* ── HEADER ── */
+header {
+  position: relative; z-index: 10;
+  background: linear-gradient(180deg, #080c1a 0%, #0d1528 100%);
+  border-bottom: 1px solid var(--border2);
+  overflow: hidden;
 }
-.floaty:nth-child(1){left:5%;top:20%;animation-delay:0s;animation-duration:7s}
-.floaty:nth-child(2){left:92%;top:40%;animation-delay:2s;animation-duration:8s}
-.floaty:nth-child(3){left:15%;top:70%;animation-delay:4s;animation-duration:6s}
-.floaty:nth-child(4){left:80%;top:15%;animation-delay:1s;animation-duration:9s}
-.floaty:nth-child(5){left:50%;top:85%;animation-delay:3s;animation-duration:7s}
-@keyframes floatUp{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-20px) rotate(10deg)}}
+header::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+  background: linear-gradient(90deg, transparent, var(--neon), var(--pink), var(--green), var(--neon), transparent);
+  animation: scan 4s linear infinite;
+}
+@keyframes scan { 0%{background-position:0% 0%} 100%{background-position:200% 0%} }
 
-/* ===== HEADER ===== */
-header{
-  background:linear-gradient(135deg,#2d1070 0%,#3d1a8a 50%,#2a0e7a 100%);
-  border-bottom:2px solid rgba(255,110,180,.3);
-  position:relative;overflow:hidden;
+.hdr-inner {
+  max-width: 960px; margin: 0 auto; padding: 24px 20px 28px;
+  text-align: center; position: relative; z-index: 1;
 }
-header::before{
-  content:'';
-  position:absolute;bottom:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--pink),var(--yellow),var(--cyan),var(--mint),var(--yellow),var(--pink));
-  background-size:200% 100%;
-  animation:rainbow 3s linear infinite;
+.school-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(0,245,255,.08); border: 1px solid rgba(0,245,255,.2);
+  color: var(--neon); font-size: 10px; font-weight: 800; letter-spacing: 1.8px;
+  padding: 4px 16px; border-radius: 20px; margin-bottom: 14px;
+  text-transform: uppercase; font-family: 'Nunito', sans-serif;
 }
-@keyframes rainbow{0%{background-position:0%}100%{background-position:200%}}
+.school-badge .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--neon);
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%,100%{box-shadow:0 0 0 0 rgba(0,245,255,.5)} 50%{box-shadow:0 0 0 6px rgba(0,245,255,0)}
+}
+header h1 {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: clamp(22px, 5vw, 40px);
+  color: var(--white);
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+header h1 .accent {
+  background: linear-gradient(90deg, var(--neon), var(--green));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+header p { color: var(--text2); font-size: 12px; margin-top: 6px; font-weight: 600; }
 
-.hdr{max-width:960px;margin:0 auto;padding:24px 20px 32px;text-align:center;position:relative;z-index:1}
-.badge-s{
-  display:inline-flex;align-items:center;gap:7px;
-  background:rgba(255,224,51,.12);border:1.5px solid rgba(255,224,51,.35);
-  color:var(--yellow);font-size:10px;font-weight:800;letter-spacing:1px;
-  padding:4px 14px;border-radius:20px;margin-bottom:12px;
-  text-transform:uppercase;
+/* ── FLOATING ICONS ── */
+.float-icon {
+  position: absolute; font-size: 24px;
+  animation: float var(--dur, 4s) ease-in-out infinite;
+  opacity: .5;
 }
-.pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--yellow);animation:blink 1.5s ease infinite}
-@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
-
-header h1{
-  font-family:'Baloo 2',cursive;
-  font-size:clamp(22px,6vw,40px);
-  font-weight:800;color:var(--white);
-  line-height:1.15;
-  text-shadow:0 0 30px rgba(192,132,252,.5),0 3px 0 rgba(0,0,0,.3);
-}
-header h1 .accent{
-  font-family:'Fredoka One',cursive;
-  background:linear-gradient(90deg,var(--pink),var(--yellow),var(--cyan));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  display:inline-block;animation:glow 2s ease infinite alternate;
-}
-@keyframes glow{from{filter:drop-shadow(0 0 8px rgba(255,110,180,.6))}to{filter:drop-shadow(0 0 16px rgba(0,229,255,.6))}}
-
-header p{color:rgba(200,184,240,.8);font-size:13px;margin-top:6px;font-weight:600}
-
-/* ===== PLANET DECOS ===== */
-.planet{position:absolute;border-radius:50%;pointer-events:none}
-.pl1{width:60px;height:60px;background:radial-gradient(circle at 35% 35%,#ff6eb4,#8b2fc9);top:-15px;right:60px;opacity:.35;animation:spin 20s linear infinite}
-.pl2{width:40px;height:40px;background:radial-gradient(circle at 40% 40%,#ffe033,#ff9a3c);bottom:-10px;left:80px;opacity:.3;animation:spin 15s linear infinite reverse}
-@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-
-/* ===== NAV ===== */
-.tnw{max-width:960px;margin:0 auto;padding:0 16px;position:relative;z-index:10}
-.tnav{
-  display:flex;gap:3px;
-  background:rgba(26,16,64,.9);
-  backdrop-filter:blur(16px);
-  border-radius:18px 18px 0 0;
-  padding:7px 7px 0;
-  border:1.5px solid var(--border);border-bottom:none;
-  overflow-x:auto;
-}
-.tbtn{
-  flex:1;min-width:90px;
-  padding:10px 8px 14px;border:none;cursor:pointer;
-  background:transparent;
-  font-family:'Nunito',sans-serif;
-  font-weight:800;font-size:11px;
-  color:var(--text3);
-  border-radius:13px 13px 0 0;
-  transition:all .25s;white-space:nowrap;
-  letter-spacing:.3px;
-  position:relative;
-}
-.tbtn .ti{font-size:18px;display:block;margin-bottom:3px;transition:transform .25s}
-.tbtn:hover{color:var(--lav);background:rgba(192,132,252,.08)}
-.tbtn:hover .ti{transform:scale(1.2) rotate(-5deg)}
-.tbtn.active{background:rgba(255,110,180,.1);color:var(--pink);}
-.tbtn.active .ti{animation:wiggle .5s ease}
-@keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
-.tbtn.active::after{
-  content:'';position:absolute;bottom:0;left:15%;right:15%;height:2.5px;
-  background:linear-gradient(90deg,transparent,var(--pink),transparent);
-  border-radius:2px;
-}
-.tbtn.gm-btn.active{color:var(--yellow);background:rgba(255,224,51,.08)}
-.tbtn.gm-btn.active::after{background:linear-gradient(90deg,transparent,var(--yellow),transparent)}
-.tbtn.gm-btn:hover{color:var(--yellow);background:rgba(255,224,51,.06)}
-.tbtn.rv-btn.active{color:var(--cyan);background:rgba(0,229,255,.08)}
-.tbtn.rv-btn.active::after{background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
-.tbtn.rv-btn:hover{color:var(--cyan);background:rgba(0,229,255,.06)}
-
-/* ===== CONTENT ===== */
-.cw{max-width:960px;margin:0 auto;padding:0 16px 80px;position:relative;z-index:5}
-.tp{
-  display:none;
-  background:linear-gradient(180deg,var(--panel) 0%,var(--panel2) 100%);
-  border:1.5px solid var(--border);border-top:none;
-  border-radius:0 0 var(--rad) var(--rad);
-  padding:26px;
-  animation:popIn .3s cubic-bezier(.34,1.56,.64,1);
-}
-.tp.active{display:block}
-@keyframes popIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
-
-/* ===== PERTEMUAN HEADER ===== */
-.ph{
-  display:flex;align-items:center;gap:14px;
-  border-radius:var(--rad);padding:16px 20px;margin-bottom:22px;
-  position:relative;overflow:hidden;
-}
-.ph.p1{
-  background:linear-gradient(135deg,rgba(255,110,180,.15),rgba(192,132,252,.12));
-  border:1.5px solid rgba(255,110,180,.3);
-}
-.ph.p2{
-  background:linear-gradient(135deg,rgba(0,229,255,.12),rgba(0,255,179,.1));
-  border:1.5px solid rgba(0,229,255,.25);
-}
-.ph::after{
-  content:'✨';position:absolute;right:18px;top:12px;font-size:22px;
-  animation:floatUp 3s ease infinite;
-}
-.pnum{
-  font-family:'Fredoka One',cursive;font-size:30px;
-  border-radius:var(--rad2);width:58px;height:58px;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
-.ph.p1 .pnum{background:linear-gradient(135deg,var(--pink),var(--lav));color:#fff;box-shadow:var(--glow-p)}
-.ph.p2 .pnum{background:linear-gradient(135deg,var(--cyan),var(--mint));color:#1a1040;box-shadow:var(--glow-c)}
-.ph h2{font-family:'Baloo 2',cursive;font-size:17px;font-weight:800;color:var(--white)}
-.ph p{font-size:12px;color:var(--text2);margin-top:3px}
-
-/* ===== STEP CARDS ===== */
-.sl{display:flex;flex-direction:column;gap:9px}
-.sc{
-  border:1.5px solid var(--border);
-  border-radius:var(--rad2);overflow:hidden;
-  transition:all .2s;cursor:pointer;
-  background:rgba(50,29,120,.4);
-}
-.sc:hover{border-color:rgba(255,110,180,.4);transform:translateY(-1px);box-shadow:0 4px 20px rgba(255,110,180,.1)}
-.sc.open{border-color:rgba(255,110,180,.5);box-shadow:0 0 20px rgba(255,110,180,.12)}
-.sh{
-  display:flex;align-items:center;gap:12px;
-  padding:13px 16px;
-  background:rgba(45,26,110,.6);
-  user-select:none;
-}
-.sn{
-  width:34px;height:34px;border-radius:9px;flex-shrink:0;
-  font-family:'Fredoka One',cursive;font-size:16px;
-  display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,var(--pink),var(--lav));
-  color:#fff;box-shadow:0 3px 10px rgba(255,110,180,.3);
-}
-.st{font-weight:800;font-size:13px;color:var(--white);flex:1}
-.stag{font-size:9px;padding:3px 9px;border-radius:8px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
-.tm{background:rgba(0,229,255,.15);color:var(--cyan);border:1px solid rgba(0,229,255,.25)}
-.tl{background:rgba(255,224,51,.15);color:var(--yellow);border:1px solid rgba(255,224,51,.25)}
-.tt{background:rgba(255,154,60,.15);color:var(--orange);border:1px solid rgba(255,154,60,.25)}
-.sa{font-size:16px;transition:transform .25s;color:var(--lav)}
-.sc.open .sa{transform:rotate(90deg);color:var(--pink)}
-.sb{
-  display:none;
-  padding:18px 18px 20px;
-  border-top:1.5px solid rgba(255,110,180,.15);
-  background:rgba(26,16,64,.5);
-  animation:popIn .2s ease;
-}
-.sc.open .sb{display:block}
-
-/* ===== INFO BOXES ===== */
-.mb{
-  display:inline-flex;align-items:center;gap:6px;
-  background:linear-gradient(90deg,rgba(0,229,255,.15),rgba(0,255,179,.1));
-  border:1.5px solid rgba(0,229,255,.3);
-  color:var(--cyan);padding:4px 13px;border-radius:20px;
-  font-size:10px;font-weight:800;margin-bottom:12px;
-  letter-spacing:.5px;text-transform:uppercase;
-}
-.ib{border-radius:var(--rad2);padding:14px 16px;margin:10px 0;font-size:13px;line-height:1.75}
-.ib.g{background:rgba(0,255,179,.07);border:1.5px solid rgba(0,255,179,.2);border-left:3.5px solid var(--mint)}
-.ib.b{background:rgba(0,229,255,.07);border:1.5px solid rgba(0,229,255,.2);border-left:3.5px solid var(--cyan)}
-.ib.o{background:rgba(255,154,60,.07);border:1.5px solid rgba(255,154,60,.2);border-left:3.5px solid var(--orange)}
-.ib.pk{background:rgba(255,110,180,.07);border:1.5px solid rgba(255,110,180,.2);border-left:3.5px solid var(--pink)}
-.ib.pu{background:rgba(192,132,252,.07);border:1.5px solid rgba(192,132,252,.2);border-left:3.5px solid var(--lav)}
-.ib.y{background:rgba(255,224,51,.07);border:1.5px solid rgba(255,224,51,.2);border-left:3.5px solid var(--yellow)}
-.ib h4{font-weight:800;margin-bottom:7px;font-size:13px;color:var(--white)}
-
-/* ===== STORY CARD ===== */
-.strc{
-  background:rgba(45,26,110,.5);
-  border:1.5px solid rgba(192,132,252,.3);
-  border-radius:var(--rad2);padding:18px 20px;margin:10px 0;
-  position:relative;
-}
-.strc::before{
-  content:'📖';position:absolute;top:-14px;left:50%;transform:translateX(-50%);
-  font-size:24px;background:var(--panel2);padding:0 8px;
-}
-.strc h4{
-  font-family:'Fredoka One',cursive;font-size:16px;
-  color:var(--lav);text-align:center;margin-bottom:14px;margin-top:4px;
-}
-.strc p{font-size:13px;line-height:1.9;color:var(--text)}
-
-/* ===== COMPARE TABLE ===== */
-.ctb{width:100%;border-collapse:collapse;font-size:12px;border-radius:var(--rad2);overflow:hidden;margin:10px 0;border:1.5px solid var(--border)}
-.ctb th{padding:11px 13px;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
-.ctb th:first-child{background:rgba(192,132,252,.25);color:var(--lav)}
-.ctb th:nth-child(2){background:rgba(0,229,255,.2);color:var(--cyan)}
-.ctb th:nth-child(3){background:rgba(255,154,60,.2);color:var(--orange)}
-.ctb td{padding:9px 13px;border-bottom:1px solid rgba(255,255,255,.05);color:var(--text);font-size:12px;vertical-align:top}
-.ctb tr:last-child td{border-bottom:none}
-.ctb tr:nth-child(odd) td{background:rgba(255,255,255,.03)}
-.ctb td:first-child{font-weight:800;color:var(--text2)}
-
-/* ===== LAPORAN TEMPLATE ===== */
-.lt{
-  background:rgba(255,224,51,.05);
-  border:2px dashed rgba(255,224,51,.3);
-  border-radius:var(--rad2);padding:18px 20px;margin:10px 0;
-}
-.lt h4{
-  font-family:'Fredoka One',cursive;color:var(--yellow);font-size:15px;
-  text-align:center;margin-bottom:14px;
-}
-.lr{display:flex;gap:10px;margin-bottom:10px;font-size:12px}
-.ll{font-weight:800;color:var(--mint);min-width:120px;padding-top:2px;flex-shrink:0;font-size:11px;text-transform:uppercase;letter-spacing:.3px}
-.lv{color:var(--text);line-height:1.65}
-
-/* ===== STEP ITEMS ===== */
-.si{list-style:none}
-.si li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:13px}
-.si li:last-child{border-bottom:none}
-.sc2{
-  width:30px;height:30px;border-radius:8px;flex-shrink:0;
-  background:linear-gradient(135deg,var(--cyan),var(--mint));
-  color:#1a1040;font-weight:800;font-size:12px;
-  display:flex;align-items:center;justify-content:center;
+@keyframes float {
+  0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-12px) rotate(5deg)}
 }
 
-/* ===== VOCAB ===== */
-.vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:9px;margin:10px 0}
-.vc{
-  background:linear-gradient(135deg,rgba(255,110,180,.1),rgba(192,132,252,.08));
-  border:1.5px solid rgba(255,110,180,.2);
-  border-radius:var(--rad2);padding:12px 14px;text-align:center;
-  transition:all .2s;
+/* ── NAV ── */
+.nav-wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; position: relative; z-index: 10; }
+.nav-bar {
+  display: flex; gap: 3px;
+  background: rgba(8,12,26,.9); backdrop-filter: blur(16px);
+  border-radius: var(--rad) var(--rad) 0 0;
+  padding: 8px 8px 0;
+  border: 1px solid var(--border2); border-bottom: none;
 }
-.vc:hover{border-color:var(--pink);box-shadow:var(--glow-p);transform:translateY(-2px)}
-.vc strong{display:block;font-size:13px;font-weight:800;color:var(--pink);margin-bottom:4px}
-.vc span{font-size:11px;color:var(--text2);line-height:1.4}
+.nav-btn {
+  flex: 1; padding: 11px 8px 16px; border: none; cursor: pointer;
+  background: transparent;
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11px;
+  color: var(--text3); border-radius: 10px 10px 0 0;
+  transition: all .25s; white-space: nowrap;
+  letter-spacing: .5px; text-transform: uppercase; position: relative;
+}
+.nav-btn .nav-icon { font-size: 18px; display: block; margin-bottom: 4px; }
+.nav-btn:hover { color: var(--neon); background: rgba(0,245,255,.06); }
+.nav-btn.active { background: rgba(0,245,255,.1); color: var(--neon); }
+.nav-btn.active::after {
+  content:''; position:absolute; bottom:0; left:15%; right:15%; height:3px;
+  background: linear-gradient(90deg, transparent, var(--neon), transparent);
+  border-radius: 3px;
+}
+.nav-btn.gm-btn:hover { color: var(--amber); background: rgba(255,204,0,.06); }
+.nav-btn.gm-btn.active { color: var(--amber); background: rgba(255,204,0,.1); }
+.nav-btn.gm-btn.active::after { background: linear-gradient(90deg, transparent, var(--amber), transparent); }
 
-/* ===== OBS TABLE ===== */
-.ot{width:100%;border-collapse:collapse;font-size:12px;border-radius:var(--rad2);overflow:hidden;border:1.5px solid var(--border)}
-.ot th{background:linear-gradient(90deg,rgba(255,110,180,.25),rgba(192,132,252,.2));color:var(--pink);padding:10px;text-align:center;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
-.ot td{padding:9px 11px;border-bottom:1px solid rgba(255,255,255,.05);text-align:center;font-size:12px;color:var(--text)}
-.ot td:first-child{font-weight:800;color:var(--text2)}
-.ob{display:inline-block;padding:3px 10px;border-radius:8px;font-weight:800;font-size:10px;letter-spacing:.3px;text-transform:uppercase}
-.ob.or{background:rgba(0,255,179,.12);color:var(--mint);border:1px solid rgba(0,255,179,.25)}
-.ob.an{background:rgba(255,154,60,.12);color:var(--orange);border:1px solid rgba(255,154,60,.25)}
+/* ── CONTENT ── */
+.cw { max-width: 960px; margin: 0 auto; padding: 0 16px 80px; position: relative; z-index: 5; }
+.tab-panel {
+  display: none;
+  background: linear-gradient(180deg, var(--panel) 0%, var(--panel2) 100%);
+  border: 1px solid var(--border2); border-top: none;
+  border-radius: 0 0 var(--rad) var(--rad);
+  padding: 28px;
+  animation: fadeSlide .3s ease;
+}
+.tab-panel.active { display: block; }
+@keyframes fadeSlide { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
 
-/* ===== REVIEW ===== */
-.rh{text-align:center;padding:10px 0 20px}
-.rh h2{
-  font-family:'Fredoka One',cursive;font-size:26px;
-  background:linear-gradient(90deg,var(--cyan),var(--mint));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+/* ── INFO BOXES ── */
+.ib {
+  border-radius: var(--rad2); padding: 14px 16px; margin: 10px 0;
+  font-size: 13px; line-height: 1.8;
 }
-.rh p{color:var(--text2);font-size:13px;margin-top:6px;font-weight:600}
-.cg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
-.cc{border-radius:var(--rad);padding:18px;text-align:center}
-.cc.fk{background:rgba(0,255,179,.07);border:1.5px solid rgba(0,255,179,.25)}
-.cc.op{background:rgba(255,224,51,.07);border:1.5px solid rgba(255,224,51,.25)}
-.cc .ci{font-size:30px;margin-bottom:8px;animation:bnc .8s ease infinite alternate}
-@keyframes bnc{from{transform:translateY(0)}to{transform:translateY(-6px)}}
-.cc h3{font-family:'Fredoka One',cursive;font-size:18px;margin-bottom:8px}
-.cc.fk h3{color:var(--mint)}.cc.op h3{color:var(--yellow)}
-.cc ul{list-style:none;font-size:12px;text-align:left;color:var(--text)}
-.cc ul li{padding:3px 0;display:flex;align-items:flex-start;gap:6px}
-.cc.fk ul li::before{content:'✦';color:var(--mint);font-size:10px;padding-top:2px;flex-shrink:0}
-.cc.op ul li::before{content:'✦';color:var(--yellow);font-size:10px;padding-top:2px;flex-shrink:0}
-.kb{display:inline-block;margin:2px;padding:3px 10px;border-radius:8px;font-size:10px;font-weight:800}
-.ko{background:rgba(255,224,51,.15);color:var(--yellow);border:1px solid rgba(255,224,51,.25)}
-.kf{background:rgba(0,255,179,.12);color:var(--mint);border:1px solid rgba(0,255,179,.2)}
+.ib.neon { background:rgba(0,245,255,.06); border:1px solid rgba(0,245,255,.2); border-left:3px solid var(--neon); }
+.ib.pink { background:rgba(255,79,163,.06); border:1px solid rgba(255,79,163,.2); border-left:3px solid var(--pink); }
+.ib.green { background:rgba(0,255,179,.06); border:1px solid rgba(0,255,179,.2); border-left:3px solid var(--green); }
+.ib.amber { background:rgba(255,204,0,.06); border:1px solid rgba(255,204,0,.2); border-left:3px solid var(--amber); }
+.ib.purple { background:rgba(168,85,247,.06); border:1px solid rgba(168,85,247,.2); border-left:3px solid var(--purple); }
+.ib h4 { font-weight: 800; margin-bottom: 7px; font-size: 13px; color: var(--white); }
 
-/* ===== MINI REVIEW GAME ===== */
-.rp{display:flex;gap:5px;margin-bottom:16px;flex-wrap:wrap}
-.rd{
-  width:28px;height:28px;border-radius:8px;
-  background:rgba(50,29,120,.8);border:1.5px solid var(--border);
-  font-weight:800;font-size:10px;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .3s;color:var(--text3);font-family:'Fredoka One',cursive;
+/* ── STEP CARDS ── */
+.step-list { display: flex; flex-direction: column; gap: 8px; }
+.step-card {
+  border: 1px solid var(--border); border-radius: var(--rad2); overflow: hidden;
+  transition: all .2s; cursor: pointer;
+  background: rgba(10,14,26,.5);
 }
-.rd.correct{background:rgba(0,255,179,.2);color:var(--mint);border-color:var(--mint);box-shadow:0 0 10px rgba(0,255,179,.3)}
-.rd.wrong{background:rgba(255,92,106,.15);color:var(--red);border-color:var(--red)}
-.rd.cur{border-color:var(--pink);color:var(--pink);transform:scale(1.15);box-shadow:var(--glow-p)}
-.rqc{
-  background:rgba(45,26,110,.6);border:1.5px solid var(--border2);
-  border-radius:var(--rad);padding:22px;text-align:center;margin-bottom:14px;
+.step-card:hover { border-color: rgba(0,245,255,.35); box-shadow: 0 0 20px rgba(0,245,255,.07); }
+.step-card.open { border-color: rgba(0,245,255,.4); box-shadow: 0 0 28px rgba(0,245,255,.1); }
+.step-head {
+  display: flex; align-items: center; gap: 12px; padding: 13px 16px;
+  background: rgba(19,30,53,.7); user-select: none;
 }
-.rqn{font-size:10px;color:var(--text3);font-weight:800;letter-spacing:1px;margin-bottom:10px;text-transform:uppercase}
-.rqt{font-size:15px;font-weight:800;line-height:1.6;color:var(--white)}
-.rbg{display:flex;gap:12px;justify-content:center}
-.rb{
-  flex:1;max-width:160px;padding:13px 10px;cursor:pointer;border-radius:var(--rad2);
-  font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;
-  transition:all .2s;letter-spacing:.3px;border:2px solid;
+.step-num {
+  width: 34px; height: 34px; border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--neon), var(--green));
+  color: #080c1a; font-family: 'Fredoka One', sans-serif; font-weight: 700; font-size: 15px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 14px rgba(0,245,255,.35);
 }
-.rb.fbtn{background:rgba(0,255,179,.12);color:var(--mint);border-color:rgba(0,255,179,.35)}
-.rb.obtn{background:rgba(255,224,51,.12);color:var(--yellow);border-color:rgba(255,224,51,.35)}
-.rb:hover{transform:translateY(-3px) scale(1.03)}
-.rb.fbtn:hover{box-shadow:0 6px 20px rgba(0,255,179,.25);background:rgba(0,255,179,.2)}
-.rb.obtn:hover{box-shadow:0 6px 20px rgba(255,224,51,.25);background:rgba(255,224,51,.2)}
-.rb:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.rb.ca{outline:3px solid var(--mint);box-shadow:0 0 18px rgba(0,255,179,.4)}
-.rb.wa{outline:3px solid var(--red)}
-.rfb{text-align:center;padding:12px;border-radius:var(--rad2);font-weight:700;font-size:13px;margin-top:12px;display:none}
-.rfb.correct{background:rgba(0,255,179,.1);color:var(--mint);border:1.5px solid rgba(0,255,179,.25)}
-.rfb.wrong{background:rgba(255,92,106,.1);color:var(--red);border:1.5px solid rgba(255,92,106,.25)}
-.rsc{display:none;text-align:center;background:linear-gradient(135deg,rgba(0,229,255,.1),rgba(0,255,179,.08));border:1.5px solid rgba(0,229,255,.25);border-radius:var(--rad);padding:32px}
-.rsc h3{font-family:'Fredoka One',cursive;font-size:22px;color:var(--cyan);margin-bottom:8px}
-.rsb{font-family:'Fredoka One',cursive;font-size:56px;line-height:1;margin:14px 0;color:var(--white);text-shadow:var(--glow-c)}
-.rsc p{font-size:14px;color:var(--text2);font-weight:700}
-.btr{
-  margin-top:16px;padding:11px 26px;
-  background:rgba(0,229,255,.12);color:var(--cyan);
-  border:2px solid rgba(0,229,255,.35);border-radius:28px;
-  font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;
-  cursor:pointer;transition:all .2s;
+.step-title { font-weight: 800; font-size: 13px; color: var(--white); flex: 1; }
+.step-tag {
+  font-size: 9px; padding: 2px 9px; border-radius: 6px;
+  font-weight: 800; letter-spacing: .8px; text-transform: uppercase;
 }
-.btr:hover{background:rgba(0,229,255,.22);box-shadow:var(--glow-c);transform:scale(1.05)}
+.tag-m { background:rgba(0,245,255,.12); color:var(--neon); border:1px solid rgba(0,245,255,.2); }
+.tag-l { background:rgba(255,204,0,.12); color:var(--amber); border:1px solid rgba(255,204,0,.2); }
+.tag-t { background:rgba(168,85,247,.12); color:var(--purple); border:1px solid rgba(168,85,247,.2); }
+.step-arrow { font-size: 14px; transition: transform .25s; color: var(--text3); }
+.step-card.open .step-arrow { transform: rotate(90deg); color: var(--neon); }
+.step-body {
+  display: none; padding: 18px 18px 20px;
+  border-top: 1px solid var(--border);
+  background: rgba(8,12,26,.6);
+  animation: fadeSlide .2s ease;
+}
+.step-card.open .step-body { display: block; }
 
-/* ===== MAIN GAME ===== */
-.gdash{
-  background:linear-gradient(135deg,#1e0e50 0%,#2a1068 100%);
-  border:2px solid rgba(255,224,51,.25);
-  border-radius:var(--rad);padding:22px 20px;
-  text-align:center;position:relative;overflow:hidden;margin-bottom:14px;
+/* ── STORY CARD ── */
+.story-card {
+  background: rgba(0,245,255,.04); border: 1px solid rgba(0,245,255,.15);
+  border-radius: var(--rad2); padding: 20px 22px; margin: 10px 0;
+  position: relative;
 }
-.gdash::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2.5px;
-  background:linear-gradient(90deg,var(--pink),var(--yellow),var(--cyan),var(--mint),var(--yellow),var(--pink));
-  background-size:200% 100%;animation:rainbow 3s linear infinite;
+.story-card::before {
+  content:''; position:absolute; top:0; left:16px; right:16px; height:1px;
+  background: linear-gradient(90deg, transparent, var(--neon), transparent);
 }
-.gdash h2{
-  font-family:'Fredoka One',cursive;font-size:22px;letter-spacing:2px;
-  color:var(--yellow);text-shadow:var(--glow-y);margin-bottom:6px;
+.story-card h4 {
+  font-family: 'Fredoka One', sans-serif; font-size: 16px;
+  color: var(--neon); text-align: center; margin-bottom: 14px; letter-spacing: 1px;
 }
-.gdash p{color:var(--text2);font-size:12px;font-weight:600}
-.gs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
-.gch{
-  background:rgba(255,255,255,.07);border:1.5px solid var(--border2);
-  border-radius:20px;padding:5px 14px;color:var(--text);font-weight:700;font-size:11px;
+.story-card p { font-size: 13px; line-height: 1.9; color: var(--text); }
+
+/* ── TABLE ── */
+.ctable {
+  width: 100%; border-collapse: collapse; font-size: 12px;
+  border-radius: var(--rad2); overflow: hidden; margin: 10px 0;
+  border: 1px solid var(--border);
 }
-.gch span{color:var(--yellow);font-family:'Fredoka One',cursive;font-size:14px}
+.ctable th { padding: 11px 13px; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: .8px; }
+.ctable th:first-child { background: rgba(168,85,247,.2); color: var(--purple); }
+.ctable th:nth-child(2) { background: rgba(0,245,255,.15); color: var(--neon); }
+.ctable th:nth-child(3) { background: rgba(255,79,163,.15); color: var(--pink); }
+.ctable td { padding: 9px 13px; border-bottom: 1px solid var(--border); color: var(--text); font-size: 12px; vertical-align: top; }
+.ctable tr:last-child td { border-bottom: none; }
+.ctable tr:nth-child(odd) td { background: rgba(255,255,255,.02); }
+.ctable td:first-child { font-weight: 800; color: var(--text2); }
+
+/* ── LAPORAN TEMPLATE ── */
+.laporan-box {
+  background: rgba(255,204,0,.04); border: 1px dashed rgba(255,204,0,.3);
+  border-radius: var(--rad2); padding: 20px 22px; margin: 10px 0;
+}
+.laporan-box h4 {
+  font-family: 'Fredoka One', sans-serif; color: var(--amber); font-size: 15px;
+  text-align: center; margin-bottom: 16px; letter-spacing: 1px;
+}
+.lap-row { display: flex; gap: 12px; margin-bottom: 10px; font-size: 12px; }
+.lap-label {
+  font-weight: 800; color: var(--green); min-width: 130px;
+  padding-top: 2px; flex-shrink: 0; font-size: 11px;
+  text-transform: uppercase; letter-spacing: .5px;
+}
+.lap-value { color: var(--text); line-height: 1.7; }
+
+/* ── VOCAB ── */
+.vocab-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px; margin: 10px 0;
+}
+.vocab-card {
+  background: linear-gradient(135deg, rgba(0,245,255,.08), rgba(0,255,179,.05));
+  border: 1px solid rgba(0,245,255,.18);
+  border-radius: var(--rad2); padding: 12px 14px; text-align: center;
+  transition: all .2s;
+}
+.vocab-card:hover { border-color: var(--neon); box-shadow: var(--glow-n); }
+.vocab-card strong { display: block; font-size: 13px; font-weight: 800; color: var(--neon); margin-bottom: 4px; }
+.vocab-card span { font-size: 11px; color: var(--text2); line-height: 1.4; }
+
+/* ── STEP ITEMS ── */
+.si { list-style: none; }
+.si li {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13px;
+}
+.si li:last-child { border-bottom: none; }
+.si-num {
+  width: 28px; height: 28px; border-radius: 7px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--neon), var(--green));
+  color: #080c1a; font-weight: 800; font-size: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── PAGE HEADER ── */
+.ph {
+  display: flex; align-items: center; gap: 14px;
+  border-radius: var(--rad); padding: 18px 22px; margin-bottom: 22px;
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, rgba(0,245,255,.1), rgba(0,255,179,.06));
+  border: 1px solid rgba(0,245,255,.2);
+}
+.ph .pnum {
+  font-family: 'Fredoka One', sans-serif; font-size: 30px;
+  background: rgba(0,245,255,.12); border: 1px solid rgba(0,245,255,.3);
+  border-radius: 10px; width: 58px; height: 58px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--neon); flex-shrink: 0; box-shadow: var(--glow-n);
+}
+.ph h2 { font-family: 'Fredoka One', sans-serif; font-size: 18px; color: var(--white); }
+.ph p { font-size: 12px; color: var(--text2); margin-top: 4px; font-weight: 600; }
+
+.section-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(90deg, rgba(0,245,255,.15), rgba(0,255,179,.08));
+  border: 1px solid rgba(0,245,255,.25); color: var(--neon);
+  padding: 4px 14px; border-radius: 20px; font-size: 10px; font-weight: 800;
+  margin-bottom: 12px; letter-spacing: .5px; text-transform: uppercase;
+}
+
+/* ══════════════════════════════════════════
+   REVIEW TAB
+══════════════════════════════════════════ */
+.rv-header { text-align: center; padding: 12px 0 22px; }
+.rv-header h2 {
+  font-family: 'Fredoka One', sans-serif; font-size: 26px;
+  background: linear-gradient(90deg, var(--neon), var(--pink));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  letter-spacing: 2px;
+}
+.rv-header p { color: var(--text2); font-size: 13px; margin-top: 6px; font-weight: 600; }
+
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+.cg-card { border-radius: var(--rad); padding: 20px; text-align: center; }
+.cg-card.fk { background: rgba(0,255,179,.06); border: 1px solid rgba(0,255,179,.25); }
+.cg-card.op { background: rgba(255,204,0,.06); border: 1px solid rgba(255,204,0,.25); }
+.cg-card .ci { font-size: 30px; margin-bottom: 10px; }
+.cg-card h3 { font-family: 'Fredoka One', sans-serif; font-size: 17px; margin-bottom: 10px; letter-spacing: 1px; }
+.cg-card.fk h3 { color: var(--green); }
+.cg-card.op h3 { color: var(--amber); }
+.cg-card ul { list-style: none; font-size: 12px; text-align: left; color: var(--text); }
+.cg-card ul li { padding: 4px 0; display: flex; align-items: flex-start; gap: 7px; }
+.cg-card.fk ul li::before { content:'▸'; color: var(--green); font-size: 10px; padding-top: 2px; }
+.cg-card.op ul li::before { content:'▸'; color: var(--amber); font-size: 10px; padding-top: 2px; }
+
+.kw-tag { display: inline-block; margin: 2px; padding: 3px 10px; border-radius: 7px; font-size: 10px; font-weight: 700; letter-spacing: .5px; }
+.kw-fk { background: rgba(0,255,179,.1); color: var(--green); border: 1px solid rgba(0,255,179,.2); }
+.kw-op { background: rgba(255,204,0,.1); color: var(--amber); border: 1px solid rgba(255,204,0,.2); }
+
+/* ── MINI GAME (Review) ── */
+.rv-game-title { text-align: center; margin: 20px 0 6px; }
+.rv-game-title h3 { font-family: 'Fredoka One', sans-serif; font-size: 18px; color: var(--neon); letter-spacing: 1px; }
+.rv-game-title p { font-size: 12px; color: var(--text2); font-weight: 600; }
+
+.dots-row { display: flex; gap: 5px; margin-bottom: 16px; flex-wrap: wrap; }
+.dot-item {
+  width: 28px; height: 28px; border-radius: 7px;
+  background: rgba(19,30,53,.9); border: 1px solid var(--border);
+  font-weight: 800; font-size: 10px; font-family: 'Fredoka One', sans-serif;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .3s; color: var(--text3);
+}
+.dot-item.correct { background: rgba(0,255,179,.2); color: var(--green); border-color: var(--green); box-shadow: 0 0 10px rgba(0,255,179,.2); }
+.dot-item.wrong { background: rgba(255,85,116,.15); color: var(--rose); border-color: var(--rose); }
+.dot-item.cur { border-color: var(--neon); color: var(--neon); transform: scale(1.15); box-shadow: var(--glow-n); }
+
+.rv-qbox {
+  background: rgba(10,14,26,.7); border: 1px solid var(--border2);
+  border-radius: var(--rad); padding: 22px; text-align: center; margin-bottom: 14px;
+}
+.rv-qnum { font-size: 10px; color: var(--text3); font-weight: 800; letter-spacing: 1.5px; margin-bottom: 10px; text-transform: uppercase; }
+.rv-qtext { font-size: 15px; font-weight: 700; line-height: 1.65; color: var(--white); }
+
+.rv-btn-row { display: flex; gap: 14px; justify-content: center; }
+.rv-btn {
+  flex: 1; max-width: 160px; padding: 14px 10px;
+  border: 1px solid; cursor: pointer; border-radius: var(--rad2);
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px;
+  transition: all .2s; letter-spacing: .5px;
+}
+.rv-btn.fk { background: rgba(0,255,179,.1); color: var(--green); border-color: rgba(0,255,179,.3); }
+.rv-btn.op { background: rgba(255,204,0,.1); color: var(--amber); border-color: rgba(255,204,0,.3); }
+.rv-btn:hover { transform: translateY(-2px); }
+.rv-btn.fk:hover { box-shadow: var(--glow-g); background: rgba(0,255,179,.18); }
+.rv-btn.op:hover { box-shadow: var(--glow-a); background: rgba(255,204,0,.18); }
+.rv-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+.rv-btn.ca { outline: 2px solid var(--green); box-shadow: var(--glow-g); }
+.rv-btn.wa { outline: 2px solid var(--rose); }
+
+.rv-feedback {
+  text-align: center; padding: 12px; border-radius: var(--rad2);
+  font-weight: 700; font-size: 13px; margin-top: 12px; display: none;
+}
+.rv-feedback.ok { background: rgba(0,255,179,.08); color: var(--green); border: 1px solid rgba(0,255,179,.2); }
+.rv-feedback.no { background: rgba(255,85,116,.08); color: var(--rose); border: 1px solid rgba(255,85,116,.2); }
+
+.rv-result {
+  display: none; text-align: center;
+  background: linear-gradient(135deg, rgba(0,245,255,.08), rgba(168,85,247,.08));
+  border: 1px solid rgba(0,245,255,.2); border-radius: var(--rad); padding: 32px;
+}
+.rv-result h3 { font-family: 'Fredoka One', sans-serif; font-size: 22px; color: var(--neon); margin-bottom: 8px; letter-spacing: 1px; }
+.rv-score-big { font-family: 'Fredoka One', sans-serif; font-size: 56px; line-height: 1; margin: 14px 0; color: var(--white); text-shadow: var(--glow-n); }
+.rv-result p { font-size: 14px; color: var(--text2); font-weight: 600; }
+.retry-btn {
+  margin-top: 16px; padding: 11px 26px;
+  background: rgba(0,245,255,.1); color: var(--neon);
+  border: 1px solid rgba(0,245,255,.3); border-radius: 28px;
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px;
+  cursor: pointer; transition: all .2s; letter-spacing: .5px;
+}
+.retry-btn:hover { background: rgba(0,245,255,.2); box-shadow: var(--glow-n); }
+
+/* ══════════════════════════════════════════
+   GAMES TAB
+══════════════════════════════════════════ */
+.gm-start {
+  text-align: center; padding: 10px 0;
+  background: linear-gradient(135deg, #060a18 0%, #0c1526 100%);
+  border: 1px solid var(--border2); border-radius: var(--rad);
+  padding: 28px 20px; position: relative; overflow: hidden;
+  margin-bottom: 14px;
+}
+.gm-start::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background: linear-gradient(90deg, var(--neon), var(--pink), var(--green), var(--amber), var(--neon));
+  background-size: 300% 100%; animation: rainbow 3s linear infinite;
+}
+@keyframes rainbow { 0%{background-position:0%} 100%{background-position:300%} }
+.gm-start .game-emoji { font-size: 72px; display: block; margin-bottom: 10px; animation: bounce 1.4s ease infinite alternate; }
+@keyframes bounce { from{transform:translateY(0)} to{transform:translateY(-12px)} }
+.gm-title { font-family: 'Fredoka One', sans-serif; font-size: 26px; color: var(--amber); text-shadow: var(--glow-a); margin-bottom: 6px; letter-spacing: 2px; }
+.gm-subtitle { color: var(--text2); font-size: 13px; margin-bottom: 4px; font-weight: 600; }
+.gm-rules {
+  background: rgba(10,14,26,.7); border: 1px solid var(--border);
+  border-radius: var(--rad); padding: 16px; margin: 18px auto; max-width: 360px; text-align: left;
+}
+.gm-rules li { color: var(--text); font-size: 12px; padding: 4px 0; list-style: none; display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.gm-rules li::before { content: '⚡'; font-size: 11px; }
+.start-btn {
+  background: linear-gradient(135deg, var(--amber), var(--amber2));
+  color: #080c1a; border: none; border-radius: 30px;
+  padding: 15px 48px; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 16px;
+  cursor: pointer; margin-top: 10px; transition: all .2s;
+  box-shadow: 0 4px 24px rgba(255,204,0,.4); letter-spacing: .5px;
+  animation: pulse-btn 2s ease infinite;
+}
+@keyframes pulse-btn { 0%,100%{transform:scale(1);box-shadow:0 4px 24px rgba(255,204,0,.4)} 50%{transform:scale(1.04);box-shadow:0 6px 32px rgba(255,204,0,.6)} }
+.start-btn:hover { transform: scale(1.08) !important; }
+
+/* GAME PLAYING */
+.gm-stats {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px;
+}
+.gm-stat {
+  background: rgba(255,255,255,.06); border: 1px solid var(--border2);
+  border-radius: 20px; padding: 5px 16px; color: var(--text); font-weight: 700; font-size: 11px;
+}
+.gm-stat span { font-family: 'Fredoka One', sans-serif; color: var(--amber); font-size: 14px; }
 
 /* TIMER */
-.tw{position:relative;width:70px;height:70px;margin:0 auto 14px}
-.tr{transform:rotate(-90deg)}
-.trb{fill:none;stroke:rgba(255,255,255,.08);stroke-width:5}
-.trp{fill:none;stroke-width:5;stroke-linecap:round;stroke:var(--yellow);transition:stroke-dashoffset 1s linear,stroke .3s}
-.tn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Fredoka One',cursive;font-size:22px;color:var(--white)}
+.timer-wrap { position: relative; width: 72px; height: 72px; margin: 0 auto 16px; }
+.timer-svg { transform: rotate(-90deg); }
+.timer-bg { fill: none; stroke: rgba(255,255,255,.08); stroke-width: 5; }
+.timer-ring { fill: none; stroke-width: 5; stroke-linecap: round; stroke: var(--amber); transition: stroke-dashoffset 1s linear, stroke .3s; }
+.timer-num { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: 'Fredoka One', sans-serif; font-size: 22px; color: var(--white); }
 
 /* PROGRESS */
-.pt{background:rgba(255,255,255,.06);border-radius:8px;height:6px;margin-bottom:14px;overflow:hidden;border:1px solid var(--border)}
-.pf{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--pink),var(--lav),var(--cyan));transition:width .4s ease}
+.prog-bar { background: rgba(255,255,255,.06); border-radius: 10px; height: 6px; margin-bottom: 16px; overflow: hidden; border: 1px solid var(--border); }
+.prog-fill { height: 100%; border-radius: 10px; background: linear-gradient(90deg, var(--neon), var(--purple)); transition: width .4s ease; }
 
-/* QUESTION CARD */
-.qc{
-  background:rgba(45,26,110,.6);border:1.5px solid var(--border2);
-  border-radius:var(--rad);padding:20px;margin-bottom:12px;
-  position:relative;overflow:hidden;
+/* QUESTION */
+.q-card {
+  background: rgba(10,14,26,.75); border: 1px solid var(--border2);
+  border-radius: var(--rad); padding: 22px; margin-bottom: 12px;
+  position: relative; overflow: hidden;
 }
-.qc::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,var(--pink),var(--lav),var(--cyan),var(--mint))}
-.qm{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.qnb{
-  background:linear-gradient(90deg,rgba(255,110,180,.2),rgba(192,132,252,.2));
-  color:var(--pink);padding:3px 12px;border-radius:8px;
-  font-weight:800;font-size:12px;border:1px solid rgba(255,110,180,.3);
-  font-family:'Fredoka One',cursive;
+.q-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background: linear-gradient(90deg, var(--neon), var(--pink), var(--green)); }
+.q-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.q-num-badge {
+  background: rgba(0,245,255,.12); color: var(--neon);
+  padding: 3px 11px; border-radius: 7px; font-weight: 800; font-size: 11px;
+  font-family: 'Fredoka One', sans-serif; border: 1px solid rgba(0,245,255,.2);
 }
-.qcat{font-size:10px;color:var(--text3);font-weight:800;background:rgba(255,255,255,.05);padding:2px 9px;border-radius:6px;text-transform:uppercase;letter-spacing:.3px}
-.qt{font-size:14px;font-weight:800;line-height:1.65;color:var(--white);text-align:center;padding:6px 0}
-.og{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
-.ob2{
-  padding:13px 10px;
-  border:1.5px solid var(--border);background:rgba(50,29,120,.5);
-  border-radius:12px;
-  font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;
-  color:var(--text);cursor:pointer;transition:all .2s;text-align:center;line-height:1.4;
+.q-cat { font-size: 10px; color: var(--text3); font-weight: 800; background: rgba(255,255,255,.05); padding: 3px 10px; border-radius: 7px; text-transform: uppercase; letter-spacing: .5px; }
+.q-text { font-size: 14px; font-weight: 700; line-height: 1.7; color: var(--white); text-align: center; padding: 6px 0; }
+.opts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 14px; }
+.opt-btn {
+  padding: 13px 10px;
+  border: 1px solid var(--border); background: rgba(19,30,53,.8);
+  border-radius: var(--rad2);
+  font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 12px;
+  color: var(--text); cursor: pointer; transition: all .2s; text-align: center; line-height: 1.4;
 }
-.ob2:hover:not(:disabled){border-color:rgba(255,110,180,.5);background:rgba(255,110,180,.1);transform:translateY(-2px) scale(1.02);color:var(--pink)}
-.ob2.correct{background:rgba(0,255,179,.15);color:var(--mint);border-color:var(--mint);box-shadow:0 0 16px rgba(0,255,179,.25)}
-.ob2.wrong{background:rgba(255,92,106,.12);color:var(--red);border-color:var(--red)}
-.ob2:disabled{cursor:not-allowed}
+.opt-btn:hover:not(:disabled) { border-color: rgba(0,245,255,.4); background: rgba(0,245,255,.08); transform: translateY(-2px); color: var(--neon); }
+.opt-btn.correct { background: rgba(0,255,179,.15); color: var(--green); border-color: var(--green); box-shadow: 0 0 16px rgba(0,255,179,.2); }
+.opt-btn.wrong { background: rgba(255,85,116,.12); color: var(--rose); border-color: var(--rose); }
+.opt-btn:disabled { cursor: not-allowed; }
 
-/* SKIP BUTTON */
-.skip-bar{display:flex;justify-content:flex-end;margin-bottom:10px}
-.skip-btn{
-  padding:8px 16px;border-radius:10px;cursor:pointer;
-  background:rgba(255,92,106,.1);color:var(--red);
-  border:1.5px solid rgba(255,92,106,.3);
-  font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;
-  letter-spacing:.3px;transition:all .2s;
-  display:flex;align-items:center;gap:6px;
+.skip-bar { display: flex; justify-content: flex-end; margin-bottom: 10px; }
+.skip-btn {
+  padding: 7px 16px; border-radius: 9px; cursor: pointer;
+  background: rgba(255,85,116,.08); color: var(--rose);
+  border: 1px solid rgba(255,85,116,.25);
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11px;
+  letter-spacing: .5px; text-transform: uppercase; transition: all .2s;
 }
-.skip-btn:hover{background:rgba(255,92,106,.2);box-shadow:0 0 16px rgba(255,92,106,.2);transform:scale(1.03)}
+.skip-btn:hover { background: rgba(255,85,116,.15); box-shadow: 0 0 16px rgba(255,85,116,.2); }
 
 /* FEEDBACK OVERLAY */
-.fo{
-  position:fixed;top:50%;left:50%;
-  transform:translate(-50%,-50%) scale(0);
-  border-radius:22px;padding:22px 36px;text-align:center;
-  z-index:1000;transition:transform .3s cubic-bezier(.34,1.56,.64,1);min-width:180px;
-  backdrop-filter:blur(20px);border:2px solid rgba(255,255,255,.2);
+.fb-overlay {
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  border-radius: 18px; padding: 22px 36px; text-align: center;
+  z-index: 1000; transition: transform .25s cubic-bezier(.68,-.55,.265,1.55);
+  min-width: 190px; backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,.15);
 }
-.fo.show{transform:translate(-50%,-50%) scale(1)}
-.fe{font-size:48px;margin-bottom:6px;display:block;animation:bnc .4s ease infinite alternate}
-.ft{color:#fff;font-family:'Fredoka One',cursive;font-size:20px}
-.fs{color:rgba(255,255,255,.8);font-size:12px;margin-top:4px;font-weight:600}
+.fb-overlay.show { transform: translate(-50%,-50%) scale(1); }
+.fb-emoji { font-size: 46px; margin-bottom: 6px; }
+.fb-title { color: var(--white); font-family: 'Fredoka One', sans-serif; font-size: 20px; letter-spacing: 1px; }
+.fb-sub { color: rgba(255,255,255,.7); font-size: 12px; margin-top: 4px; font-weight: 600; }
 
 /* RESULT */
-.res{
-  display:none;text-align:center;
-  background:linear-gradient(135deg,rgba(255,110,180,.08),rgba(192,132,252,.08));
-  border:2px solid rgba(255,110,180,.25);
-  border-radius:var(--rad);padding:36px 24px;
+.gm-result {
+  display: none; text-align: center;
+  background: linear-gradient(135deg, rgba(0,245,255,.06), rgba(168,85,247,.06));
+  border: 1px solid rgba(0,245,255,.2); border-radius: var(--rad); padding: 40px 28px;
 }
-.res.show{display:block;animation:popIn .5s cubic-bezier(.34,1.56,.64,1)}
-.rtit{font-family:'Fredoka One',cursive;font-size:26px;color:var(--yellow);text-shadow:var(--glow-y);margin-bottom:6px}
-.rsco{font-family:'Fredoka One',cursive;font-size:70px;color:var(--white);line-height:1;margin:16px 0;text-shadow:0 0 30px rgba(255,110,180,.5)}
-.rstr{font-size:36px;margin:10px 0;letter-spacing:5px}
-.rdt{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:14px 0}
-.rcp{background:rgba(255,255,255,.07);border:1.5px solid var(--border2);border-radius:20px;padding:7px 18px;font-weight:800;font-size:12px;color:var(--text)}
-.rcp b{color:var(--yellow);font-family:'Fredoka One',cursive;font-size:15px}
-.rmsg{background:rgba(255,110,180,.07);border:1.5px solid rgba(255,110,180,.2);border-radius:var(--rad2);padding:14px;margin:14px 0;font-size:14px;color:var(--text);font-weight:700}
-.bpa{
-  background:linear-gradient(135deg,var(--pink),var(--lav));
-  color:#fff;border:none;border-radius:28px;padding:13px 34px;
-  font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;cursor:pointer;
-  margin:6px;transition:all .2s;box-shadow:0 4px 20px rgba(255,110,180,.4);
+.gm-result.show { display: block; animation: fadeSlide .5s ease; }
+.res-trophy { font-size: 32px; margin-bottom: 6px; animation: bounce 1.2s ease infinite alternate; }
+.res-title { font-family: 'Fredoka One', sans-serif; font-size: 26px; color: var(--amber); text-shadow: var(--glow-a); margin-bottom: 6px; letter-spacing: 2px; }
+.res-score { font-family: 'Fredoka One', sans-serif; font-size: 68px; color: var(--white); line-height: 1; margin: 14px 0; text-shadow: 0 0 30px rgba(0,245,255,.5); }
+.res-stars { font-size: 36px; margin: 10px 0; letter-spacing: 4px; }
+.res-details { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 16px 0; }
+.res-chip {
+  background: rgba(255,255,255,.06); border: 1px solid var(--border2);
+  border-radius: 20px; padding: 6px 18px; font-weight: 700; font-size: 12px; color: var(--text);
 }
-.bpa:hover{transform:scale(1.07);box-shadow:0 6px 28px rgba(255,110,180,.55)}
-.fwk{font-size:32px;margin:6px 0;animation:bnc .7s ease infinite alternate}
-
-/* START SCREEN */
-.ss{text-align:center;padding:14px 8px}
-.ss .be{font-size:72px;display:block;margin-bottom:10px;animation:bnc 1.2s ease infinite alternate;filter:drop-shadow(0 0 16px rgba(255,224,51,.5))}
-.ss h2{font-family:'Fredoka One',cursive;font-size:26px;color:var(--yellow);text-shadow:var(--glow-y);margin-bottom:6px}
-.ss p{color:var(--text2);font-size:13px;margin-bottom:8px;font-weight:600}
-.gr{
-  background:rgba(45,26,110,.6);border:1.5px solid var(--border2);
-  border-radius:var(--rad);padding:16px;margin:16px auto;max-width:340px;text-align:left;
+.res-chip b { color: var(--amber); font-family: 'Fredoka One', sans-serif; }
+.res-msg { background: rgba(0,245,255,.06); border: 1px solid rgba(0,245,255,.15); border-radius: var(--rad2); padding: 14px; margin: 14px 0; font-size: 14px; color: var(--text); font-weight: 600; }
+.play-again-btn {
+  background: linear-gradient(135deg, var(--amber), var(--amber2));
+  color: #080c1a; border: none; border-radius: 30px;
+  padding: 13px 36px; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 15px;
+  cursor: pointer; margin: 6px; transition: all .2s;
+  box-shadow: 0 4px 24px rgba(255,204,0,.4);
 }
-.gr li{color:var(--text);font-size:12px;padding:4px 0;list-style:none;display:flex;align-items:center;gap:9px;font-weight:700}
-.gr li::before{content:'⚡';font-size:13px;flex-shrink:0}
-.bst{
-  background:linear-gradient(135deg,var(--pink),var(--lav));
-  color:#fff;border:none;border-radius:30px;padding:14px 48px;
-  font-family:'Nunito',sans-serif;font-weight:800;font-size:17px;cursor:pointer;
-  margin-top:10px;transition:all .2s;
-  box-shadow:0 4px 20px rgba(255,110,180,.5),0 0 40px rgba(255,110,180,.2);
-  animation:breathe 2s ease infinite;
-}
-@keyframes breathe{0%,100%{transform:scale(1);box-shadow:0 4px 20px rgba(255,110,180,.5)}50%{transform:scale(1.04);box-shadow:0 6px 30px rgba(255,110,180,.65)}}
-.bst:hover{transform:scale(1.09)!important}
+.play-again-btn:hover { transform: scale(1.06); box-shadow: 0 6px 30px rgba(255,204,0,.5); }
 
 /* CONFETTI */
-.cc2{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:999;overflow:hidden}
-.cp{position:absolute;animation:cff 2.8s linear forwards;border-radius:2px}
-@keyframes cff{0%{transform:translateY(-100px) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+.confetti-wrap { position: fixed; inset: 0; pointer-events: none; z-index: 999; overflow: hidden; }
+.cp { position: absolute; animation: cffall 3s linear forwards; border-radius: 2px; }
+@keyframes cffall { 0%{transform:translateY(-100px) rotate(0);opacity:1} 100%{transform:translateY(100vh) rotate(720deg);opacity:0} }
 
-/* DIVIDER */
-.div{border:none;border-top:1px solid rgba(255,255,255,.06);margin:18px 0}
+/* ── OBS TABLE ── */
+.obs-table { width: 100%; border-collapse: collapse; font-size: 12px; border-radius: var(--rad2); overflow: hidden; border: 1px solid var(--border); }
+.obs-table th { background: linear-gradient(90deg, rgba(0,245,255,.18), rgba(0,255,179,.1)); color: var(--neon); padding: 10px; text-align: center; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: .8px; }
+.obs-table td { padding: 9px 11px; border-bottom: 1px solid var(--border); text-align: center; font-size: 12px; color: var(--text); }
+.obs-table td:first-child { font-weight: 800; color: var(--text2); }
+.type-badge { display: inline-block; padding: 3px 10px; border-radius: 7px; font-weight: 800; font-size: 10px; text-transform: uppercase; }
+.type-or { background: rgba(0,255,179,.12); color: var(--green); border: 1px solid rgba(0,255,179,.25); }
+.type-an { background: rgba(255,204,0,.12); color: var(--amber); border: 1px solid rgba(255,204,0,.25); }
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+.rangkuman-emoji { text-align: center; margin-top: 14px; font-size: 24px; }
 
 /* RESPONSIVE */
-@media(max-width:600px){
-  .tp{padding:16px 12px}.cg{grid-template-columns:1fr}
-  .og{grid-template-columns:1fr 1fr}
-  .qt{font-size:12px}.ob2{font-size:11px;padding:10px 6px}
-  .lr{flex-direction:column;gap:2px}
-  header h1{font-size:clamp(18px,5.5vw,28px)}
+@media(max-width:600px) {
+  .tab-panel { padding: 16px 12px; }
+  .compare-grid, .opts-grid { grid-template-columns: 1fr; }
+  header h1 { font-size: clamp(18px, 5vw, 28px); }
+  .gm-title { font-size: 20px; }
 }
 </style>
 </head>
 <body>
 
-<!-- floating background deco -->
-<div class="floaty">🌟</div>
-<div class="floaty">✨</div>
-<div class="floaty">🌙</div>
-<div class="floaty">⭐</div>
-<div class="floaty">💫</div>
+<!-- BG LAYER -->
+<div class="bg-layer">
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+</div>
 
 <header>
-  <div class="planet pl1"></div>
-  <div class="planet pl2"></div>
-  <div class="hdr">
-    <div class="badge-s"><div class="pulse-dot"></div>SD Islam Tahfizh Cahaya Qur'an · Kelas 3 · TA 2025/26</div>
-    <h1>🚀 MATERI 5 — <span class="accent">Cerita atau Laporan</span></h1>
-    <p>Bahasa Indonesia &nbsp;·&nbsp; Klik setiap judul untuk membuka materi 😊</p>
+  <span class="float-icon" style="top:20%;left:5%;--dur:3.5s">📚</span>
+  <span class="float-icon" style="top:30%;right:6%;--dur:4.5s">✏️</span>
+  <span class="float-icon" style="top:60%;left:8%;--dur:5s">🌟</span>
+  <div class="hdr-inner">
+    <div class="school-badge"><span class="dot"></span>SD Islam Tahfizh Cahaya Qur'an · Kelas 3 Sem II · TA 2025/26</div>
+    <h1>MATERI 5 — <span class="accent">Cerita atau Laporan</span></h1>
+    <p>Bahasa Indonesia &nbsp;·&nbsp; Klik tab untuk mulai belajar!</p>
   </div>
 </header>
 
-<div class="tnw">
-  <div class="tnav">
-    <button class="tbtn rv-btn" onclick="swT('rv')"><span class="ti">🔍</span>Review</button>
-    <button class="tbtn active" onclick="swT('p1')"><span class="ti">📅</span>Pertemuan 1</button>
-    <button class="tbtn" onclick="swT('p2')"><span class="ti">📅</span>Pertemuan 2</button>
-    <button class="tbtn gm-btn" onclick="swT('gm')"><span class="ti">🎮</span>Games!</button>
+<div class="nav-wrap">
+  <div class="nav-bar">
+    <button class="nav-btn" onclick="switchTab('rv')"><span class="nav-icon">🔍</span>Review Fakta/Opini</button>
+    <button class="nav-btn active" onclick="switchTab('mt')"><span class="nav-icon">📖</span>Materi</button>
+    <button class="nav-btn gm-btn" onclick="switchTab('gm')"><span class="nav-icon">🎮</span>Games 30 Soal</button>
   </div>
 </div>
 
 <div class="cw">
 
-<!-- ======== REVIEW ======== -->
-<div id="rv" class="tp">
-  <div class="rh">
-    <h2>🔍 Fakta vs Opini</h2>
-    <p>Ingat lagi perbedaannya sebelum masuk games besar!</p>
+<!-- ════════════════ REVIEW TAB ════════════════ -->
+<div id="rv" class="tab-panel">
+  <div class="rv-header">
+    <h2>FAKTA vs OPINI</h2>
+    <p>Ingat lagi perbedaan fakta dan opini sebelum masuk games besar!</p>
   </div>
-  <div class="cg">
-    <div class="cc fk">
-      <div class="ci">✅</div><h3>FAKTA</h3>
+
+  <div class="compare-grid">
+    <div class="cg-card fk">
+      <div class="ci">✅</div>
+      <h3>FAKTA</h3>
       <ul>
         <li>Bisa dibuktikan kebenarannya</li>
         <li>Berisi data, tempat, waktu, jumlah</li>
         <li>Tidak berubah-ubah</li>
-        <li>Bersifat nyata dan benar terjadi</li>
+        <li>Nyata dan benar-benar terjadi</li>
       </ul>
     </div>
-    <div class="cc op">
-      <div class="ci">💭</div><h3>OPINI</h3>
+    <div class="cg-card op">
+      <div class="ci">💭</div>
+      <h3>OPINI</h3>
       <ul>
-        <li>Pendapat atau perasaan seseorang</li>
+        <li>Pendapat/perasaan seseorang</li>
         <li>Tidak sama untuk semua orang</li>
         <li>Tidak bisa dibuktikan langsung</li>
         <li>Bersifat subjektif</li>
       </ul>
     </div>
   </div>
-  <div class="ib o">
+
+  <div class="ib amber">
     <h4>🔑 Kata Kunci OPINI:</h4>
-    <p><span class="kb ko">menurut saya</span><span class="kb ko">saya pikir</span><span class="kb ko">seharusnya</span><span class="kb ko">paling indah</span><span class="kb ko">terbaik</span><span class="kb ko">sangat menyenangkan</span><span class="kb ko">penting sekali</span></p>
+    <p>
+      <span class="kw-tag kw-op">menurut saya</span><span class="kw-tag kw-op">saya pikir</span>
+      <span class="kw-tag kw-op">seharusnya</span><span class="kw-tag kw-op">paling indah</span>
+      <span class="kw-tag kw-op">terbaik</span><span class="kw-tag kw-op">paling cantik</span>
+      <span class="kw-tag kw-op">sangat menyenangkan</span><span class="kw-tag kw-op">penting sekali</span>
+    </p>
   </div>
-  <div class="ib g">
+
+  <div class="ib green">
     <h4>🔑 Ciri Kalimat FAKTA:</h4>
-    <p><span class="kb kf">hidup di...</span><span class="kb kf">berwarna...</span><span class="kb kf">tumbuh di...</span><span class="kb kf">memakan...</span><span class="kb kf">bertelur</span><span class="kb kf">jumlahnya...</span><span class="kb kf">terjadi pada...</span></p>
+    <p>
+      <span class="kw-tag kw-fk">hidup di...</span><span class="kw-tag kw-fk">berwarna...</span>
+      <span class="kw-tag kw-fk">tumbuh di...</span><span class="kw-tag kw-fk">memakan...</span>
+      <span class="kw-tag kw-fk">bertelur</span><span class="kw-tag kw-fk">jumlahnya...</span>
+      <span class="kw-tag kw-fk">terjadi pada...</span>
+    </p>
   </div>
-  <hr class="div">
-  <div style="text-align:center;margin-bottom:14px">
-    <div style="font-family:'Fredoka One',cursive;font-size:20px;color:var(--cyan);margin-bottom:4px">🎯 Mini Game — 10 Soal Fakta / Opini</div>
-    <div style="font-size:12px;color:var(--text2);font-weight:600">Klik FAKTA atau OPINI untuk menjawab!</div>
+
+  <hr class="divider">
+
+  <div class="rv-game-title">
+    <h3>🎯 MINI GAME — 10 Soal Fakta / Opini</h3>
+    <p>Klik FAKTA atau OPINI untuk menjawab!</p>
   </div>
-  <div id="rgame">
-    <div class="rp" id="rdots"></div>
-    <div id="rcon">
-      <div class="rqc">
-        <div class="rqn" id="rqn">Soal 1 dari 10</div>
-        <div class="rqt" id="rqt">Loading...</div>
+
+  <div id="rvGame">
+    <div class="dots-row" id="rvDots"></div>
+    <div id="rvCon">
+      <div class="rv-qbox">
+        <div class="rv-qnum" id="rvQNum">Soal 1 dari 10</div>
+        <div class="rv-qtext" id="rvQText">Loading...</div>
       </div>
-      <div class="rbg">
-        <button class="rb fbtn" id="rfk" onclick="ansRv('fakta')">✅ FAKTA</button>
-        <button class="rb obtn" id="rop" onclick="ansRv('opini')">💭 OPINI</button>
+      <div class="rv-btn-row">
+        <button class="rv-btn fk" id="rvFk" onclick="ansRv('fakta')">✅ FAKTA</button>
+        <button class="rv-btn op" id="rvOp" onclick="ansRv('opini')">💭 OPINI</button>
       </div>
-      <div class="rfb" id="rfb"></div>
+      <div class="rv-feedback" id="rvFb"></div>
     </div>
-    <div class="rsc" id="rsc">
-      <h3>🎉 Selesai!</h3>
-      <div class="rsb" id="rsb">0/10</div>
-      <p id="rsm">Pesan motivasi</p>
-      <button class="btr" onclick="initRv()">🔄 Main Lagi</button>
+    <div class="rv-result" id="rvResult">
+      <h3>SELESAI! 🎉</h3>
+      <div class="rv-score-big" id="rvScoreBig">0/10</div>
+      <p id="rvMsg">Pesan</p>
+      <button class="retry-btn" onclick="initRv()">🔄 Main Lagi</button>
     </div>
   </div>
 </div>
 
-<!-- ======== PERTEMUAN 1 ======== -->
-<div id="p1" class="tp active">
-  <div class="ph p1">
-    <div class="pnum">1</div>
-    <div><h2>Pertemuan Pertama</h2><p>Membaca cerita, memahami laporan, belajar perbedaan cerita &amp; laporan</p></div>
+<!-- ════════════════ MATERI TAB ════════════════ -->
+<div id="mt" class="tab-panel active">
+  <div class="ph">
+    <div class="pnum">📚</div>
+    <div>
+      <h2>Materi 5 — Cerita atau Laporan</h2>
+      <p>Membaca cerita, memahami laporan, belajar perbedaan cerita &amp; laporan</p>
+    </div>
   </div>
-  <div class="ib y" style="margin-bottom:16px">💡 <strong>Petunjuk:</strong> Klik setiap nomor untuk membuka materinya. Kerjakan secara urut ya! 😊</div>
-  <div class="sl">
 
-    <div class="sc" onclick="tog(this)">
-      <div class="sh"><div class="sn">1</div><div class="st">📖 Membaca Cerita "Memilah Sampah di Sekolah"</div><span class="stag tm">MATERI</span><span class="sa">▶</span></div>
-      <div class="sb">
-        <div class="mb">📘 Modul Halaman 45</div>
-        <div class="ib y">Buka modulmu di halaman 45 dan bacalah cerita di bawah ini dengan saksama! 👀</div>
-        <div class="strc">
+  <div class="ib amber" style="margin-bottom:16px">💡 <strong>Petunjuk:</strong> Klik setiap nomor untuk membuka materinya. Kerjakan secara urut ya! 😊</div>
+
+  <div class="step-list">
+
+    <!-- 1 -->
+    <div class="step-card" onclick="toggleStep(this)">
+      <div class="step-head">
+        <div class="step-num">1</div>
+        <div class="step-title">📖 Membaca Cerita "Memilah Sampah di Sekolah"</div>
+        <span class="step-tag tag-m">MATERI</span>
+        <span class="step-arrow">▶</span>
+      </div>
+      <div class="step-body">
+        <div class="section-badge">📘 Modul Halaman 45</div>
+        <div class="ib amber">Buka modulmu di halaman 45 dan bacalah cerita berikut dengan saksama! 👀</div>
+        <div class="story-card">
           <h4>Memilah Sampah di Sekolah</h4>
           <p>Hari Jumat pagi, guru mengajak kami belajar memilah sampah di halaman sekolah. Di sana ada tiga tempat sampah berwarna hijau, kuning, dan biru. Tempat sampah hijau untuk sampah organik, kuning untuk sampah anorganik, dan biru untuk sampah kertas.</p><br>
           <p>Saya dan teman-teman memungut sampah di halaman. Daun kering kami masukkan ke tempat sampah hijau, botol plastik kami masukkan ke tempat sampah kuning, dan kertas bekas kami masukkan ke tempat sampah biru. Kami belajar bahwa sampah organik dapat dijadikan kompos, sedangkan sampah anorganik bisa didaur ulang.</p><br>
@@ -692,37 +720,70 @@ header p{color:rgba(200,184,240,.8);font-size:13px;margin-top:6px;font-weight:60
       </div>
     </div>
 
-    <div class="sc" onclick="tog(this)">
-      <div class="sh"><div class="sn">2</div><div class="st">📝 Apa itu Laporan?</div><span class="stag tm">MATERI</span><span class="sa">▶</span></div>
-      <div class="sb">
-        <div class="mb">📘 Modul Halaman 47</div>
-        <div class="ib g"><h4>🗂️ Pengertian Laporan</h4><p><strong>Laporan</strong> adalah cerita atau tulisan tentang apa yang sudah kita <strong>lihat, dengar, atau lakukan</strong>.</p></div>
-        <div class="ib b"><h4>🎯 Tujuan &amp; Manfaat Laporan</h4>
+    <!-- 2 -->
+    <div class="step-card" onclick="toggleStep(this)">
+      <div class="step-head">
+        <div class="step-num">2</div>
+        <div class="step-title">📝 Apa itu Laporan?</div>
+        <span class="step-tag tag-m">MATERI</span>
+        <span class="step-arrow">▶</span>
+      </div>
+      <div class="step-body">
+        <div class="section-badge">📘 Modul Halaman 47</div>
+        <div class="ib green">
+          <h4>🗂️ Pengertian Laporan</h4>
+          <p><strong>Laporan</strong> adalah cerita atau tulisan tentang apa yang sudah kita <strong>lihat, dengar, atau lakukan</strong>.</p>
+        </div>
+        <div class="ib neon">
+          <h4>🎯 Tujuan &amp; Manfaat Laporan</h4>
           <ul class="si">
-            <li><span class="sc2">1</span><span>Memberitahu orang lain tentang hasil pengamatan atau kegiatan</span></li>
-            <li><span class="sc2">2</span><span>Menyimpan informasi agar tidak lupa</span></li>
-            <li><span class="sc2">3</span><span>Memudahkan orang lain memahami apa yang terjadi</span></li>
+            <li><span class="si-num">1</span><span>Memberitahu orang lain tentang hasil pengamatan atau kegiatan</span></li>
+            <li><span class="si-num">2</span><span>Menyimpan informasi agar tidak lupa</span></li>
+            <li><span class="si-num">3</span><span>Memudahkan orang lain memahami apa yang terjadi</span></li>
           </ul>
         </div>
-        <div class="ib o"><h4>✅ Ciri-Ciri Laporan</h4><p>✔ Ditulis dengan urutan yang <strong>jelas</strong><br>✔ Berisi <strong>fakta</strong>, bukan karangan<br>✔ Menggunakan kalimat <strong>singkat dan mudah dimengerti</strong></p></div>
-      </div>
-    </div>
-
-    <div class="sc" onclick="tog(this)">
-      <div class="sh"><div class="sn">3</div><div class="st">📋 Jenis-Jenis Laporan</div><span class="stag tm">MATERI</span><span class="sa">▶</span></div>
-      <div class="sb">
-        <div class="mb">📘 Modul Halaman 48</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-          <div class="ib g"><h4>🔭 Laporan Pengamatan</h4><p>Laporan dari hasil <strong>mengamati</strong> sesuatu secara langsung.</p><p style="font-style:italic;color:var(--text2);font-size:11px;margin-top:5px">Contoh: mengamati tanaman di taman sekolah</p></div>
-          <div class="ib b"><h4>🏃 Laporan Kegiatan</h4><p>Laporan dari hasil <strong>kegiatan</strong> yang kita ikuti.</p><p style="font-style:italic;color:var(--text2);font-size:11px;margin-top:5px">Contoh: kegiatan membersihkan kelas</p></div>
+        <div class="ib amber">
+          <h4>✅ Ciri-Ciri Laporan</h4>
+          <p>✔ Ditulis dengan urutan yang <strong>jelas</strong><br>✔ Berisi <strong>fakta</strong>, bukan karangan<br>✔ Menggunakan kalimat <strong>singkat dan mudah dimengerti</strong></p>
         </div>
       </div>
     </div>
 
-    <div class="sc" onclick="tog(this)">
-      <div class="sh"><div class="sn">4</div><div class="st">🔄 Perbedaan Cerita dan Laporan</div><span class="stag tm">MATERI</span><span class="sa">▶</span></div>
-      <div class="sb">
-        <table class="ctb">
+    <!-- 3 -->
+    <div class="step-card" onclick="toggleStep(this)">
+      <div class="step-head">
+        <div class="step-num">3</div>
+        <div class="step-title">📋 Jenis-Jenis Laporan</div>
+        <span class="step-tag tag-m">MATERI</span>
+        <span class="step-arrow">▶</span>
+      </div>
+      <div class="step-body">
+        <div class="section-badge">📘 Modul Halaman 48</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div class="ib green">
+            <h4>🔭 Laporan Pengamatan</h4>
+            <p>Laporan dari hasil <strong>mengamati</strong> sesuatu secara langsung.</p>
+            <p style="font-style:italic;color:var(--text2);font-size:11px;margin-top:5px">Contoh: mengamati tanaman di taman sekolah</p>
+          </div>
+          <div class="ib neon">
+            <h4>🏃 Laporan Kegiatan</h4>
+            <p>Laporan dari hasil <strong>kegiatan</strong> yang kita ikuti.</p>
+            <p style="font-style:italic;color:var(--text2);font-size:11px;margin-top:5px">Contoh: kegiatan membersihkan kelas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="step-card" onclick="toggleStep(this)">
+      <div class="step-head">
+        <div class="step-num">4</div>
+        <div class="step-title">🔄 Perbedaan Cerita dan Laporan</div>
+        <span class="step-tag tag-m">MATERI</span>
+        <span class="step-arrow">▶</span>
+      </div>
+      <div class="step-body">
+        <table class="ctable">
           <tr><th>Aspek</th><th>📖 Cerita</th><th>📋 Laporan</th></tr>
           <tr><td>Isinya</td><td>Peristiwa yang diceritakan secara mengalir</td><td>Fakta hasil pengamatan atau kegiatan</td></tr>
           <tr><td>Bahasanya</td><td>Mengalir, bisa ada perasaan/emosi</td><td>Singkat, jelas, tidak bertele-tele</td></tr>
@@ -732,416 +793,577 @@ header p{color:rgba(200,184,240,.8);font-size:13px;margin-top:6px;font-weight:60
       </div>
     </div>
 
-    <div class="sc" onclick="tog(this)">
-      <div class="sh"><div class="sn">5</div><div class="st">📄 Contoh Laporan Lengkap</div><span class="stag tm">MATERI</span><span class="sa">▶</span></div>
-      <div class="sb">
-        <div class="mb">📘 Modul Halaman 46</div>
-        <p style="font-size:12px;color:var(--text2);margin-bottom:10px">Ini adalah cerita "Memilah Sampah" yang sudah diubah menjadi laporan resmi:</p>
-        <div class="lt">
+    <!-- 5 -->
+    <div class="step-card" onclick="toggleStep(this)">
+      <div class="step-head">
+        <div class="step-num">5</div>
+        <div class="step-title">📄 Contoh Laporan Lengkap</div>
+        <span class="step-tag tag-m">MATERI</span>
+        <span class="step-arrow">▶</span>
+      </div>
+      <div class="step-body">
+        <div class="section-badge">📘 Modul Halaman 46</div>
+        <p style="font-size:12px;color:var(--text2);margin-bottom:10px">Cerita "Memilah Sampah" yang sudah diubah menjadi laporan resmi:</p>
+        <div class="laporan-box">
           <h4>📋 Laporan Kegiatan Memilah Sampah di Sekolah</h4>
-          <div class="lr"><span class="ll">📅 Waktu &amp; Tempat</span><span class="lv">Jumat pagi, di halaman sekolah</span></div>
-          <div class="lr"><span class="ll">🎯 Tujuan</span><span class="lv">Belajar memilah sampah dan menjaga kebersihan sekolah</span></div>
-          <div class="lr"><span class="ll">👥 Peserta</span><span class="lv">Guru dan seluruh siswa</span></div>
-          <div class="lr"><span class="ll">📝 Jalannya</span><span class="lv">Guru mengajak siswa ke halaman. Ada 3 tempat sampah: hijau (organik), kuning (anorganik), biru (kertas). Siswa memungut dan memilah sampah sesuai jenisnya.</span></div>
-          <div class="lr"><span class="ll">✅ Hasil</span><span class="lv">Halaman sekolah menjadi bersih dan rapi</span></div>
-          <div class="lr"><span class="ll">💡 Kesimpulan</span><span class="lv">Kegiatan memilah sampah membuat siswa mengerti cara membedakan sampah organik, anorganik, dan kertas.</span></div>
+          <div class="lap-row"><span class="lap-label">📅 Waktu &amp; Tempat</span><span class="lap-value">Jumat pagi, di halaman sekolah</span></div>
+          <div class="lap-row"><span class="lap-label">🎯 Tujuan</span><span class="lap-value">Belajar memilah sampah dan menjaga kebersihan sekolah</span></div>
+          <div class="lap-row"><span class="lap-label">👥 Peserta</span><span class="lap-value">Guru dan seluruh siswa</span></div>
+          <div class="lap-row"><span class="lap-label">📝 Jalannya Kegiatan</span><span class="lap-value">Guru mengajak siswa ke halaman. Ada 3 tempat sampah: hijau (organik), kuning (anorganik), biru (kertas). Siswa memungut dan memilah sampah sesuai jenisnya.</span></div>
+          <div class="lap-row"><span class="lap-label">✅ Hasil</span><span class="lap-value">Halaman sekolah menjadi bersih dan rapi</span></div>
+          <div class="lap-row"><span class="lap-label">💡 Kesimpulan</span><span class="lap-value">Kegiatan memilah sampah membuat siswa mengerti cara membedakan sampah organik, anorganik, dan kertas.</span></div>
         </div>
       </div>
     </div>
 
-    <div class="sc" onclick="tog(this)">
-      <div class="sh"><div class="sn">6</div><div class="st">📚 Kosakata Baru</div><span class="stag tm">MATERI</span><span class="sa">▶</span></div>
-      <div class="sb">
-        <div class="mb">📘 Modul Halaman 47</div>
-        <div class="vg">
-          <div class="vc"><strong>Organik</strong><span>Berasal dari makhluk hidup, mudah terurai</span></div>
-          <div class="vc"><strong>Anorganik</strong><span>Bukan dari makhluk hidup, sulit terurai</span></div>
-          <div class="vc"><strong>Daur Ulang</strong><span>Mengolah kembali barang bekas menjadi berguna</span></div>
-          <div class="vc"><strong>Kompos</strong><span>Pupuk alami dari sisa makhluk hidup</span></div>
-          <div class="vc"><strong>Memilah</strong><span>Memisahkan atau mengelompokkan</span></div>
+    <!-- 6 -->
+    <div class="step-card" onclick="toggleStep(this)">
+      <div class="step-head">
+        <div class="step-num">6</div>
+        <div class="step-title">📚 Kosakata Baru</div>
+        <span class="step-tag tag-m">MATERI</span>
+        <span class="step-arrow">▶</span>
+      </div>
+      <div class="step-body">
+        <div class="section-badge">📘 Modul Halaman 47</div>
+        <div class="vocab-grid">
+          <div class="vocab-card"><strong>Organik</strong><span>Berasal dari makhluk hidup, mudah terurai</span></div>
+          <div class="vocab-card"><strong>Anorganik</strong><span>Bukan dari makhluk hidup, sulit terurai</span></div>
+          <div class="vocab-card"><strong>Daur Ulang</strong><span>Mengolah kembali barang bekas menjadi berguna</span></div>
+          <div class="vocab-card"><strong>Kompos</strong><span>Pupuk alami dari sisa makhluk hidup</span></div>
+          <div class="vocab-card"><strong>Memilah</strong><span>Memisahkan atau mengelompokkan</span></div>
         </div>
       </div>
     </div>
 
-    <div class="sc" onclick="tog(this)">
-      <div class="sh"><div class="sn">7</div><div class="st">✏️ Kegiatan: Isi Tabel Sampah!</div><span class="stag tl">LATIHAN</span><span class="sa">▶</span></div>
-      <div class="sb">
-        <div class="mb">📘 Modul Halaman 49</div>
-        <div class="ib y">🔎 <strong>Petunjuk:</strong> Carilah contoh sampah organik dan anorganik di sekitar sekolah atau rumahmu. Isi tabel di modul halaman 49!</div>
-        <table class="ot">
+    <!-- 7 -->
+    <div class="step-card" onclick="toggleStep(this)">
+      <div class="step-head">
+        <div class="step-num">7</div>
+        <div class="step-title">✏️ Kegiatan Pengamatan – Isi Tabel Sampah!</div>
+        <span class="step-tag tag-l">LATIHAN</span>
+        <span class="step-arrow">▶</span>
+      </div>
+      <div class="step-body">
+        <div class="section-badge">📘 Modul Halaman 49 – Tulis jawabanmu di modul!</div>
+        <div class="ib amber">🔎 <strong>Petunjuk:</strong> Carilah contoh sampah organik dan anorganik di sekitar sekolah atau rumahmu. Isi tabel di modul halaman 49!</div>
+        <table class="obs-table">
           <tr><th>No</th><th>Jenis Sampah</th><th>Contoh (isi di modul!)</th><th>Tempat Sampah</th></tr>
-          <tr><td>1</td><td><span class="ob or">Sampah Organik</span></td><td style="color:var(--text3);font-style:italic">Tulis di modul...</td><td>🟢 Hijau</td></tr>
-          <tr><td>2</td><td><span class="ob an">Sampah Anorganik</span></td><td style="color:var(--text3);font-style:italic">Tulis di modul...</td><td>🟡 Kuning</td></tr>
+          <tr><td>1</td><td><span class="type-badge type-or">Sampah Organik</span></td><td style="color:var(--text3);font-style:italic">Tulis di modul...</td><td>🟢 Hijau</td></tr>
+          <tr><td>2</td><td><span class="type-badge type-an">Sampah Anorganik</span></td><td style="color:var(--text3);font-style:italic">Tulis di modul...</td><td>🟡 Kuning</td></tr>
         </table>
       </div>
     </div>
 
-  </div>
-</div>
-
-<!-- ======== PERTEMUAN 2 ======== -->
-<div id="p2" class="tp">
-  <div class="ph p2">
-    <div class="pnum">2</div>
-    <div><h2>Pertemuan Kedua</h2><p>Cerita "Jumat Bersih", melengkapi laporan, dan latihan menulis laporan sendiri</p></div>
-  </div>
-  <div class="ib y" style="margin-bottom:16px">💡 <strong>Petunjuk:</strong> Klik setiap nomor untuk membuka materi. Kerjakan semua latihan di modul ya! 📝</div>
-  <div class="sl">
-
-    <div class="sc" onclick="tog(this)">
-      <div class="sh"><div class="sn">1</div><div class="st">📖 Membaca Cerita "Jumat Bersih di SD Cahaya Quran"</div><span class="stag tm">MATERI</span><span class="sa">▶</span></div>
-      <div class="sb">
-        <div class="mb">📘 Modul Halaman 50</div>
-        <div class="ib y">Buka modulmu di halaman 50, lalu bacalah cerita dengan saksama!</div>
-        <div class="strc">
-          <h4>Jumat Bersih di SD Cahaya Quran</h4>
-          <p>Pagi itu, udara terasa segar di SD Cahaya Quran. Setelah apel pagi, Bu Anis, guru kelas 3, memberi tahu bahwa hari ini adalah jadwal kelas kami melaksanakan kegiatan <em>Jumat Bersih</em>. Semua murid terlihat bersemangat.</p><br>
-          <p>Kami dibagi menjadi tiga kelompok. Kelompok pertama bertugas menyapu halaman sekolah — memungut daun-daun kering ke tempat sampah hijau. Kelompok kedua membersihkan ruang kelas — mengelap meja, merapikan kursi, dan membuang sampah plastik ke tempat sampah kuning. Kelompok ketiga pergi ke taman untuk mencabut rumput liar dan merapikan tanaman. Bu Anis dan Pak Arif ikut membantu sambil mengingatkan untuk bekerja sama.</p><br>
-          <p>Dalam waktu satu jam, lingkungan sekolah menjadi bersih dan rapi. Semua murid tersenyum bangga. Kegiatan ini membuat kami belajar bahwa menjaga kebersihan adalah tanggung jawab bersama. 🌟</p>
-        </div>
+    <!-- 8 RANGKUMAN -->
+    <div class="step-card" onclick="toggleStep(this)">
+      <div class="step-head">
+        <div class="step-num">8</div>
+        <div class="step-title">⭐ Rangkuman Materi 5</div>
+        <span class="step-tag tag-m">RANGKUMAN</span>
+        <span class="step-arrow">▶</span>
       </div>
-    </div>
-
-    <div class="sc" onclick="tog(this)">
-      <div class="sh"><div class="sn">2</div><div class="st">⚙️ Langkah-Langkah Menulis Laporan</div><span class="stag tm">MATERI</span><span class="sa">▶</span></div>
-      <div class="sb">
-        <div class="mb">📘 Modul Halaman 48</div>
-        <ul class="si">
-          <li><span class="sc2">1</span><span>Tentukan <strong>kegiatan atau pengamatan</strong> yang akan dilaporkan</span></li>
-          <li><span class="sc2">2</span><span>Catat <strong>waktu, tempat</strong>, dan siapa yang ikut</span></li>
-          <li><span class="sc2">3</span><span>Tuliskan <strong>jalannya kegiatan</strong> secara urut</span></li>
-          <li><span class="sc2">4</span><span>Tambahkan <strong>hasil dan kesimpulan</strong></span></li>
-          <li><span class="sc2">5</span><span>Gunakan <strong>kalimat efektif</strong> dan tanda baca yang benar</span></li>
-        </ul>
-        <div class="ib o" style="margin-top:12px"><h4>💡 Ingat Struktur Laporan!</h4><p style="font-weight:700;font-size:12px">📌 Judul → 📅 Waktu &amp; Tempat → 🎯 Tujuan → 👥 Peserta → 📝 Jalannya → ✅ Hasil → 💡 Kesimpulan</p></div>
-      </div>
-    </div>
-
-    <div class="sc" onclick="tog(this)">
-      <div class="sh"><div class="sn">3</div><div class="st">✏️ Latihan: Lengkapi Laporan "Jumat Bersih"</div><span class="stag tl">LATIHAN</span><span class="sa">▶</span></div>
-      <div class="sb">
-        <div class="mb">📘 Modul Halaman 51</div>
-        <div class="ib y">✍️ <strong>Petunjuk:</strong> Berdasarkan cerita "Jumat Bersih", lengkapi tabel laporan di modul halaman 51!</div>
-        <div class="lt">
-          <h4>📋 Panduan Laporan "Jumat Bersih"</h4>
-          <div class="lr"><span class="ll">📌 Judul</span><span class="lv" style="color:var(--red);font-weight:800">← Buat sendiri di modul!</span></div>
-          <div class="lr"><span class="ll">📅 Waktu &amp; Tempat</span><span class="lv" style="color:var(--text2)">Petunjuk: Hari apa? Di mana? Cari di cerita!</span></div>
-          <div class="lr"><span class="ll">🎯 Tujuan</span><span class="lv" style="color:var(--text2)">Petunjuk: Kenapa diadakan Jumat Bersih?</span></div>
-          <div class="lr"><span class="ll">👥 Peserta</span><span class="lv" style="color:var(--text2)">Petunjuk: Siapa saja yang ikut? (Ingat nama gurunya!)</span></div>
-          <div class="lr"><span class="ll">📝 Jalannya</span><span class="lv" style="color:var(--text2)">Petunjuk: Ada 3 kelompok. Apa tugas masing-masing?</span></div>
-          <div class="lr"><span class="ll">✅ Hasil</span><span class="lv" style="color:var(--text2)">Petunjuk: Apa yang terjadi setelah satu jam?</span></div>
-          <div class="lr"><span class="ll">💡 Kesimpulan</span><span class="lv" style="color:var(--text2)">Petunjuk: Pelajaran apa yang didapat?</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="sc" onclick="tog(this)">
-      <div class="sh"><div class="sn">4</div><div class="st">🌳 Tugas: Laporan "Menanam Pohon di Halaman Sekolah"</div><span class="stag tt">TUGAS</span><span class="sa">▶</span></div>
-      <div class="sb">
-        <div class="mb">📘 Modul Halaman 52</div>
-        <div class="ib y">🌱 <strong>Petunjuk:</strong> Buatlah laporan sederhana tentang <strong>"Menanam Pohon di Halaman Sekolah"</strong>. Tulis di modul halaman 52 dengan struktur laporan!</div>
-        <div class="ib pu">
-          <h4>🎯 Checklist sebelum dikumpulkan:</h4>
-          <p>☐ Ada judul?<br>☐ Ada waktu dan tempat?<br>☐ Ada tujuan kegiatan?<br>☐ Ada peserta?<br>☐ Ada jalannya kegiatan (urut)?<br>☐ Ada hasil dan kesimpulan?<br>☐ Kalimat singkat dan jelas?</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="sc" onclick="tog(this)">
-      <div class="sh"><div class="sn">5</div><div class="st">⭐ Rangkuman Materi 5</div><span class="stag tm">RANGKUMAN</span><span class="sa">▶</span></div>
-      <div class="sb">
-        <div class="ib g">
+      <div class="step-body">
+        <div class="ib green">
           <h4>📝 Yang sudah kita pelajari:</h4>
           <ul class="si">
-            <li><span class="sc2">✓</span><span><strong>Cerita</strong> = menceritakan pengalaman secara mengalir, boleh ada perasaan</span></li>
-            <li><span class="sc2">✓</span><span><strong>Laporan</strong> = menuliskan fakta kegiatan secara urut dan jelas</span></li>
-            <li><span class="sc2">✓</span><span>Struktur: Judul → Waktu/Tempat → Tujuan → Peserta → Jalannya → Hasil → Kesimpulan</span></li>
-            <li><span class="sc2">✓</span><span>Jenis laporan: laporan pengamatan dan laporan kegiatan</span></li>
-            <li><span class="sc2">✓</span><span>Laporan yang baik: berisi fakta, urut, kalimat efektif</span></li>
+            <li><span class="si-num">✓</span><span><strong>Cerita</strong> = menceritakan pengalaman secara mengalir, boleh ada perasaan</span></li>
+            <li><span class="si-num">✓</span><span><strong>Laporan</strong> = menuliskan fakta kegiatan secara urut dan jelas (tidak boleh karangan)</span></li>
+            <li><span class="si-num">✓</span><span>Struktur laporan: Judul → Waktu/Tempat → Tujuan → Peserta → Jalannya → Hasil → Kesimpulan</span></li>
+            <li><span class="si-num">✓</span><span>Jenis laporan: laporan pengamatan dan laporan kegiatan</span></li>
+            <li><span class="si-num">✓</span><span>Laporan yang baik: berisi fakta, urut, kalimat efektif</span></li>
           </ul>
         </div>
-        <div style="text-align:center;margin-top:16px;font-size:28px;animation:bnc .8s ease infinite alternate;display:block">🎉 Keren! Kamu sudah selesaikan Materi 5! 🎉</div>
+        <div class="rangkuman-emoji">🎉 Keren! Siap ke Games? Coba klik tab Games! 🎮</div>
       </div>
     </div>
 
-  </div>
+  </div><!-- end step-list -->
 </div>
 
-<!-- ======== GAMES ======== -->
-<div id="gm" class="tp">
-  <!-- START -->
-  <div id="gss" class="gdash">
-    <div class="ss">
-      <span class="be">🚀</span>
-      <h2>SUPER QUIZ TIME!</h2>
-      <p>30 Soal seru tentang Materi 5: Cerita &amp; Laporan</p>
-      <ul class="gr">
-        <li>30 soal pilihan ganda</li>
+<!-- ════════════════ GAMES TAB ════════════════ -->
+<div id="gm" class="tab-panel">
+
+  <!-- START SCREEN -->
+  <div id="gmStart">
+    <div class="gm-start">
+      <span class="game-emoji">🎮</span>
+      <div class="gm-title">SUPER QUIZ TIME!</div>
+      <div class="gm-subtitle">30 Soal Seru dari Materi 1–5 Bahasa Indonesia</div>
+      <ul class="gm-rules">
+        <li>30 soal pilihan ganda seru</li>
         <li>Waktu 20 detik per soal — cepat ya!</li>
         <li>Jawab benar = skor naik 🎉</li>
-        <li>Bisa berhenti kapan saja!</li>
+        <li>Jawaban di posisi berbeda-beda</li>
         <li>Semangat dan jujur ya! 💪</li>
       </ul>
-      <button class="bst" onclick="startG()">🚀 MULAI GAME!</button>
+      <button class="start-btn" onclick="startGame()">▶ MULAI GAME!</button>
     </div>
   </div>
 
-  <!-- PLAYING -->
-  <div id="gps" style="display:none">
+  <!-- PLAYING SCREEN -->
+  <div id="gmPlay" style="display:none">
     <div class="skip-bar">
       <button class="skip-btn" onclick="stopGame()">✕ Hentikan Game</button>
     </div>
-    <div class="gdash">
-      <div class="gs">
-        <div class="gch">❓ Soal: <span id="gqn">1</span>/30</div>
-        <div class="gch">✅ Benar: <span id="gsc">0</span></div>
-        <div class="gch">❌ Salah: <span id="gwn">0</span></div>
+    <div class="gm-start" style="padding:18px 16px;margin-bottom:14px">
+      <div class="gm-stats">
+        <div class="gm-stat">❓ Soal: <span id="gQNum">1</span>/30</div>
+        <div class="gm-stat">✅ Benar: <span id="gScore">0</span></div>
+        <div class="gm-stat">❌ Salah: <span id="gWrong">0</span></div>
       </div>
-      <div class="tw" style="margin-top:12px">
-        <svg class="tr" width="70" height="70" viewBox="0 0 70 70">
-          <circle class="trb" cx="35" cy="35" r="30"/>
-          <circle class="trp" id="tring" cx="35" cy="35" r="30" stroke-dasharray="188.5" stroke-dashoffset="0"/>
+      <div class="timer-wrap">
+        <svg class="timer-svg" width="72" height="72" viewBox="0 0 72 72">
+          <circle class="timer-bg" cx="36" cy="36" r="30"/>
+          <circle class="timer-ring" id="timerRing" cx="36" cy="36" r="30" stroke-dasharray="188.5" stroke-dashoffset="0"/>
         </svg>
-        <div class="tn" id="tnum">20</div>
+        <div class="timer-num" id="timerNum">20</div>
       </div>
     </div>
-    <div class="pt"><div class="pf" id="pfill" style="width:0%"></div></div>
-    <div class="qc">
-      <div class="qm"><span class="qnb" id="gqb">No. 1</span><span class="qcat" id="gqcat">Kategori</span></div>
-      <div class="qt" id="gqt">Pertanyaan...</div>
-      <div class="og" id="gopt"></div>
+    <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    <div class="q-card">
+      <div class="q-meta">
+        <span class="q-num-badge" id="qNumBadge">No. 1</span>
+        <span class="q-cat" id="qCat">Kategori</span>
+      </div>
+      <div class="q-text" id="qText">Pertanyaan...</div>
+      <div class="opts-grid" id="qOpts"></div>
     </div>
   </div>
 
-  <!-- RESULT -->
-  <div id="grs" class="res">
-    <div class="fwk" id="rfwk">🎊🏆🎊</div>
-    <div class="rtit" id="rttl">SELAMAT!</div>
-    <div class="rsco" id="rsco">0/30</div>
-    <div class="rstr" id="rstr">⭐⭐⭐</div>
-    <div class="rdt">
-      <div class="rcp">✅ Benar: <b id="rc">0</b></div>
-      <div class="rcp">❌ Salah: <b id="rw">0</b></div>
-      <div class="rcp">📊 Nilai: <b id="rn">0</b>/100</div>
+  <!-- RESULT SCREEN -->
+  <div id="gmResult" class="gm-result">
+    <div class="res-trophy" id="resTrophy">🎊</div>
+    <div class="res-title" id="resTitle">SELAMAT!</div>
+    <div class="res-score" id="resScore">0/30</div>
+    <div class="res-stars" id="resStars">⭐⭐⭐</div>
+    <div class="res-details">
+      <div class="res-chip">✅ Benar: <b id="resC">0</b></div>
+      <div class="res-chip">❌ Salah: <b id="resW">0</b></div>
+      <div class="res-chip">📊 Nilai: <b id="resN">0</b>/100</div>
     </div>
-    <div class="rmsg" id="rmsg">Pesan</div>
-    <button class="bpa" onclick="restartG()">🔄 Main Lagi</button>
+    <div class="res-msg" id="resMsg">Pesan</div>
+    <button class="play-again-btn" onclick="restartGame()">🔄 Main Lagi</button>
   </div>
+
 </div>
 
 </div><!-- end cw -->
 
-<!-- FEEDBACK -->
-<div class="fo" id="fov">
-  <span class="fe" id="foe">😊</span>
-  <div class="ft" id="fot">Benar!</div>
-  <div class="fs" id="fos"></div>
+<!-- FEEDBACK OVERLAY -->
+<div class="fb-overlay" id="fbOverlay">
+  <div class="fb-emoji" id="fbEmoji">😊</div>
+  <div class="fb-title" id="fbTitle">Benar!</div>
+  <div class="fb-sub" id="fbSub"></div>
 </div>
 
 <!-- CONFETTI -->
-<div class="cc2" id="ccon"></div>
+<div class="confetti-wrap" id="confettiWrap"></div>
 
 <script>
-// ===== TABS =====
-const TAB_ORDER=['rv','p1','p2','gm'];
-function swT(id){
-  if(id!=='gm'&&gc>0&&document.getElementById('gps').style.display!=='none') stopGame();
-  document.querySelectorAll('.tp').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('active'));
+// ══════════════════════════════════════════
+// TAB SWITCH
+// ══════════════════════════════════════════
+const TABS = ['rv','mt','gm'];
+function switchTab(id) {
+  if(id !== 'gm' && gc > 0 && document.getElementById('gmPlay').style.display !== 'none') stopGame();
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  document.querySelectorAll('.tbtn')[TAB_ORDER.indexOf(id)].classList.add('active');
-  if(id==='rv'&&!rvDone) initRv();
+  const idx = TABS.indexOf(id);
+  document.querySelectorAll('.nav-btn')[idx].classList.add('active');
+  if(id === 'rv' && !rvInited) initRv();
 }
 
-// ===== STEP TOGGLE =====
-function tog(el){
-  const was=el.classList.contains('open');
-  el.closest('.sl').querySelectorAll('.sc').forEach(c=>c.classList.remove('open'));
+// ══════════════════════════════════════════
+// STEP TOGGLE
+// ══════════════════════════════════════════
+function toggleStep(el) {
+  const was = el.classList.contains('open');
+  el.closest('.step-list').querySelectorAll('.step-card').forEach(c => c.classList.remove('open'));
   if(!was) el.classList.add('open');
 }
 
-// ===== REVIEW =====
-const rvQ=[
-  {q:"Harimau Sumatra hidup di hutan Pulau Sumatra.",ans:"fakta",e:"Bisa dibuktikan → FAKTA! ✅"},
-  {q:"Menurut saya, harimau Sumatra adalah hewan paling gagah di dunia.",ans:"opini",e:"'Menurut saya' = kata kunci opini 💭"},
-  {q:"Pohon bakau tumbuh di daerah pesisir pantai berlumpur.",ans:"fakta",e:"Bisa dibuktikan → FAKTA! ✅"},
-  {q:"Pohon bakau adalah tumbuhan paling penting di pantai.",ans:"opini",e:"'Paling penting' = penilaian subjektif → OPINI 💭"},
-  {q:"Burung Cendrawasih hidup di Papua, Indonesia.",ans:"fakta",e:"Bisa dicek dan dibuktikan → FAKTA! ✅"},
-  {q:"Burung Cendrawasih harus dilindungi karena sangat cantik.",ans:"opini",e:"'Sangat cantik' = penilaian → OPINI 💭"},
-  {q:"Air mendidih pada suhu 100 derajat Celcius.",ans:"fakta",e:"Terbukti secara ilmu pengetahuan → FAKTA! ✅"},
-  {q:"Matematika adalah pelajaran yang paling menyenangkan.",ans:"opini",e:"'Paling menyenangkan' berbeda tiap orang → OPINI 💭"},
-  {q:"Matahari terbit dari sebelah timur.",ans:"fakta",e:"Selalu bisa dibuktikan → FAKTA! ✅"},
-  {q:"Es krim rasa cokelat adalah yang paling enak.",ans:"opini",e:"'Paling enak' tergantung selera → OPINI 💭"},
+// ══════════════════════════════════════════
+// REVIEW GAME DATA
+// ══════════════════════════════════════════
+const rvData = [
+  {q:"Harimau Sumatra hidup di hutan Pulau Sumatra.",a:"fakta",e:"Bisa dibuktikan → FAKTA! ✅"},
+  {q:"Menurut saya, harimau Sumatra adalah hewan paling gagah di dunia.",a:"opini",e:"'Menurut saya' = kata kunci opini 💭"},
+  {q:"Pohon bakau tumbuh di daerah pesisir pantai berlumpur.",a:"fakta",e:"Bisa dibuktikan → FAKTA! ✅"},
+  {q:"Pohon bakau adalah tumbuhan paling penting di pantai.",a:"opini",e:"'Paling penting' = penilaian subjektif → OPINI 💭"},
+  {q:"Burung Cendrawasih hidup di Papua, Indonesia.",a:"fakta",e:"Bisa dicek dan dibuktikan → FAKTA! ✅"},
+  {q:"Burung Cendrawasih harus dilindungi karena sangat cantik.",a:"opini",e:"'Sangat cantik' = penilaian → OPINI 💭"},
+  {q:"Air mendidih pada suhu 100 derajat Celcius.",a:"fakta",e:"Terbukti secara ilmiah → FAKTA! ✅"},
+  {q:"Matematika adalah pelajaran yang paling menyenangkan.",a:"opini",e:"'Paling menyenangkan' berbeda tiap orang → OPINI 💭"},
+  {q:"Matahari terbit dari sebelah timur.",a:"fakta",e:"Selalu bisa dibuktikan → FAKTA! ✅"},
+  {q:"Es krim rasa cokelat adalah yang paling enak.",a:"opini",e:"'Paling enak' tergantung selera → OPINI 💭"},
 ];
-let rvc=0,rvs=0,rvDone=false;
+let rvIdx=0, rvScore=0, rvInited=false;
 
-function initRv(){
-  rvDone=true;rvc=0;rvs=0;
-  document.getElementById('rsc').style.display='none';
-  document.getElementById('rcon').style.display='block';
-  buildDots();showRvQ();
+function initRv() {
+  rvInited=true; rvIdx=0; rvScore=0;
+  document.getElementById('rvResult').style.display='none';
+  document.getElementById('rvCon').style.display='block';
+  buildDots(); showRvQ();
 }
-function buildDots(){
-  const c=document.getElementById('rdots');c.innerHTML='';
-  rvQ.forEach((_,i)=>{
+function buildDots() {
+  const c=document.getElementById('rvDots'); c.innerHTML='';
+  rvData.forEach((_,i)=>{
     const d=document.createElement('div');
-    d.className='rd'+(i===0?' cur':'');d.textContent=i+1;d.id='rd'+i;c.appendChild(d);
+    d.className='dot-item'+(i===0?' cur':'');
+    d.textContent=i+1; d.id='dot'+i; c.appendChild(d);
   });
 }
-function showRvQ(){
-  const q=rvQ[rvc];
-  document.getElementById('rqn').textContent=`Soal ${rvc+1} dari ${rvQ.length}`;
-  document.getElementById('rqt').textContent=q.q;
-  document.getElementById('rfb').style.display='none';
-  ['rfk','rop'].forEach(id=>{const b=document.getElementById(id);b.disabled=false;b.classList.remove('ca','wa');});
+function showRvQ() {
+  const q=rvData[rvIdx];
+  document.getElementById('rvQNum').textContent=`Soal ${rvIdx+1} dari ${rvData.length}`;
+  document.getElementById('rvQText').textContent=q.q;
+  document.getElementById('rvFb').style.display='none';
+  ['rvFk','rvOp'].forEach(id=>{
+    const b=document.getElementById(id); b.disabled=false;
+    b.classList.remove('ca','wa');
+  });
 }
-function ansRv(c){
-  const q=rvQ[rvc];const ok=c===q.ans;
-  const dot=document.getElementById('rd'+rvc);
-  document.getElementById('rfk').disabled=true;document.getElementById('rop').disabled=true;
-  if(ok){rvs++;dot.className='rd correct';document.getElementById(c==='fakta'?'rfk':'rop').classList.add('ca');const fb=document.getElementById('rfb');fb.className='rfb correct';fb.innerHTML='✅ Benar! '+q.e;fb.style.display='block';}
-  else{dot.className='rd wrong';document.getElementById(c==='fakta'?'rfk':'rop').classList.add('wa');document.getElementById(q.ans==='fakta'?'rfk':'rop').classList.add('ca');const fb=document.getElementById('rfb');fb.className='rfb wrong';fb.innerHTML='❌ Kurang tepat! '+q.e;fb.style.display='block';}
-  setTimeout(()=>{rvc++;if(rvc<rvQ.length){document.getElementById('rd'+rvc).classList.add('cur');showRvQ();}else showRvEnd();},1600);
+function ansRv(choice) {
+  const q=rvData[rvIdx]; const ok=choice===q.a;
+  const dot=document.getElementById('dot'+rvIdx);
+  document.getElementById('rvFk').disabled=true;
+  document.getElementById('rvOp').disabled=true;
+  if(ok) {
+    rvScore++;
+    dot.className='dot-item correct';
+    document.getElementById(choice==='fakta'?'rvFk':'rvOp').classList.add('ca');
+    const fb=document.getElementById('rvFb'); fb.className='rv-feedback ok';
+    fb.innerHTML='✅ Benar! '+q.e; fb.style.display='block';
+  } else {
+    dot.className='dot-item wrong';
+    document.getElementById(choice==='fakta'?'rvFk':'rvOp').classList.add('wa');
+    document.getElementById(q.a==='fakta'?'rvFk':'rvOp').classList.add('ca');
+    const fb=document.getElementById('rvFb'); fb.className='rv-feedback no';
+    fb.innerHTML='❌ Kurang tepat! '+q.e; fb.style.display='block';
+  }
+  setTimeout(()=>{
+    rvIdx++;
+    if(rvIdx<rvData.length) { document.getElementById('dot'+rvIdx).classList.add('cur'); showRvQ(); }
+    else showRvEnd();
+  }, 1700);
 }
-function showRvEnd(){
-  document.getElementById('rcon').style.display='none';
-  document.getElementById('rsc').style.display='block';
-  document.getElementById('rsb').textContent=rvs+'/10';
-  const m=['Terus berlatih ya! 💪','Lumayan! Baca lagi materinya!','Bagus! Hampir sempurna! 😊','LUAR BIASA! Kamu hebat! 🌟'];
-  document.getElementById('rsm').textContent=m[Math.min(Math.floor(rvs/3),3)];
-  if(rvs>=8)confetti();
+function showRvEnd() {
+  document.getElementById('rvCon').style.display='none';
+  document.getElementById('rvResult').style.display='block';
+  document.getElementById('rvScoreBig').textContent=rvScore+'/10';
+  const msgs=['Terus berlatih ya! 💪','Lumayan! Baca lagi materinya!','Bagus! Hampir sempurna! 😊','LUAR BIASA! Kamu hebat! 🌟'];
+  document.getElementById('rvMsg').textContent=msgs[Math.min(Math.floor(rvScore/3),3)];
+  if(rvScore>=8) confetti();
 }
 
-// ===== GAME DATA =====
-const QS=[
-  {cat:"Pengertian",q:"Apa yang dimaksud dengan laporan?",o:["Cerita khayalan yang menarik","Tulisan fakta kegiatan/pengamatan secara urut dan jelas","Lagu yang dinyanyikan bersama","Gambar tentang kegiatan"],a:1},
-  {cat:"Ciri Laporan",q:"Ciri laporan yang baik adalah...",o:["Berisi karangan bebas","Menggunakan bahasa puisi","Berisi fakta dan kalimat singkat jelas","Menggunakan banyak kata sifat indah"],a:2},
-  {cat:"Struktur",q:"Urutan struktur laporan yang benar adalah...",o:["Judul – Kesimpulan – Hasil – Tujuan","Judul – Waktu/Tempat – Tujuan – Peserta – Jalannya – Hasil – Kesimpulan","Waktu – Judul – Tujuan – Hasil","Kesimpulan – Judul – Jalannya Kegiatan"],a:1},
-  {cat:"Struktur",q:"Bagian laporan yang berisi urutan kejadian selangkah demi selangkah disebut...",o:["Tujuan kegiatan","Peserta","Jalannya kegiatan","Kesimpulan"],a:2},
-  {cat:"Struktur",q:"Apa yang ditulis di bagian 'Kesimpulan' sebuah laporan?",o:["Nama semua peserta","Pelajaran atau hasil akhir dari kegiatan","Waktu dan tempat","Daftar alat yang digunakan"],a:1},
-  {cat:"Kosakata",q:"Sampah organik adalah...",o:["Sampah dari plastik dan kaca","Sampah dari logam","Sampah dari makhluk hidup yang mudah terurai","Sampah yang tidak bisa terurai sama sekali"],a:2},
-  {cat:"Kosakata",q:"Daun kering, sisa makanan, dan ranting pohon termasuk sampah...",o:["Anorganik","Organik","Kertas","Elektronik"],a:1},
-  {cat:"Kosakata",q:"Botol plastik dan kaleng minuman termasuk sampah...",o:["Organik","Kertas","Anorganik","Alam"],a:2},
-  {cat:"Kosakata",q:"Sampah organik bisa dijadikan...",o:["Plastik baru","Kompos atau pupuk alami","Kaca","Bahan bakar"],a:1},
-  {cat:"Kosakata",q:"Tempat sampah warna KUNING digunakan untuk sampah...",o:["Organik (daun, makanan)","Kertas dan kardus","Anorganik (botol, plastik)","Semua jenis sampah"],a:2},
-  {cat:"Cerita Jumat Bersih",q:"Di cerita 'Jumat Bersih', murid dibagi menjadi berapa kelompok?",o:["Dua kelompok","Empat kelompok","Tiga kelompok","Lima kelompok"],a:2},
-  {cat:"Cerita Jumat Bersih",q:"Kelompok pertama bertugas...",o:["Membersihkan toilet","Menyapu halaman sekolah","Menanam tanaman","Mengelap kaca jendela"],a:1},
-  {cat:"Cerita Jumat Bersih",q:"Kelompok kedua membersihkan...",o:["Taman sekolah","Halaman depan","Ruang kelas","Kantin"],a:2},
-  {cat:"Cerita Jumat Bersih",q:"Guru kelas 3 yang memimpin Jumat Bersih bernama...",o:["Bu Rani","Bu Anis","Bu Maya","Pak Arif"],a:1},
-  {cat:"Cerita Jumat Bersih",q:"Pelajaran dari kegiatan Jumat Bersih adalah...",o:["Kebersihan tanggung jawab satu orang","Kebersihan tanggung jawab bersama","Kebersihan tidak penting","Hanya guru yang menjaga kebersihan"],a:1},
-  {cat:"Cerita vs Laporan",q:"Manakah yang merupakan contoh CERITA?",o:["Laporan kegiatan dengan struktur resmi","Formulir pendaftaran sekolah","Kisah Rani belajar memilah sampah bersama teman di sekolah","Daftar nama siswa"],a:2},
-  {cat:"Cerita vs Laporan",q:"Perbedaan utama cerita dan laporan adalah...",o:["Cerita lebih panjang","Laporan berisi fakta dan terstruktur, cerita mengalir dan berisi pengalaman","Cerita harus bahasa baku","Laporan harus ada gambarnya"],a:1},
-  {cat:"Jenis Laporan",q:"Laporan yang dibuat setelah mengamati sesuatu disebut...",o:["Laporan kegiatan","Laporan pengamatan","Laporan berita","Laporan keuangan"],a:1},
-  {cat:"Jenis Laporan",q:"Laporan yang dibuat setelah mengikuti kerja bakti kelas disebut...",o:["Laporan pengamatan","Laporan keuangan","Laporan kegiatan","Laporan ilmiah"],a:2},
-  {cat:"Kalimat Efektif",q:"Kalimat yang singkat, jelas, dan mudah dipahami disebut...",o:["Kalimat panjang","Kalimat efektif","Kalimat majemuk","Kalimat seru"],a:1},
-  {cat:"Kalimat Efektif",q:"Manakah contoh kalimat efektif untuk laporan?",o:["Murid-murid yang sangat bersemangat sekali membersihkan kelas yang sangat kotor itu","Murid membersihkan kelas","Membersihkan... kelas... murid ya!","Kelas dibersihkan oh oleh murid yang sangat giat itu"],a:1},
-  {cat:"Fakta / Opini",q:"Kalimat manakah yang merupakan FAKTA?",o:["Menurutku sampah organik lebih berguna","Sepertinya memilah sampah itu susah sekali","Pohon mangrove tumbuh di daerah pesisir pantai","Saya pikir semua orang harus suka berkebun"],a:2},
-  {cat:"Fakta / Opini",q:"Kalimat manakah yang merupakan OPINI?",o:["Burung Cendrawasih hidup di Papua","Sampah organik mudah terurai","Menurut saya, kegiatan Jumat Bersih sangat menyenangkan","Matahari terbit dari timur"],a:2},
-  {cat:"Fakta / Opini",q:"Kata yang menunjukkan bahwa kalimat itu adalah opini adalah...",o:["hidup di","berwarna","menurut saya","tumbuh di"],a:2},
-  {cat:"Fakta / Opini",q:"Laporan yang baik harus berisi...",o:["Opini penulis sebanyak-banyaknya","Fakta yang bisa dibuktikan","Khayalan yang indah","Perasaan sedih penulis"],a:1},
-  {cat:"Cerita Memilah Sampah",q:"Di cerita 'Memilah Sampah', ada berapa warna tempat sampah?",o:["Dua warna","Empat warna","Lima warna","Tiga warna"],a:3},
-  {cat:"Cerita Memilah Sampah",q:"Tempat sampah warna HIJAU untuk...",o:["Sampah anorganik","Sampah kertas","Sampah organik (daun kering, dll)","Sampah plastik"],a:2},
-  {cat:"Cerita Memilah Sampah",q:"Tempat sampah warna BIRU untuk...",o:["Sampah organik","Sampah plastik","Sampah anorganik","Sampah kertas"],a:3},
-  {cat:"Cerita vs Laporan",q:"Cerita dan Laporan 'Jumat Bersih' berisi peristiwa SAMA. Apa yang BERBEDA?",o:["Nama pesertanya","Cara dan gaya penulisannya","Waktu kegiatannya","Tempat kegiatannya"],a:1},
-  {cat:"Umum",q:"Ketika menulis laporan, kalimat yang digunakan sebaiknya...",o:["Sangat panjang dan penuh hiasan kata","Singkat, jelas, dan efektif","Penuh dengan opini penulis","Menggunakan kata-kata asing yang sulit"],a:1},
+// ══════════════════════════════════════════
+// GAME DATA — 30 SOAL (jawaban tersebar)
+// Format: {cat, q, o:[A,B,C,D], a: index jawaban benar}
+// Distribusi a: 0→A, 1→B, 2→C, 3→D
+// Target distribusi: ~7-8 per pilihan
+// ══════════════════════════════════════════
+const QS = [
+  // ══════════════════════════════════
+  // MATERI 5 — CERITA ATAU LAPORAN (18 soal)
+  // ══════════════════════════════════
+
+  // a:0 (jawaban di A)
+  {cat:"Laporan", q:"Apa yang dimaksud dengan laporan?",
+   o:["Tulisan fakta tentang apa yang sudah kita lihat, dengar, atau lakukan","Cerita khayalan yang menarik dan menghibur","Kumpulan puisi tentang pengalaman sekolah","Gambar yang menjelaskan suatu kejadian"],
+   a:0},
+
+  // a:1
+  {cat:"Cerita vs Laporan", q:"Perbedaan utama antara CERITA dan LAPORAN adalah...",
+   o:["Cerita harus selalu menggunakan bahasa baku","Laporan berisi fakta terstruktur, cerita mengalir berisi pengalaman","Laporan tidak perlu ada judulnya","Cerita dan laporan tidak ada bedanya"],
+   a:1},
+
+  // a:2
+  {cat:"Ciri Laporan", q:"Ciri laporan yang BAIK adalah...",
+   o:["Berisi karangan bebas tanpa fakta","Menggunakan banyak kata puisi yang indah","Berisi fakta, kalimat singkat, dan urutan yang jelas","Harus selalu disertai gambar dan foto"],
+   a:2},
+
+  // a:3
+  {cat:"Struktur Laporan", q:"Urutan struktur laporan yang BENAR adalah...",
+   o:["Kesimpulan – Jalannya – Judul – Tujuan","Waktu – Judul – Tujuan – Peserta – Hasil","Judul – Kesimpulan – Hasil – Tujuan – Peserta","Judul – Waktu/Tempat – Tujuan – Peserta – Jalannya – Hasil – Kesimpulan"],
+   a:3},
+
+  // a:0
+  {cat:"Jenis Laporan", q:"Laporan yang dibuat setelah mengamati sesuatu secara langsung disebut...",
+   o:["Laporan pengamatan","Laporan kegiatan","Laporan keuangan","Laporan berita"],
+   a:0},
+
+  // a:1
+  {cat:"Jenis Laporan", q:"Laporan yang dibuat setelah mengikuti kerja bakti membersihkan kelas disebut...",
+   o:["Laporan pengamatan","Laporan kegiatan","Laporan keuangan","Laporan ilmiah"],
+   a:1},
+
+  // a:2
+  {cat:"Struktur Laporan", q:"Bagian laporan yang berisi urutan kejadian selangkah demi selangkah disebut...",
+   o:["Tujuan kegiatan","Nama peserta","Jalannya kegiatan","Kesimpulan"],
+   a:2},
+
+  // a:1
+  {cat:"Struktur Laporan", q:"Apa yang ditulis di bagian 'Kesimpulan' sebuah laporan?",
+   o:["Nama semua peserta kegiatan","Pelajaran atau hasil akhir yang didapat dari kegiatan","Waktu dan tempat berlangsung","Daftar alat yang digunakan"],
+   a:1},
+
+  // a:3
+  {cat:"Menulis Laporan", q:"Langkah PERTAMA dalam menulis laporan adalah...",
+   o:["Menuliskan jalannya kegiatan secara urut","Menambahkan kesimpulan dan hasil","Menggunakan kalimat efektif dan tanda baca yang benar","Menentukan kegiatan atau pengamatan yang akan dilaporkan"],
+   a:3},
+
+  // a:0
+  {cat:"Kosakata", q:"Sampah organik adalah sampah yang...",
+   o:["Berasal dari makhluk hidup dan mudah terurai","Berasal dari logam dan kaca","Berasal dari plastik dan tidak bisa terurai","Berasal dari kertas yang sudah robek"],
+   a:0},
+
+  // a:2
+  {cat:"Kosakata", q:"Tempat sampah warna KUNING digunakan untuk sampah...",
+   o:["Organik seperti daun kering","Kertas dan kardus bekas","Anorganik seperti botol dan plastik","Semua jenis sampah dicampur"],
+   a:2},
+
+  // a:1
+  {cat:"Kosakata", q:"Sampah organik bisa dijadikan...",
+   o:["Plastik baru yang lebih kuat","Kompos atau pupuk alami","Kaca daur ulang","Bahan bakar cair"],
+   a:1},
+
+  // a:3
+  {cat:"Kosakata", q:"Tempat sampah warna HIJAU digunakan untuk sampah...",
+   o:["Anorganik seperti botol plastik","Kertas dan kardus bekas","Elektronik bekas","Organik seperti daun kering dan sisa makanan"],
+   a:3},
+
+  // a:0
+  {cat:"Cerita Memilah Sampah", q:"Dalam cerita 'Memilah Sampah di Sekolah', ada berapa warna tempat sampah?",
+   o:["Tiga warna: hijau, kuning, dan biru","Dua warna: hijau dan kuning","Empat warna: hijau, kuning, biru, dan merah","Lima warna"],
+   a:0},
+
+  // a:2
+  {cat:"Kosakata", q:"Kata 'memilah' artinya...",
+   o:["Membuang semua barang bekas","Mencuci barang yang kotor","Memisahkan atau mengelompokkan sesuatu","Mengumpulkan barang dari tempat jauh"],
+   a:2},
+
+  // a:1
+  {cat:"Cerita Jumat Bersih", q:"Guru kelas 3 yang memimpin kegiatan Jumat Bersih di SD Cahaya Quran bernama...",
+   o:["Bu Maya","Bu Anis","Bu Rani","Pak Arif"],
+   a:1},
+
+  // a:3
+  {cat:"Cerita Jumat Bersih", q:"Dalam cerita 'Jumat Bersih', murid dibagi menjadi berapa kelompok?",
+   o:["Dua kelompok","Empat kelompok","Lima kelompok","Tiga kelompok"],
+   a:3},
+
+  // a:0
+  {cat:"Cerita Jumat Bersih", q:"Pelajaran dari kegiatan Jumat Bersih adalah...",
+   o:["Kebersihan adalah tanggung jawab bersama","Kebersihan hanya tanggung jawab guru","Kebersihan tidak perlu dijaga bersama","Hanya petugas kebersihan yang perlu bekerja"],
+   a:0},
+
+  // ══════════════════════════════════
+  // MATERI 1–4 (12 soal review)
+  // ══════════════════════════════════
+
+  // a:2 — Materi 1
+  {cat:"Ide Pokok", q:"Apa yang dimaksud dengan ide pokok sebuah paragraf?",
+   o:["Kata yang paling sering muncul","Kalimat penutup di akhir paragraf","Gagasan utama atau hal paling penting yang dibahas dalam paragraf","Kata sambung yang menghubungkan kalimat"],
+   a:2},
+
+  // a:0 — Materi 1
+  {cat:"Ide Pokok", q:"Di manakah biasanya ide pokok dapat ditemukan dalam sebuah paragraf?",
+   o:["Di awal, tengah, atau akhir paragraf","Hanya di akhir paragraf","Hanya di judul teks","Di dalam tanda kurung"],
+   a:0},
+
+  // a:3 — Materi 1
+  {cat:"Kalimat Aktif/Pasif", q:"Manakah contoh kalimat PASIF?",
+   o:["Rani membaca buku dengan saksama","Ia mengetikkan kata kunci di komputer","Ibu mengangguk sambil tersenyum","Makhluk hidup perlu dirawat dan dilestarikan"],
+   a:3},
+
+  // a:1 — Materi 2
+  {cat:"Kalimat Efektif", q:"Kalimat efektif harus memiliki ciri berikut, KECUALI...",
+   o:["Ada subjek dan predikat","Bertele-tele dan sangat panjang","Kata dipilih dengan tepat","Tanda baca digunakan dengan benar"],
+   a:1},
+
+  // a:2 — Materi 2
+  {cat:"Kalimat Larangan", q:"Kalimat larangan biasanya menggunakan kata...",
+   o:["sebaiknya","lebih baik","jangan","hendaknya"],
+   a:2},
+
+  // a:0 — Materi 2
+  {cat:"Kalimat Anjuran", q:"Manakah contoh kalimat ANJURAN yang tepat?",
+   o:["Sebaiknya kita rajin menyiram tanaman setiap hari.","Jangan membuang sampah di sungai!","Kamu tidak boleh memetik bunga orang lain.","Dilarang menginjak rumput taman."],
+   a:0},
+
+  // a:3 — Materi 3
+  {cat:"Pendapat", q:"Apa yang dimaksud dengan pendapat?",
+   o:["Informasi yang sudah terbukti kebenarannya","Data atau angka yang bisa diukur","Peraturan yang wajib diikuti semua orang","Pikiran atau ide yang kita miliki tentang suatu hal"],
+   a:3},
+
+  // a:1 — Materi 3
+  {cat:"Kritik & Saran", q:"Kalimat saran biasanya menggunakan kata...",
+   o:["menurut saya","sebaiknya / lebih baik / hendaknya","jangan","tidak boleh"],
+   a:1},
+
+  // a:2 — Materi 4
+  {cat:"Fakta/Opini", q:"Manakah pernyataan yang merupakan FAKTA?",
+   o:["Menurutku sampah organik lebih berguna","Sepertinya memilah sampah itu susah sekali","Pohon mangrove tumbuh di daerah pesisir pantai berlumpur","Saya pikir semua orang harus suka berkebun"],
+   a:2},
+
+  // a:0 — Materi 4
+  {cat:"Fakta/Opini", q:"Pernyataan 'Matahari terbit dari sebelah timur' termasuk...",
+   o:["Fakta, karena bisa dibuktikan dan tidak berubah-ubah","Opini, karena setiap orang bisa berbeda pendapat","Opini, karena menggunakan kata 'matahari'","Fakta, karena ada di buku pelajaran"],
+   a:0},
+
+  // a:3 — Materi 4
+  {cat:"Fakta/Opini", q:"Manakah kalimat yang merupakan OPINI?",
+   o:["Burung Cendrawasih hidup di Papua, Indonesia","Bulunya berwarna kuning, cokelat, dan putih","Air mendidih pada suhu 100 derajat Celcius","Menurut saya, burung Cendrawasih adalah burung tercantik di dunia"],
+   a:3},
+
+  // a:1 — Materi 4
+  {cat:"Fakta/Opini", q:"Kata yang menunjukkan bahwa sebuah kalimat adalah OPINI adalah...",
+   o:["hidup di","menurut saya","berwarna","tumbuh di"],
+   a:1},
 ];
 
-let gc=0,gsc=0,gwn=0,gtm=null,gtl=20,gans=false;
+// ══════════════════════════════════════════
+// GAME LOGIC
+// ══════════════════════════════════════════
+let gc=0, gScore=0, gWrong=0, gTimer=null, gTimeLeft=20, gAnswered=false;
 const CIRC=188.5;
 
-function startG(){
-  document.getElementById('gss').style.display='none';
-  document.getElementById('gps').style.display='block';
-  document.getElementById('grs').classList.remove('show');
-  gc=0;gsc=0;gwn=0;updSt();showQ();
+function startGame() {
+  document.getElementById('gmStart').style.display='none';
+  document.getElementById('gmPlay').style.display='block';
+  document.getElementById('gmResult').classList.remove('show');
+  gc=0; gScore=0; gWrong=0;
+  updateStats(); showQ();
 }
-function stopGame(){
-  clearInterval(gtm);
-  document.getElementById('gps').style.display='none';
-  document.getElementById('gss').style.display='block';
-  gc=0;gsc=0;gwn=0;
+function stopGame() {
+  clearInterval(gTimer);
+  document.getElementById('gmPlay').style.display='none';
+  document.getElementById('gmStart').style.display='block';
+  gc=0; gScore=0; gWrong=0;
 }
-function updSt(){
-  document.getElementById('gqn').textContent=gc+1;
-  document.getElementById('gsc').textContent=gsc;
-  document.getElementById('gwn').textContent=gwn;
-  document.getElementById('pfill').style.width=((gc/QS.length)*100)+'%';
+function updateStats() {
+  document.getElementById('gQNum').textContent=gc+1;
+  document.getElementById('gScore').textContent=gScore;
+  document.getElementById('gWrong').textContent=gWrong;
+  document.getElementById('progFill').style.width=((gc/QS.length)*100)+'%';
 }
-function showQ(){
-  if(gc>=QS.length){endG();return;}
-  const q=QS[gc];gans=false;
-  document.getElementById('gqb').textContent='No. '+(gc+1);
-  document.getElementById('gqcat').textContent=q.cat;
-  document.getElementById('gqt').textContent=q.q;
-  const og=document.getElementById('gopt');og.innerHTML='';
+function showQ() {
+  if(gc>=QS.length){endGame();return;}
+  const q=QS[gc]; gAnswered=false;
+  document.getElementById('qNumBadge').textContent='No. '+(gc+1);
+  document.getElementById('qCat').textContent=q.cat;
+  document.getElementById('qText').textContent=q.q;
+  const og=document.getElementById('qOpts'); og.innerHTML='';
   q.o.forEach((opt,i)=>{
-    const b=document.createElement('button');b.className='ob2';b.textContent=opt;
-    b.onclick=()=>selA(i);og.appendChild(b);
+    const b=document.createElement('button');
+    b.className='opt-btn'; b.textContent=opt;
+    b.onclick=()=>selectAnswer(i);
+    og.appendChild(b);
   });
-  startTmr();updSt();
+  startTimer(); updateStats();
 }
-function startTmr(){
-  clearInterval(gtm);gtl=20;
-  const ring=document.getElementById('tring');
-  document.getElementById('tnum').textContent=gtl;
-  ring.style.stroke='var(--yellow)';ring.style.strokeDashoffset='0';
-  gtm=setInterval(()=>{
-    gtl--;document.getElementById('tnum').textContent=gtl;
-    ring.style.strokeDashoffset=CIRC*(1-gtl/20);
-    if(gtl<=5)ring.style.stroke='var(--red)';
-    else if(gtl<=10)ring.style.stroke='var(--orange)';
-    if(gtl<=0){clearInterval(gtm);if(!gans)timeUp();}
+function startTimer() {
+  clearInterval(gTimer); gTimeLeft=20;
+  const ring=document.getElementById('timerRing');
+  document.getElementById('timerNum').textContent=gTimeLeft;
+  ring.style.stroke='var(--amber)';
+  ring.style.strokeDashoffset='0';
+  gTimer=setInterval(()=>{
+    gTimeLeft--;
+    document.getElementById('timerNum').textContent=gTimeLeft;
+    ring.style.strokeDashoffset=CIRC*(1-gTimeLeft/20);
+    if(gTimeLeft<=5) ring.style.stroke='var(--rose)';
+    else if(gTimeLeft<=10) ring.style.stroke='var(--neon)';
+    if(gTimeLeft<=0){clearInterval(gTimer);if(!gAnswered) timeUp();}
   },1000);
 }
-function timeUp(){
-  gans=true;gwn++;
+function timeUp() {
+  gAnswered=true; gWrong++;
   const q=QS[gc];
-  const btns=document.querySelectorAll('.ob2');btns.forEach(b=>b.disabled=true);btns[q.a].classList.add('correct');
-  showFB('⏰','Waktu Habis!','Jawaban: '+q.o[q.a],false);setTimeout(nextQ,1800);
+  document.querySelectorAll('.opt-btn').forEach(b=>b.disabled=true);
+  document.querySelectorAll('.opt-btn')[q.a].classList.add('correct');
+  showFeedback('⏰','Waktu Habis!','Jawaban: '+q.o[q.a],false);
+  setTimeout(nextQ,1900);
 }
-function selA(idx){
-  if(gans)return;clearInterval(gtm);gans=true;
-  const q=QS[gc];const btns=document.querySelectorAll('.ob2');btns.forEach(b=>b.disabled=true);
-  if(idx===q.a){gsc++;btns[idx].classList.add('correct');showFB('🎉','BENAR!','Mantap sekali! 🌟',true);}
-  else{gwn++;btns[idx].classList.add('wrong');btns[q.a].classList.add('correct');showFB('😅','Kurang Tepat!','Yuk belajar lagi! 💪',false);}
-  updSt();setTimeout(nextQ,1700);
+function selectAnswer(idx) {
+  if(gAnswered) return;
+  clearInterval(gTimer); gAnswered=true;
+  const q=QS[gc];
+  document.querySelectorAll('.opt-btn').forEach(b=>b.disabled=true);
+  if(idx===q.a) {
+    gScore++;
+    document.querySelectorAll('.opt-btn')[idx].classList.add('correct');
+    showFeedback('🎉','BENAR!','Mantap sekali! 🌟',true);
+  } else {
+    gWrong++;
+    document.querySelectorAll('.opt-btn')[idx].classList.add('wrong');
+    document.querySelectorAll('.opt-btn')[q.a].classList.add('correct');
+    showFeedback('😅','Kurang Tepat','Yuk belajar lagi! 💪',false);
+  }
+  updateStats();
+  setTimeout(nextQ,1800);
 }
-function showFB(e,t,s,ok){
-  const ov=document.getElementById('fov');
-  document.getElementById('foe').textContent=e;document.getElementById('fot').textContent=t;document.getElementById('fos').textContent=s;
-  ov.style.background=ok?'rgba(0,200,150,.9)':'rgba(255,80,100,.88)';
-  ov.classList.add('show');setTimeout(()=>ov.classList.remove('show'),1200);
+function showFeedback(emoji,title,sub,ok) {
+  const ov=document.getElementById('fbOverlay');
+  document.getElementById('fbEmoji').textContent=emoji;
+  document.getElementById('fbTitle').textContent=title;
+  document.getElementById('fbSub').textContent=sub;
+  ov.style.background=ok?'rgba(0,255,179,.92)':'rgba(255,85,116,.88)';
+  ov.classList.add('show');
+  setTimeout(()=>ov.classList.remove('show'),1200);
 }
 function nextQ(){gc++;showQ();}
-function endG(){
-  clearInterval(gtm);
-  document.getElementById('gps').style.display='none';
-  const rs=document.getElementById('grs');rs.classList.add('show');
-  const pct=Math.round((gsc/QS.length)*100);
-  document.getElementById('rsco').textContent=gsc+'/30';
-  document.getElementById('rc').textContent=gsc;document.getElementById('rw').textContent=gwn;document.getElementById('rn').textContent=pct;
-  let s='⭐',t='Semangat Terus!',m='Baca lagi materinya, kamu pasti bisa! 💪';
-  if(pct>=90){s='🌟🌟🌟';t='SEMPURNA!';m='Luar biasa! Kamu menguasai materi ini! 🏆';confetti();}
-  else if(pct>=75){s='⭐⭐⭐';t='HEBAT!';m='Bagus sekali! Sedikit lagi sempurna! 😊';confetti();}
-  else if(pct>=60){s='⭐⭐';t='BAGUS!';m='Sudah cukup bagus! Terus berlatih ya! 💪';}
-  document.getElementById('rstr').textContent=s;document.getElementById('rttl').textContent=t;document.getElementById('rmsg').textContent=m;
-  document.getElementById('rfwk').textContent=pct>=75?'🎊🏆🎊':'📚💪📚';
+function endGame() {
+  clearInterval(gTimer);
+  document.getElementById('gmPlay').style.display='none';
+  const res=document.getElementById('gmResult'); res.classList.add('show');
+  const pct=Math.round((gScore/QS.length)*100);
+  document.getElementById('resScore').textContent=gScore+'/30';
+  document.getElementById('resC').textContent=gScore;
+  document.getElementById('resW').textContent=gWrong;
+  document.getElementById('resN').textContent=pct;
+  let stars='⭐', title='Semangat Terus!', msg='Baca lagi materinya, kamu pasti bisa! 💪', trophy='📚💪📚';
+  if(pct>=90){stars='🌟🌟🌟';title='SEMPURNA!';msg='Luar biasa! Kamu menguasai semua materi! 🏆';trophy='🎊🏆🎊';confetti();}
+  else if(pct>=75){stars='⭐⭐⭐';title='HEBAT!';msg='Bagus sekali! Sedikit lagi sempurna! 😊';trophy='🎊🏆🎊';confetti();}
+  else if(pct>=60){stars='⭐⭐';title='BAGUS!';msg='Sudah cukup bagus! Terus berlatih ya! 💪';trophy='📚✨📚';}
+  document.getElementById('resStars').textContent=stars;
+  document.getElementById('resTitle').textContent=title;
+  document.getElementById('resMsg').textContent=msg;
+  document.getElementById('resTrophy').textContent=trophy;
 }
-function restartG(){document.getElementById('grs').classList.remove('show');document.getElementById('gss').style.display='block';}
+function restartGame() {
+  document.getElementById('gmResult').classList.remove('show');
+  document.getElementById('gmStart').style.display='block';
+}
 
-// ===== CONFETTI =====
-function confetti(){
-  const cls=['var(--pink)','var(--yellow)','var(--cyan)','var(--mint)','var(--lav)','var(--orange)','#fff'];
-  const c=document.getElementById('ccon');c.innerHTML='';
+// ══════════════════════════════════════════
+// CONFETTI
+// ══════════════════════════════════════════
+function confetti() {
+  const colors=['var(--amber)','var(--neon)','var(--pink)','var(--green)','var(--purple)','#fff'];
+  const wrap=document.getElementById('confettiWrap'); wrap.innerHTML='';
   for(let i=0;i<70;i++){
-    const p=document.createElement('div');p.className='cp';
-    p.style.cssText=`left:${Math.random()*100}%;background:${cls[Math.floor(Math.random()*cls.length)]};animation-delay:${Math.random()*0.5}s;animation-duration:${2+Math.random()*1.8}s;width:${6+Math.random()*9}px;height:${6+Math.random()*9}px;border-radius:${Math.random()>.5?'50%':'3px'};`;
-    c.appendChild(p);
+    const p=document.createElement('div'); p.className='cp';
+    p.style.cssText=`left:${Math.random()*100}%;background:${colors[Math.floor(Math.random()*colors.length)]};animation-delay:${Math.random()}s;animation-duration:${2+Math.random()*1.5}s;width:${5+Math.random()*8}px;height:${5+Math.random()*8}px;border-radius:${Math.random()>.5?'50%':'2px'};`;
+    wrap.appendChild(p);
   }
-  setTimeout(()=>c.innerHTML='',5000);
+  setTimeout(()=>wrap.innerHTML='',5000);
 }
 
-swT('p1');
+// ── STARS ──
+(function(){
+  const bg=document.querySelector('.bg-layer');
+  for(let i=0;i<60;i++){
+    const s=document.createElement('div'); s.className='star';
+    s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;--t:${2+Math.random()*4}s;--o:${.2+Math.random()*.6};animation-delay:${Math.random()*4}s`;
+    bg.appendChild(s);
+  }
+})();
+
+// Init tab
+switchTab('mt');
 </script>
 </body>
 </html>
