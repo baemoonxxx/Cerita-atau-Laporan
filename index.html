@@ -4,231 +4,634 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Materi 5 – Cerita atau Laporan | Kelas 3 SD-CQ</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--green:#27ae60;--gl:#2ecc71;--gd:#1a8a46;--yel:#f1c40f;--ora:#e67e22;--blu:#2980b9;--pin:#e91e8c;--pur:#8e44ad;--red:#e74c3c;--tea:#00b894;--bg:#f0fdf4;--sh:0 4px 20px rgba(0,0,0,0.12);--rad:20px}
+/* ===================== RESET & BASE ===================== */
+:root{
+  --bg:#080e1a;
+  --bg2:#0d1526;
+  --bg3:#111e34;
+  --panel:#131f35;
+  --panel2:#192740;
+  --border:#1e3050;
+  --border2:#243860;
+  --cyan:#00d4ff;
+  --cyan2:#00a8cc;
+  --cyan3:rgba(0,212,255,.12);
+  --amber:#f5a623;
+  --amber2:#e8941a;
+  --amber3:rgba(245,166,35,.1);
+  --rose:#ff4d6d;
+  --lav:#7c6af7;
+  --mint:#00e5b0;
+  --text:#c8d8f0;
+  --text2:#7a94b8;
+  --text3:#4a6080;
+  --white:#e8f2ff;
+  --glow-c:0 0 20px rgba(0,212,255,.35);
+  --glow-a:0 0 20px rgba(245,166,35,.35);
+  --rad:14px;
+  --rad2:10px;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Nunito',sans-serif;background:var(--bg);color:#2d3436;min-height:100vh;overflow-x:hidden}
-body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 15% 20%,rgba(39,174,96,.08) 0%,transparent 40%),radial-gradient(circle at 85% 80%,rgba(241,196,15,.1) 0%,transparent 40%);pointer-events:none;z-index:0}
-/* HEADER */
-header{background:linear-gradient(135deg,var(--gd) 0%,var(--green) 60%,var(--tea) 100%);position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(27,122,55,.3)}
-header::after{content:'🌿🌱🦋🌻🐛🌿🌱🦋🌻🐛';position:absolute;bottom:6px;left:0;right:0;text-align:center;font-size:14px;opacity:.35;letter-spacing:4px}
-.hdr{max-width:900px;margin:0 auto;padding:22px 20px 30px;text-align:center;position:relative;z-index:1}
-.badge-s{display:inline-block;background:rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:20px;letter-spacing:1px;margin-bottom:7px;border:1px solid rgba(255,255,255,.3)}
-header h1{font-family:'Fredoka One',cursive;font-size:clamp(26px,6vw,42px);color:#fff;line-height:1.15;text-shadow:2px 3px 0 rgba(0,0,0,.15)}
-header p{color:rgba(255,255,255,.85);font-size:14px;margin-top:5px;font-weight:600}
-/* NAV */
-.tnw{max-width:900px;margin:0 auto;padding:0 16px;position:relative;z-index:10}
-.tnav{display:flex;gap:3px;background:rgba(255,255,255,.7);backdrop-filter:blur(10px);border-radius:18px 18px 0 0;padding:7px 7px 0;box-shadow:0 -2px 20px rgba(0,0,0,.08);overflow-x:auto}
-.tbtn{flex:1;min-width:90px;padding:9px 8px 13px;border:none;cursor:pointer;background:transparent;font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;color:#888;border-radius:13px 13px 0 0;transition:all .25s;white-space:nowrap}
-.tbtn .ti{font-size:17px;display:block;margin-bottom:2px}
-.tbtn:hover{color:var(--green);background:rgba(39,174,96,.08)}
-.tbtn.active{background:#fff;color:var(--gd);box-shadow:0 -3px 0 var(--green) inset}
-/* CONTENT */
-.cw{max-width:900px;margin:0 auto;padding:0 16px 60px;position:relative;z-index:5}
-.tp{display:none;background:#fff;border-radius:0 0 var(--rad) var(--rad);box-shadow:var(--sh);padding:26px;animation:fu .35s ease}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ---- GRID BG ---- */
+body::before{
+  content:'';
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    linear-gradient(rgba(0,212,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,.04) 1px, transparent 1px);
+  background-size:40px 40px;
+  pointer-events:none;z-index:0;
+}
+body::after{
+  content:'';
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:
+    radial-gradient(ellipse at 10% 10%, rgba(0,212,255,.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 85%, rgba(124,106,247,.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(0,229,176,.03) 0%, transparent 60%);
+  pointer-events:none;z-index:0;
+}
+
+/* ===================== HEADER ===================== */
+header{
+  background:linear-gradient(180deg,#0a1628 0%,#0d1e38 100%);
+  border-bottom:1px solid var(--border2);
+  position:relative;overflow:hidden;
+}
+header::before{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--cyan),var(--lav),var(--cyan),transparent);
+}
+.hdr{max-width:960px;margin:0 auto;padding:28px 20px 32px;text-align:center;position:relative;z-index:1}
+.badge-s{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.25);
+  color:var(--cyan);font-size:10px;font-weight:600;letter-spacing:1.5px;
+  padding:4px 14px;border-radius:20px;margin-bottom:12px;
+  font-family:'Space Grotesk',sans-serif;text-transform:uppercase;
+}
+.badge-s::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(0,212,255,0)}}
+header h1{
+  font-family:'Orbitron',monospace;
+  font-size:clamp(20px,5vw,36px);
+  font-weight:900;
+  color:var(--white);
+  letter-spacing:2px;
+  line-height:1.2;
+}
+header h1 span{
+  background:linear-gradient(90deg,var(--cyan),var(--mint));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+header p{color:var(--text2);font-size:13px;margin-top:8px;font-weight:500}
+
+/* ---- SCAN LINE ---- */
+.scan{
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(0,212,255,.6),transparent);
+  animation:scanline 3s linear infinite;
+}
+@keyframes scanline{0%{top:0}100%{top:100%}}
+
+/* ===================== NAV ===================== */
+.tnw{max-width:960px;margin:0 auto;padding:0 16px;position:relative;z-index:10}
+.tnav{
+  display:flex;gap:2px;
+  background:rgba(10,18,35,.8);
+  backdrop-filter:blur(12px);
+  border-radius:var(--rad) var(--rad) 0 0;
+  padding:6px 6px 0;
+  border:1px solid var(--border2);border-bottom:none;
+  overflow-x:auto;
+}
+.tbtn{
+  flex:1;min-width:90px;
+  padding:10px 8px 14px;border:none;cursor:pointer;
+  background:transparent;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:600;font-size:11px;
+  color:var(--text3);
+  border-radius:10px 10px 0 0;
+  transition:all .25s;white-space:nowrap;
+  letter-spacing:.5px;text-transform:uppercase;
+  position:relative;
+}
+.tbtn .ti{font-size:16px;display:block;margin-bottom:3px}
+.tbtn:hover{color:var(--cyan);background:rgba(0,212,255,.05)}
+.tbtn.active{
+  background:rgba(0,212,255,.08);
+  color:var(--cyan);
+}
+.tbtn.active::after{
+  content:'';position:absolute;bottom:0;left:20%;right:20%;height:2px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  border-radius:2px;
+}
+.tbtn.gm-btn.active{color:var(--amber)}
+.tbtn.gm-btn.active::after{background:linear-gradient(90deg,transparent,var(--amber),transparent)}
+.tbtn.gm-btn:hover{color:var(--amber);background:rgba(245,166,35,.05)}
+
+/* ===================== CONTENT ===================== */
+.cw{max-width:960px;margin:0 auto;padding:0 16px 80px;position:relative;z-index:5}
+.tp{
+  display:none;
+  background:linear-gradient(180deg,var(--panel) 0%,var(--panel2) 100%);
+  border:1px solid var(--border2);border-top:none;
+  border-radius:0 0 var(--rad) var(--rad);
+  padding:28px;
+  animation:fadeUp .3s ease;
+}
 .tp.active{display:block}
-@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-/* PERTEMUAN HEADER */
-.ph{display:flex;align-items:center;gap:13px;border-radius:15px;padding:15px 18px;margin-bottom:22px;color:#fff}
-.ph.p1{background:linear-gradient(135deg,var(--green),var(--tea))}
-.ph.p2{background:linear-gradient(135deg,var(--blu),var(--pur))}
-.pnum{font-family:'Fredoka One';font-size:38px;background:rgba(255,255,255,.22);border-radius:11px;width:56px;height:56px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.ph h2{font-size:17px;font-weight:800}
-.ph p{font-size:13px;opacity:.9;margin-top:2px}
-/* STEP CARDS */
-.sl{display:flex;flex-direction:column;gap:11px}
-.sc{border:2px solid #e8f5e9;border-radius:15px;overflow:hidden;transition:box-shadow .2s;cursor:pointer}
-.sc:hover{box-shadow:0 4px 16px rgba(39,174,96,.18)}
-.sh{display:flex;align-items:center;gap:11px;padding:13px 16px;background:linear-gradient(90deg,#f0fdf4,#fff);user-select:none}
-.sn{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--tea));color:#fff;font-family:'Fredoka One';font-size:17px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.st{font-weight:800;font-size:14px;color:var(--gd);flex:1}
-.stag{font-size:10px;padding:2px 9px;border-radius:9px;font-weight:700;letter-spacing:.5px}
-.tm{background:#e3f9ee;color:var(--gd)}.tl{background:#fff3cd;color:#7d5a00}.tt{background:#e8f0fe;color:#1a4fba}
-.sa{font-size:17px;transition:transform .25s;color:var(--green)}
-.sc.open .sa{transform:rotate(90deg)}
-.sb{display:none;padding:16px 18px 18px;border-top:2px dashed #d4edda;background:#fafffe;animation:fu .25s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===================== PERTEMUAN HEADER ===================== */
+.ph{
+  display:flex;align-items:center;gap:14px;
+  border-radius:var(--rad);padding:16px 20px;margin-bottom:22px;
+  position:relative;overflow:hidden;
+}
+.ph.p1{background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(0,229,176,.08));border:1px solid rgba(0,212,255,.2)}
+.ph.p2{background:linear-gradient(135deg,rgba(124,106,247,.12),rgba(0,212,255,.08));border:1px solid rgba(124,106,247,.2)}
+.ph::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:inherit;filter:brightness(3)}
+.pnum{
+  font-family:'Orbitron',monospace;font-size:28px;font-weight:900;
+  background:rgba(0,212,255,.12);border:1px solid rgba(0,212,255,.3);
+  border-radius:10px;width:56px;height:56px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  color:var(--cyan);text-shadow:var(--glow-c);
+}
+.ph.p2 .pnum{color:var(--lav);background:rgba(124,106,247,.12);border-color:rgba(124,106,247,.3);text-shadow:0 0 20px rgba(124,106,247,.4)}
+.ph h2{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:var(--white)}
+.ph p{font-size:12px;color:var(--text2);margin-top:3px}
+
+/* ===================== STEP CARDS ===================== */
+.sl{display:flex;flex-direction:column;gap:8px}
+.sc{
+  border:1px solid var(--border);
+  border-radius:var(--rad2);overflow:hidden;
+  transition:border-color .2s,box-shadow .2s;cursor:pointer;
+  background:rgba(10,18,35,.4);
+}
+.sc:hover{border-color:rgba(0,212,255,.3);box-shadow:0 0 20px rgba(0,212,255,.06)}
+.sc.open{border-color:rgba(0,212,255,.35);box-shadow:0 0 24px rgba(0,212,255,.08)}
+.sh{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 16px;
+  background:rgba(19,31,53,.6);
+  user-select:none;
+}
+.sn{
+  width:32px;height:32px;border-radius:8px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--cyan),var(--mint));
+  color:#0a1628;font-family:'Orbitron',monospace;font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 12px rgba(0,212,255,.3);
+}
+.st{font-weight:600;font-size:13px;color:var(--white);flex:1;font-family:'Space Grotesk',sans-serif}
+.stag{font-size:9px;padding:2px 8px;border-radius:6px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
+.tm{background:rgba(0,212,255,.12);color:var(--cyan);border:1px solid rgba(0,212,255,.2)}
+.tl{background:rgba(245,166,35,.12);color:var(--amber);border:1px solid rgba(245,166,35,.2)}
+.tt{background:rgba(124,106,247,.12);color:var(--lav);border:1px solid rgba(124,106,247,.2)}
+.sa{font-size:14px;transition:transform .25s;color:var(--text3)}
+.sc.open .sa{transform:rotate(90deg);color:var(--cyan)}
+.sb{
+  display:none;
+  padding:18px 18px 20px;
+  border-top:1px solid var(--border);
+  background:rgba(8,14,26,.5);
+  animation:fadeUp .2s ease;
+}
 .sc.open .sb{display:block}
-/* BADGES & BOXES */
-.mb{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:5px 13px;border-radius:18px;font-size:11px;font-weight:700;margin-bottom:11px}
-.ib{border-radius:13px;padding:14px 16px;margin:11px 0;font-size:14px;line-height:1.7}
-.ib.g{background:#e8f8ef;border-left:4px solid var(--green)}
-.ib.b{background:#e8f4ff;border-left:4px solid var(--blu)}
-.ib.o{background:#fff3e8;border-left:4px solid var(--ora)}
-.ib.pk{background:#fff0f7;border-left:4px solid var(--pin)}
-.ib.pu{background:#f3e8ff;border-left:4px solid var(--pur)}
-.ib.y{background:#fffde7;border-left:4px solid var(--yel)}
-.ib h4{font-weight:800;margin-bottom:6px;font-size:14px}
-/* STORY CARD */
-.strc{background:linear-gradient(135deg,#f0fff4,#e8f8ff);border:2px solid #b7e4c7;border-radius:15px;padding:16px 18px;margin:9px 0}
-.strc h4{font-family:'Fredoka One';font-size:17px;color:var(--gd);text-align:center;margin-bottom:10px}
-.strc p{font-size:14px;line-height:1.8;color:#444}
-/* COMPARE TABLE */
-.ctb{width:100%;border-collapse:collapse;font-size:13px;border-radius:11px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);margin:10px 0}
-.ctb th{padding:11px 13px;font-weight:800;font-size:13px}
-.ctb th:first-child{background:#667eea;color:#fff}
-.ctb th:nth-child(2){background:var(--green);color:#fff}
-.ctb th:nth-child(3){background:var(--ora);color:#fff}
-.ctb td{padding:9px 13px;border-bottom:1px solid #f0f0f0;vertical-align:top;font-size:13px}
+
+/* ===================== INFO BOXES ===================== */
+.mb{
+  display:inline-flex;align-items:center;gap:6px;
+  background:linear-gradient(90deg,rgba(0,212,255,.15),rgba(0,229,176,.1));
+  border:1px solid rgba(0,212,255,.25);
+  color:var(--cyan);padding:4px 12px;border-radius:20px;
+  font-size:10px;font-weight:700;margin-bottom:12px;
+  font-family:'Space Grotesk',sans-serif;letter-spacing:.5px;text-transform:uppercase;
+}
+.ib{border-radius:var(--rad2);padding:14px 16px;margin:10px 0;font-size:13px;line-height:1.75}
+.ib.g{background:rgba(0,229,176,.06);border:1px solid rgba(0,229,176,.18);border-left:3px solid var(--mint)}
+.ib.b{background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.18);border-left:3px solid var(--cyan)}
+.ib.o{background:rgba(245,166,35,.06);border:1px solid rgba(245,166,35,.18);border-left:3px solid var(--amber)}
+.ib.pk{background:rgba(255,77,109,.06);border:1px solid rgba(255,77,109,.18);border-left:3px solid var(--rose)}
+.ib.pu{background:rgba(124,106,247,.06);border:1px solid rgba(124,106,247,.18);border-left:3px solid var(--lav)}
+.ib.y{background:rgba(245,166,35,.06);border:1px solid rgba(245,166,35,.18);border-left:3px solid var(--amber)}
+.ib h4{font-weight:700;margin-bottom:7px;font-size:13px;color:var(--white);font-family:'Space Grotesk',sans-serif}
+
+/* ===================== STORY CARD ===================== */
+.strc{
+  background:rgba(0,212,255,.04);
+  border:1px solid rgba(0,212,255,.15);
+  border-radius:var(--rad2);padding:18px 20px;margin:10px 0;
+  position:relative;
+}
+.strc::before{
+  content:'';position:absolute;top:0;left:16px;right:16px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+}
+.strc h4{
+  font-family:'Orbitron',monospace;font-size:14px;font-weight:700;
+  color:var(--cyan);text-align:center;margin-bottom:12px;letter-spacing:1px;
+}
+.strc p{font-size:13px;line-height:1.85;color:var(--text)}
+
+/* ===================== COMPARE TABLE ===================== */
+.ctb{width:100%;border-collapse:collapse;font-size:12px;border-radius:var(--rad2);overflow:hidden;margin:10px 0;border:1px solid var(--border)}
+.ctb th{padding:11px 13px;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.8px;font-family:'Space Grotesk',sans-serif}
+.ctb th:first-child{background:rgba(124,106,247,.2);color:var(--lav)}
+.ctb th:nth-child(2){background:rgba(0,212,255,.15);color:var(--cyan)}
+.ctb th:nth-child(3){background:rgba(245,166,35,.15);color:var(--amber)}
+.ctb td{padding:9px 13px;border-bottom:1px solid var(--border);color:var(--text);font-size:12px;vertical-align:top}
 .ctb tr:last-child td{border-bottom:none}
-.ctb tr:nth-child(odd) td{background:#fafafa}
-.ctb td:first-child{font-weight:700;color:#555}
-/* LAPORAN TEMPLATE */
-.lt{background:#fffde7;border:2px dashed #f1c40f;border-radius:15px;padding:16px 18px;margin:9px 0}
-.lt h4{font-family:'Fredoka One';color:#7d5a00;font-size:16px;text-align:center;margin-bottom:12px}
-.lr{display:flex;gap:7px;margin-bottom:9px;font-size:13px}
-.ll{font-weight:800;color:var(--gd);min-width:115px;padding-top:2px;flex-shrink:0}
-.lv{color:#555;line-height:1.6}
-/* STEP ITEMS */
+.ctb tr:nth-child(odd) td{background:rgba(255,255,255,.02)}
+.ctb td:first-child{font-weight:700;color:var(--text2);font-family:'Space Grotesk',sans-serif}
+
+/* ===================== LAPORAN TEMPLATE ===================== */
+.lt{
+  background:rgba(245,166,35,.04);
+  border:1px dashed rgba(245,166,35,.3);
+  border-radius:var(--rad2);padding:18px 20px;margin:10px 0;
+}
+.lt h4{
+  font-family:'Orbitron',monospace;color:var(--amber);font-size:13px;
+  text-align:center;margin-bottom:14px;letter-spacing:1px;
+}
+.lr{display:flex;gap:10px;margin-bottom:10px;font-size:12px}
+.ll{font-weight:700;color:var(--mint);min-width:120px;padding-top:2px;flex-shrink:0;font-family:'Space Grotesk',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.lv{color:var(--text);line-height:1.6}
+
+/* ===================== STEP ITEMS ===================== */
 .si{list-style:none}
-.si li{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-bottom:1px solid #f0f0f0;font-size:14px}
+.si li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px}
 .si li:last-child{border-bottom:none}
-.sc2{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--tea));color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-/* VOCAB */
-.vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;margin:9px 0}
-.vc{background:linear-gradient(135deg,var(--gl),var(--tea));border-radius:11px;padding:11px 13px;text-align:center;color:#fff;box-shadow:0 3px 10px rgba(39,174,96,.25)}
-.vc strong{display:block;font-size:14px;margin-bottom:3px}
-.vc span{font-size:11px;opacity:.9;line-height:1.4}
-/* OBS TABLE */
-.ot{width:100%;border-collapse:collapse;font-size:13px;border-radius:11px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08)}
-.ot th{background:var(--green);color:#fff;padding:11px;text-align:center;font-weight:800;font-size:13px}
-.ot td{padding:9px 11px;border-bottom:1px solid #e8f5e9;text-align:center;font-size:13px}
-.ot td:first-child{font-weight:700;color:#555}
-.ob{display:inline-block;padding:3px 10px;border-radius:9px;font-weight:700;font-size:11px}
-.ob.or{background:#d4edda;color:#1a5c2a}.ob.an{background:#ffeaa7;color:#7d5a00}
-/* ===== REVIEW ===== */
-.rh{text-align:center;padding:14px 0 22px}
-.rh h2{font-family:'Fredoka One';font-size:26px;background:linear-gradient(135deg,var(--blu),var(--pur));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.rh p{color:#666;font-size:14px;margin-top:5px}
-.cg{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:14px 0}
-.cc{border-radius:15px;padding:15px;text-align:center}
-.cc.fk{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border:2px solid var(--green)}
-.cc.op{background:linear-gradient(135deg,#fff3e0,#ffe0b2);border:2px solid var(--ora)}
-.cc .ci{font-size:30px;margin-bottom:7px}
-.cc h3{font-family:'Fredoka One';font-size:18px;margin-bottom:7px}
-.cc.fk h3{color:var(--gd)}.cc.op h3{color:var(--ora)}
-.cc ul{list-style:none;font-size:12px;text-align:left}
-.cc ul li{padding:2px 0}
-.cc.fk ul li::before{content:'✓ ';font-weight:700;color:var(--gd)}
-.cc.op ul li::before{content:'✓ ';font-weight:700;color:var(--ora)}
-.kb{display:inline-block;margin:2px;padding:2px 9px;border-radius:18px;font-size:11px;font-weight:700}
-.ko{background:#ffe0b2;color:var(--ora)}.kf{background:#c8e6c9;color:var(--gd)}
-/* REVIEW GAME */
+.sc2{
+  width:28px;height:28px;border-radius:6px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--cyan),var(--mint));
+  color:#0a1628;font-weight:700;font-size:11px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Orbitron',monospace;
+}
+
+/* ===================== VOCAB ===================== */
+.vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:10px 0}
+.vc{
+  background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(0,229,176,.06));
+  border:1px solid rgba(0,212,255,.2);
+  border-radius:var(--rad2);padding:12px 14px;text-align:center;
+  transition:border-color .2s,box-shadow .2s;
+}
+.vc:hover{border-color:var(--cyan);box-shadow:0 0 16px rgba(0,212,255,.15)}
+.vc strong{display:block;font-size:13px;font-weight:700;color:var(--cyan);margin-bottom:4px;font-family:'Space Grotesk',sans-serif}
+.vc span{font-size:11px;color:var(--text2);line-height:1.4}
+
+/* ===================== OBS TABLE ===================== */
+.ot{width:100%;border-collapse:collapse;font-size:12px;border-radius:var(--rad2);overflow:hidden;border:1px solid var(--border)}
+.ot th{background:linear-gradient(90deg,rgba(0,212,255,.2),rgba(0,229,176,.12));color:var(--cyan);padding:10px;text-align:center;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.8px;font-family:'Space Grotesk',sans-serif}
+.ot td{padding:9px 11px;border-bottom:1px solid var(--border);text-align:center;font-size:12px;color:var(--text)}
+.ot td:first-child{font-weight:700;color:var(--text2)}
+.ob{display:inline-block;padding:3px 10px;border-radius:6px;font-weight:700;font-size:10px;letter-spacing:.5px;text-transform:uppercase}
+.ob.or{background:rgba(0,229,176,.12);color:var(--mint);border:1px solid rgba(0,229,176,.25)}
+.ob.an{background:rgba(245,166,35,.12);color:var(--amber);border:1px solid rgba(245,166,35,.25)}
+
+/* ===================== REVIEW ===================== */
+.rh{text-align:center;padding:12px 0 22px}
+.rh h2{
+  font-family:'Orbitron',monospace;font-size:22px;font-weight:900;letter-spacing:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--lav));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.rh p{color:var(--text2);font-size:13px;margin-top:6px}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.cc{border-radius:var(--rad);padding:18px;text-align:center}
+.cc.fk{background:rgba(0,229,176,.06);border:1px solid rgba(0,229,176,.25)}
+.cc.op{background:rgba(245,166,35,.06);border:1px solid rgba(245,166,35,.25)}
+.cc .ci{font-size:28px;margin-bottom:8px}
+.cc h3{font-family:'Orbitron',monospace;font-size:15px;font-weight:700;margin-bottom:8px;letter-spacing:1px}
+.cc.fk h3{color:var(--mint)}.cc.op h3{color:var(--amber)}
+.cc ul{list-style:none;font-size:12px;text-align:left;color:var(--text)}
+.cc ul li{padding:3px 0;display:flex;align-items:flex-start;gap:6px}
+.cc.fk ul li::before{content:'▹';color:var(--mint);font-size:10px;padding-top:2px}
+.cc.op ul li::before{content:'▹';color:var(--amber);font-size:10px;padding-top:2px}
+.kb{display:inline-block;margin:2px;padding:2px 9px;border-radius:6px;font-size:10px;font-weight:600;letter-spacing:.5px}
+.ko{background:rgba(245,166,35,.12);color:var(--amber);border:1px solid rgba(245,166,35,.2)}
+.kf{background:rgba(0,229,176,.1);color:var(--mint);border:1px solid rgba(0,229,176,.2)}
+
+/* ===================== MINI REVIEW GAME ===================== */
 .rp{display:flex;gap:5px;margin-bottom:16px;flex-wrap:wrap}
-.rd{width:26px;height:26px;border-radius:50%;background:#e8f5e9;border:2px solid #b7e4c7;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;transition:all .3s;color:#888}
-.rd.correct{background:var(--green);color:#fff;border-color:var(--gd)}
-.rd.wrong{background:var(--red);color:#fff;border-color:#c0392b}
-.rd.cur{border-color:var(--blu);color:var(--blu);transform:scale(1.15)}
-.rqc{background:linear-gradient(135deg,#f8f9fa,#fff);border:2px solid #e9ecef;border-radius:17px;padding:20px;text-align:center;margin-bottom:14px}
-.rqn{font-size:11px;color:#888;font-weight:700;letter-spacing:1px;margin-bottom:9px}
-.rqt{font-size:16px;font-weight:700;line-height:1.5;color:#2d3436}
-.rbg{display:flex;gap:11px;justify-content:center}
-.rb{flex:1;max-width:150px;padding:13px 9px;border:none;cursor:pointer;border-radius:13px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.1)}
-.rb.fbtn{background:linear-gradient(135deg,var(--green),var(--gl));color:#fff}
-.rb.obtn{background:linear-gradient(135deg,var(--ora),#f39c12);color:#fff}
-.rb:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.15)}
-.rb:disabled{transform:none;opacity:.7;cursor:not-allowed}
-.rb.ca{box-shadow:0 0 0 3px #27ae60,0 4px 12px rgba(39,174,96,.3)}
-.rb.wa{box-shadow:0 0 0 3px var(--red),0 4px 12px rgba(231,76,60,.3)}
-.rfb{text-align:center;padding:11px;border-radius:11px;font-weight:700;font-size:14px;margin-top:11px;display:none}
-.rfb.correct{background:#e8f8ef;color:var(--gd)}.rfb.wrong{background:#fdecea;color:var(--red)}
-.rsc{display:none;text-align:center;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:18px;padding:28px;color:#fff}
-.rsc h3{font-family:'Fredoka One';font-size:24px;margin-bottom:7px}
-.rsb{font-family:'Fredoka One';font-size:60px;line-height:1;margin:11px 0}
-.rsc p{font-size:15px;opacity:.9}
-.btr{margin-top:14px;padding:11px 26px;background:#fff;color:#667eea;border:none;border-radius:28px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}
-.btr:hover{transform:scale(1.05)}
-/* ===== MAIN GAME ===== */
-.gd{background:linear-gradient(135deg,#0f3460 0%,#16213e 40%,#1a1a2e 100%);border-radius:18px;padding:26px 22px;text-align:center;position:relative;overflow:hidden;margin-bottom:18px}
-.gd::before{content:'⭐✨💫🌟⭐✨💫🌟⭐✨';position:absolute;top:7px;left:0;right:0;font-size:11px;opacity:.25;letter-spacing:3px}
-.gd h2{font-family:'Fredoka One';font-size:26px;color:#ffd700;text-shadow:0 0 20px rgba(255,215,0,.5);margin-bottom:5px}
-.gd p{color:rgba(255,255,255,.8);font-size:13px}
-.gs{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-top:14px}
-.gch{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:18px;padding:5px 13px;color:#fff;font-weight:700;font-size:12px}
-.gch span{color:#ffd700}
-.tw{position:relative;width:74px;height:74px;margin:0 auto 14px}
+.rd{
+  width:26px;height:26px;border-radius:6px;
+  background:rgba(19,31,53,.8);border:1px solid var(--border);
+  font-weight:700;font-size:10px;font-family:'Orbitron',monospace;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .3s;color:var(--text3);
+}
+.rd.correct{background:rgba(0,229,176,.2);color:var(--mint);border-color:var(--mint);box-shadow:0 0 10px rgba(0,229,176,.2)}
+.rd.wrong{background:rgba(255,77,109,.15);color:var(--rose);border-color:var(--rose)}
+.rd.cur{border-color:var(--cyan);color:var(--cyan);transform:scale(1.1);box-shadow:0 0 10px rgba(0,212,255,.3)}
+.rqc{
+  background:rgba(10,18,35,.6);border:1px solid var(--border2);
+  border-radius:var(--rad);padding:20px;text-align:center;margin-bottom:14px;
+}
+.rqn{font-size:10px;color:var(--text3);font-weight:700;letter-spacing:1.5px;margin-bottom:10px;font-family:'Space Grotesk',sans-serif;text-transform:uppercase}
+.rqt{font-size:15px;font-weight:600;line-height:1.6;color:var(--white);font-family:'Space Grotesk',sans-serif}
+.rbg{display:flex;gap:12px;justify-content:center}
+.rb{
+  flex:1;max-width:160px;padding:13px 9px;border:1px solid;
+  cursor:pointer;border-radius:var(--rad2);
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;
+  transition:all .2s;letter-spacing:.5px;
+}
+.rb.fbtn{background:rgba(0,229,176,.1);color:var(--mint);border-color:rgba(0,229,176,.3)}
+.rb.obtn{background:rgba(245,166,35,.1);color:var(--amber);border-color:rgba(245,166,35,.3)}
+.rb:hover{transform:translateY(-2px)}
+.rb.fbtn:hover{box-shadow:0 0 20px rgba(0,229,176,.25);background:rgba(0,229,176,.18)}
+.rb.obtn:hover{box-shadow:0 0 20px rgba(245,166,35,.25);background:rgba(245,166,35,.18)}
+.rb:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.rb.ca{outline:2px solid var(--mint);box-shadow:0 0 16px rgba(0,229,176,.3)}
+.rb.wa{outline:2px solid var(--rose)}
+.rfb{text-align:center;padding:12px;border-radius:var(--rad2);font-weight:600;font-size:13px;margin-top:12px;display:none;font-family:'Space Grotesk',sans-serif}
+.rfb.correct{background:rgba(0,229,176,.08);color:var(--mint);border:1px solid rgba(0,229,176,.2)}
+.rfb.wrong{background:rgba(255,77,109,.08);color:var(--rose);border:1px solid rgba(255,77,109,.2)}
+.rsc{display:none;text-align:center;background:linear-gradient(135deg,rgba(0,212,255,.08),rgba(124,106,247,.08));border:1px solid rgba(0,212,255,.2);border-radius:var(--rad);padding:30px}
+.rsc h3{font-family:'Orbitron',monospace;font-size:20px;color:var(--cyan);margin-bottom:8px;letter-spacing:1px}
+.rsb{font-family:'Orbitron',monospace;font-size:52px;line-height:1;margin:14px 0;color:var(--white);text-shadow:var(--glow-c)}
+.rsc p{font-size:14px;color:var(--text2)}
+.btr{
+  margin-top:16px;padding:10px 24px;
+  background:rgba(0,212,255,.1);color:var(--cyan);
+  border:1px solid rgba(0,212,255,.3);border-radius:28px;
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;
+  cursor:pointer;transition:all .2s;letter-spacing:.5px;
+}
+.btr:hover{background:rgba(0,212,255,.2);box-shadow:var(--glow-c)}
+
+/* ===================== MAIN GAME ===================== */
+.gdash{
+  background:linear-gradient(135deg,#060c1a 0%,#0c1828 100%);
+  border:1px solid var(--border2);
+  border-radius:var(--rad);padding:24px 20px;
+  text-align:center;position:relative;overflow:hidden;margin-bottom:16px;
+}
+.gdash::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--lav),var(--amber),var(--lav),var(--cyan));
+  background-size:200% 100%;animation:gradMove 3s linear infinite;
+}
+@keyframes gradMove{0%{background-position:0% 0%}100%{background-position:200% 0%}}
+.gdash h2{
+  font-family:'Orbitron',monospace;font-size:22px;font-weight:900;letter-spacing:3px;
+  color:var(--amber);text-shadow:var(--glow-a);margin-bottom:6px;
+}
+.gdash p{color:var(--text2);font-size:12px}
+.gs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.gch{
+  background:rgba(255,255,255,.06);border:1px solid var(--border2);
+  border-radius:20px;padding:5px 14px;color:var(--text);font-weight:600;font-size:11px;
+  font-family:'Space Grotesk',sans-serif;
+}
+.gch span{color:var(--amber);font-family:'Orbitron',monospace}
+
+/* TIMER */
+.tw{position:relative;width:70px;height:70px;margin:0 auto 14px}
 .tr{transform:rotate(-90deg)}
-.trb{fill:none;stroke:rgba(255,255,255,.15);stroke-width:6}
-.trp{fill:none;stroke-width:6;stroke-linecap:round;stroke:#ffd700;transition:stroke-dashoffset 1s linear,stroke .3s}
-.tn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Fredoka One';font-size:22px;color:#fff}
-.qc{background:#fff;border-radius:18px;padding:22px;box-shadow:0 4px 24px rgba(0,0,0,.1);margin-bottom:14px;position:relative;overflow:hidden}
-.qc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--green),var(--blu),var(--pin))}
-.qm{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}
-.qnb{background:linear-gradient(135deg,var(--green),var(--tea));color:#fff;padding:3px 11px;border-radius:18px;font-weight:800;font-size:12px}
-.qcat{font-size:11px;color:#999;font-weight:700;background:#f5f5f5;padding:2px 9px;border-radius:9px}
-.qt{font-size:15px;font-weight:700;line-height:1.6;color:#2d3436;text-align:center;padding:7px 0}
-.og{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}
-.ob2{padding:13px 9px;border:2px solid #e8e8e8;background:#fff;border-radius:13px;font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;color:#444;cursor:pointer;transition:all .2s;text-align:center;line-height:1.4}
-.ob2:hover:not(:disabled){border-color:var(--green);background:#f0fdf4;transform:translateY(-2px);box-shadow:0 4px 12px rgba(39,174,96,.2)}
-.ob2.correct{background:var(--green);color:#fff;border-color:var(--gd)}
-.ob2.wrong{background:var(--red);color:#fff;border-color:#c0392b}
+.trb{fill:none;stroke:rgba(255,255,255,.08);stroke-width:5}
+.trp{fill:none;stroke-width:5;stroke-linecap:round;stroke:var(--amber);transition:stroke-dashoffset 1s linear,stroke .3s}
+.tn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Orbitron',monospace;font-size:20px;font-weight:700;color:var(--white)}
+
+/* PROGRESS */
+.pt{background:rgba(255,255,255,.06);border-radius:8px;height:5px;margin-bottom:14px;overflow:hidden;border:1px solid var(--border)}
+.pf{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--cyan),var(--lav));transition:width .4s ease}
+
+/* QUESTION CARD */
+.qc{
+  background:rgba(10,18,35,.7);border:1px solid var(--border2);
+  border-radius:var(--rad);padding:20px;margin-bottom:12px;
+  position:relative;overflow:hidden;
+}
+.qc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--lav),var(--mint))}
+.qm{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.qnb{
+  background:rgba(0,212,255,.12);color:var(--cyan);
+  padding:3px 10px;border-radius:6px;font-weight:700;font-size:11px;
+  font-family:'Orbitron',monospace;border:1px solid rgba(0,212,255,.2);
+}
+.qcat{font-size:10px;color:var(--text3);font-weight:600;background:rgba(255,255,255,.05);padding:2px 9px;border-radius:6px;font-family:'Space Grotesk',sans-serif;text-transform:uppercase;letter-spacing:.5px}
+.qt{font-size:14px;font-weight:600;line-height:1.65;color:var(--white);text-align:center;padding:6px 0;font-family:'Space Grotesk',sans-serif}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.ob2{
+  padding:12px 10px;
+  border:1px solid var(--border);background:rgba(19,31,53,.7);
+  border-radius:10px;
+  font-family:'DM Sans',sans-serif;font-weight:600;font-size:12px;
+  color:var(--text);cursor:pointer;transition:all .2s;text-align:center;line-height:1.4;
+}
+.ob2:hover:not(:disabled){border-color:rgba(0,212,255,.4);background:rgba(0,212,255,.08);transform:translateY(-2px);color:var(--cyan)}
+.ob2.correct{background:rgba(0,229,176,.15);color:var(--mint);border-color:var(--mint);box-shadow:0 0 16px rgba(0,229,176,.2)}
+.ob2.wrong{background:rgba(255,77,109,.12);color:var(--rose);border-color:var(--rose)}
 .ob2:disabled{cursor:not-allowed}
-.pt{background:#e8f5e9;border-radius:9px;height:7px;margin-bottom:14px;overflow:hidden}
-.pf{height:100%;border-radius:9px;background:linear-gradient(90deg,var(--green),var(--tea));transition:width .4s ease}
+
+/* ---- SKIP BUTTON ---- */
+.skip-bar{
+  display:flex;justify-content:flex-end;margin-bottom:8px;
+}
+.skip-btn{
+  padding:7px 16px;border-radius:8px;cursor:pointer;
+  background:rgba(255,77,109,.08);color:var(--rose);
+  border:1px solid rgba(255,77,109,.25);
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;
+  letter-spacing:.5px;text-transform:uppercase;transition:all .2s;
+  display:flex;align-items:center;gap:6px;
+}
+.skip-btn:hover{background:rgba(255,77,109,.15);box-shadow:0 0 16px rgba(255,77,109,.2)}
+
 /* FEEDBACK OVERLAY */
-.fo{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);border-radius:18px;padding:22px 30px;text-align:center;z-index:1000;transition:transform .25s cubic-bezier(.68,-.55,.265,1.55);min-width:180px}
+.fo{
+  position:fixed;top:50%;left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  border-radius:16px;padding:20px 32px;text-align:center;
+  z-index:1000;transition:transform .25s cubic-bezier(.68,-.55,.265,1.55);min-width:180px;
+  backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.15);
+}
 .fo.show{transform:translate(-50%,-50%) scale(1)}
-.fe{font-size:48px;margin-bottom:7px}
-.ft{color:#fff;font-family:'Fredoka One';font-size:22px}
-.fs{color:rgba(255,255,255,.8);font-size:13px;margin-top:3px}
+.fe{font-size:44px;margin-bottom:6px}
+.ft{color:var(--white);font-family:'Orbitron',monospace;font-size:18px;font-weight:700;letter-spacing:1px}
+.fs{color:rgba(255,255,255,.7);font-size:12px;margin-top:4px}
+
 /* RESULT */
-.res{display:none;text-align:center;background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);border-radius:18px;padding:32px 22px;color:#fff}
-.res.show{display:block;animation:fu .5s ease}
-.rtit{font-family:'Fredoka One';font-size:30px;color:#ffd700;text-shadow:0 0 20px rgba(255,215,0,.5);margin-bottom:7px}
-.rsco{font-family:'Fredoka One';font-size:72px;color:#ffd700;line-height:1;margin:14px 0;text-shadow:0 0 30px rgba(255,215,0,.6)}
-.rstr{font-size:34px;margin:11px 0;letter-spacing:3px}
-.rdt{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:14px 0}
-.rcp{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:18px;padding:7px 16px;font-weight:700;font-size:13px;color:#fff}
-.rcp b{color:#ffd700}
-.rmsg{background:rgba(255,255,255,.1);border-radius:13px;padding:13px;margin:14px 0;font-size:15px;color:rgba(255,255,255,.9);font-weight:600}
-.bpa{background:linear-gradient(135deg,#ffd700,#f39c12);color:#1a1a2e;border:none;border-radius:28px;padding:13px 32px;font-family:'Nunito';font-weight:800;font-size:15px;cursor:pointer;margin:7px;transition:all .2s;box-shadow:0 4px 20px rgba(255,215,0,.4)}
-.bpa:hover{transform:scale(1.05)}
-.fwk{font-size:26px;margin:7px 0;animation:bnc .5s ease infinite alternate}
-@keyframes bnc{from{transform:translateY(0)}to{transform:translateY(-7px)}}
+.res{
+  display:none;text-align:center;
+  background:linear-gradient(135deg,rgba(0,212,255,.06),rgba(124,106,247,.06));
+  border:1px solid rgba(0,212,255,.2);
+  border-radius:var(--rad);padding:36px 24px;
+}
+.res.show{display:block;animation:fadeUp .5s ease}
+.rtit{font-family:'Orbitron',monospace;font-size:24px;font-weight:900;color:var(--amber);text-shadow:var(--glow-a);margin-bottom:6px;letter-spacing:2px}
+.rsco{font-family:'Orbitron',monospace;font-size:64px;color:var(--white);line-height:1;margin:16px 0;text-shadow:0 0 30px rgba(0,212,255,.5)}
+.rstr{font-size:32px;margin:10px 0;letter-spacing:4px}
+.rdt{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.rcp{background:rgba(255,255,255,.06);border:1px solid var(--border2);border-radius:20px;padding:6px 16px;font-weight:700;font-size:12px;color:var(--text);font-family:'Space Grotesk',sans-serif}
+.rcp b{color:var(--amber);font-family:'Orbitron',monospace}
+.rmsg{background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.15);border-radius:var(--rad2);padding:14px;margin:14px 0;font-size:14px;color:var(--text);font-weight:500}
+.bpa{
+  background:linear-gradient(135deg,var(--amber),var(--amber2));
+  color:#0a1628;border:none;border-radius:28px;padding:12px 32px;
+  font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:14px;cursor:pointer;
+  margin:6px;transition:all .2s;box-shadow:0 4px 20px rgba(245,166,35,.35);letter-spacing:.5px;
+}
+.bpa:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(245,166,35,.5)}
+.fwk{font-size:28px;margin:6px 0;animation:bnc .6s ease infinite alternate}
+@keyframes bnc{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+
 /* START SCREEN */
-.ss{text-align:center;padding:18px 8px}
-.ss .be{font-size:68px;animation:bnc 1s ease infinite alternate}
-.ss h2{font-family:'Fredoka One';font-size:26px;color:#ffd700;margin:11px 0 5px}
-.ss p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:7px}
-.gr{background:rgba(255,255,255,.1);border-radius:13px;padding:14px;margin:14px auto;max-width:340px;text-align:left}
-.gr li{color:rgba(255,255,255,.9);font-size:13px;padding:4px 0;list-style:none}
-.gr li::before{content:'⚡ '}
-.bst{background:linear-gradient(135deg,#ffd700,#f39c12);color:#1a1a2e;border:none;border-radius:28px;padding:14px 44px;font-family:'Nunito';font-weight:800;font-size:17px;cursor:pointer;margin-top:9px;transition:all .2s;box-shadow:0 4px 20px rgba(255,215,0,.4);animation:pb 1.5s ease infinite}
-@keyframes pb{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.ss{text-align:center;padding:16px 8px}
+.ss .be{font-size:64px;animation:bnc 1.2s ease infinite alternate;display:block;margin-bottom:10px}
+.ss h2{font-family:'Orbitron',monospace;font-size:22px;font-weight:900;color:var(--amber);text-shadow:var(--glow-a);margin-bottom:6px;letter-spacing:2px}
+.ss p{color:var(--text2);font-size:13px;margin-bottom:8px}
+.gr{
+  background:rgba(10,18,35,.7);border:1px solid var(--border);
+  border-radius:var(--rad);padding:16px;margin:16px auto;max-width:340px;text-align:left;
+}
+.gr li{color:var(--text);font-size:12px;padding:4px 0;list-style:none;display:flex;align-items:center;gap:8px}
+.gr li::before{content:'⚡';font-size:11px}
+.bst{
+  background:linear-gradient(135deg,var(--amber),var(--amber2));
+  color:#0a1628;border:none;border-radius:28px;padding:14px 44px;
+  font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:16px;cursor:pointer;
+  margin-top:10px;transition:all .2s;box-shadow:0 4px 20px rgba(245,166,35,.4);
+  letter-spacing:.5px;animation:pb 1.8s ease infinite;
+}
+@keyframes pb{0%,100%{transform:scale(1);box-shadow:0 4px 20px rgba(245,166,35,.4)}50%{transform:scale(1.04);box-shadow:0 6px 28px rgba(245,166,35,.55)}}
 .bst:hover{transform:scale(1.08)!important}
+
 /* CONFETTI */
 .cc2{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:999;overflow:hidden}
-.cp{position:absolute;animation:cff 2.5s linear forwards;border-radius:2px}
+.cp{position:absolute;animation:cff 2.8s linear forwards;border-radius:2px}
 @keyframes cff{0%{transform:translateY(-100px) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+
 /* RESPONSIVE */
-@media(max-width:600px){.tp{padding:16px 12px}.cg{grid-template-columns:1fr}.og{grid-template-columns:1fr 1fr}.qt{font-size:13px}.ob2{font-size:12px;padding:11px 7px}.lr{flex-direction:column;gap:2px}}
+@media(max-width:600px){
+  .tp{padding:16px 12px}
+  .cg{grid-template-columns:1fr}
+  .og{grid-template-columns:1fr 1fr}
+  .qt{font-size:12px}
+  .ob2{font-size:11px;padding:10px 6px}
+  .lr{flex-direction:column;gap:2px}
+  header h1{font-size:clamp(17px,5vw,28px)}
+  .gdash h2{font-size:17px}
+}
+
+/* ---- DIVIDER ---- */
+.div{border:none;border-top:1px solid var(--border);margin:18px 0}
+
+/* ---- STEP RANGKUMAN ---- */
+.rsm2{text-align:center;margin-top:14px;font-size:22px}
 </style>
 </head>
 <body>
 
 <header>
+  <div class="scan"></div>
   <div class="hdr">
-    <div class="badge-s">📖 SD Islam Tahfizh Cahaya Qur'an | Kelas 3 Semester II TA. 2025/26</div>
-    <h1>🌿 MATERI 5<br>Cerita atau Laporan</h1>
-    <p>Bahasa Indonesia • Klik setiap judul untuk membuka materi</p>
+    <div class="badge-s">SD Islam Tahfizh Cahaya Qur'an · Kelas 3 Semester II · TA. 2025/26</div>
+    <h1>MATERI 5 — <span>Cerita atau Laporan</span></h1>
+    <p>Bahasa Indonesia &nbsp;·&nbsp; Klik setiap judul untuk membuka materi</p>
   </div>
 </header>
 
 <div class="tnw">
   <div class="tnav">
+    <button class="tbtn" onclick="swT('rv')"><span class="ti">🔍</span>Review Fakta/Opini</button>
     <button class="tbtn active" onclick="swT('p1')"><span class="ti">📅</span>Pertemuan 1</button>
     <button class="tbtn" onclick="swT('p2')"><span class="ti">📅</span>Pertemuan 2</button>
-    <button class="tbtn" onclick="swT('rv')"><span class="ti">🔍</span>Review Fakta/Opini</button>
-    <button class="tbtn" onclick="swT('gm')"><span class="ti">🎮</span>Games 30 Soal</button>
+    <button class="tbtn gm-btn" onclick="swT('gm')"><span class="ti">🎮</span>Games 30 Soal</button>
   </div>
 </div>
 
 <div class="cw">
 
+<!-- ======== REVIEW FAKTA/OPINI ======== -->
+<div id="rv" class="tp">
+  <div class="rh">
+    <h2>FAKTA vs OPINI</h2>
+    <p>Ingat lagi perbedaan fakta dan opini sebelum games besar!</p>
+  </div>
+  <div class="cg">
+    <div class="cc fk">
+      <div class="ci">✅</div><h3>FAKTA</h3>
+      <ul>
+        <li>Bisa dibuktikan kebenarannya</li>
+        <li>Berisi data, tempat, waktu, jumlah</li>
+        <li>Tidak berubah-ubah</li>
+        <li>Bersifat nyata dan benar terjadi</li>
+      </ul>
+    </div>
+    <div class="cc op">
+      <div class="ci">💭</div><h3>OPINI</h3>
+      <ul>
+        <li>Pendapat/perasaan seseorang</li>
+        <li>Tidak sama untuk semua orang</li>
+        <li>Tidak bisa dibuktikan langsung</li>
+        <li>Bersifat subjektif</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ib o">
+    <h4>🔑 Kata Kunci OPINI:</h4>
+    <p><span class="kb ko">menurut saya</span><span class="kb ko">saya pikir</span><span class="kb ko">seharusnya</span><span class="kb ko">paling indah</span><span class="kb ko">terbaik</span><span class="kb ko">paling cantik</span><span class="kb ko">sangat menyenangkan</span><span class="kb ko">penting sekali</span></p>
+  </div>
+  <div class="ib g">
+    <h4>🔑 Ciri Kalimat FAKTA:</h4>
+    <p><span class="kb kf">hidup di...</span><span class="kb kf">berwarna...</span><span class="kb kf">tumbuh di...</span><span class="kb kf">memakan...</span><span class="kb kf">bertelur</span><span class="kb kf">jumlahnya...</span><span class="kb kf">terjadi pada...</span></p>
+  </div>
+  <hr class="div">
+  <div style="text-align:center;margin-bottom:14px">
+    <div style="font-family:'Orbitron',monospace;font-size:17px;color:var(--cyan);letter-spacing:1px;margin-bottom:4px">🎯 MINI GAME — 10 Soal Fakta / Opini</div>
+    <div style="font-size:12px;color:var(--text2)">Klik FAKTA atau OPINI untuk menjawab!</div>
+  </div>
+  <div id="rgame">
+    <div class="rp" id="rdots"></div>
+    <div id="rcon">
+      <div class="rqc">
+        <div class="rqn" id="rqn">Soal 1 dari 10</div>
+        <div class="rqt" id="rqt">Loading...</div>
+      </div>
+      <div class="rbg">
+        <button class="rb fbtn" id="rfk" onclick="ansRv('fakta')">✅ FAKTA</button>
+        <button class="rb obtn" id="rop" onclick="ansRv('opini')">💭 OPINI</button>
+      </div>
+      <div class="rfb" id="rfb"></div>
+    </div>
+    <div class="rsc" id="rsc">
+      <h3>SELESAI!</h3>
+      <div class="rsb" id="rsb">0/10</div>
+      <p id="rsm">Pesan motivasi</p>
+      <button class="btr" onclick="initRv()">🔄 Main Lagi</button>
+    </div>
+  </div>
+</div>
+
 <!-- ======== PERTEMUAN 1 ======== -->
 <div id="p1" class="tp active">
-  <div class="ph p1"><div class="pnum">1</div><div><h2>Pertemuan Pertama</h2><p>Membaca cerita, memahami laporan, belajar perbedaan cerita & laporan</p></div></div>
-  <div class="ib y" style="margin-bottom:16px">💡 <strong>Petunjuk:</strong> Klik setiap nomor/judul untuk membuka materinya. Kerjakan secara urut ya! 😊</div>
+  <div class="ph p1">
+    <div class="pnum">1</div>
+    <div><h2>Pertemuan Pertama</h2><p>Membaca cerita, memahami laporan, belajar perbedaan cerita &amp; laporan</p></div>
+  </div>
+  <div class="ib y" style="margin-bottom:16px">💡 <strong>Petunjuk:</strong> Klik setiap nomor untuk membuka materinya. Kerjakan secara urut ya! 😊</div>
   <div class="sl">
 
     <div class="sc" onclick="tog(this)">
@@ -250,7 +653,7 @@ header p{color:rgba(255,255,255,.85);font-size:14px;margin-top:5px;font-weight:6
       <div class="sb">
         <div class="mb">📘 Modul Halaman 47</div>
         <div class="ib g"><h4>🗂️ Pengertian Laporan</h4><p><strong>Laporan</strong> adalah cerita atau tulisan tentang apa yang sudah kita <strong>lihat, dengar, atau lakukan</strong>.</p></div>
-        <div class="ib b"><h4>🎯 Tujuan & Manfaat Laporan</h4>
+        <div class="ib b"><h4>🎯 Tujuan &amp; Manfaat Laporan</h4>
           <ul class="si">
             <li><span class="sc2">1</span><span>Memberitahu orang lain tentang hasil pengamatan atau kegiatan</span></li>
             <li><span class="sc2">2</span><span>Menyimpan informasi agar tidak lupa</span></li>
@@ -265,9 +668,9 @@ header p{color:rgba(255,255,255,.85);font-size:14px;margin-top:5px;font-weight:6
       <div class="sh"><div class="sn">3</div><div class="st">📋 Jenis-Jenis Laporan</div><span class="stag tm">MATERI</span><span class="sa">▶</span></div>
       <div class="sb">
         <div class="mb">📘 Modul Halaman 48</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px">
-          <div class="ib g"><h4>🔭 Laporan Pengamatan</h4><p>Laporan dari hasil <strong>mengamati</strong> sesuatu secara langsung.</p><p style="font-style:italic;color:#555;font-size:12px;margin-top:5px">Contoh: mengamati tanaman di taman sekolah</p></div>
-          <div class="ib b"><h4>🏃 Laporan Kegiatan</h4><p>Laporan dari hasil <strong>kegiatan</strong> yang kita ikuti.</p><p style="font-style:italic;color:#555;font-size:12px;margin-top:5px">Contoh: kegiatan membersihkan kelas</p></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div class="ib g"><h4>🔭 Laporan Pengamatan</h4><p>Laporan dari hasil <strong>mengamati</strong> sesuatu secara langsung.</p><p style="font-style:italic;color:var(--text2);font-size:11px;margin-top:5px">Contoh: mengamati tanaman di taman sekolah</p></div>
+          <div class="ib b"><h4>🏃 Laporan Kegiatan</h4><p>Laporan dari hasil <strong>kegiatan</strong> yang kita ikuti.</p><p style="font-style:italic;color:var(--text2);font-size:11px;margin-top:5px">Contoh: kegiatan membersihkan kelas</p></div>
         </div>
       </div>
     </div>
@@ -289,10 +692,10 @@ header p{color:rgba(255,255,255,.85);font-size:14px;margin-top:5px;font-weight:6
       <div class="sh"><div class="sn">5</div><div class="st">📄 Contoh Laporan Lengkap</div><span class="stag tm">MATERI</span><span class="sa">▶</span></div>
       <div class="sb">
         <div class="mb">📘 Modul Halaman 46</div>
-        <p style="font-size:13px;color:#666;margin-bottom:9px">Ini adalah cerita "Memilah Sampah" yang sudah diubah menjadi laporan resmi:</p>
+        <p style="font-size:12px;color:var(--text2);margin-bottom:10px">Ini adalah cerita "Memilah Sampah" yang sudah diubah menjadi laporan resmi:</p>
         <div class="lt">
           <h4>📋 Laporan Kegiatan Memilah Sampah di Sekolah</h4>
-          <div class="lr"><span class="ll">📅 Waktu & Tempat</span><span class="lv">Jumat pagi, di halaman sekolah</span></div>
+          <div class="lr"><span class="ll">📅 Waktu &amp; Tempat</span><span class="lv">Jumat pagi, di halaman sekolah</span></div>
           <div class="lr"><span class="ll">🎯 Tujuan</span><span class="lv">Belajar memilah sampah dan menjaga kebersihan sekolah</span></div>
           <div class="lr"><span class="ll">👥 Peserta</span><span class="lv">Guru dan seluruh siswa</span></div>
           <div class="lr"><span class="ll">📝 Jalannya Kegiatan</span><span class="lv">Guru mengajak siswa ke halaman. Ada 3 tempat sampah: hijau (organik), kuning (anorganik), biru (kertas). Siswa memungut dan memilah sampah sesuai jenisnya.</span></div>
@@ -323,8 +726,8 @@ header p{color:rgba(255,255,255,.85);font-size:14px;margin-top:5px;font-weight:6
         <div class="ib y">🔎 <strong>Petunjuk:</strong> Carilah contoh sampah organik dan anorganik di sekitar sekolah atau rumahmu. Isi tabel di modul halaman 49!</div>
         <table class="ot">
           <tr><th>No</th><th>Jenis Sampah</th><th>Contoh (isi di modul!)</th><th>Tempat Sampah</th></tr>
-          <tr><td>1</td><td><span class="ob or">Sampah Organik</span></td><td style="color:#aaa;font-style:italic">Tulis di modul...</td><td>🟢 Hijau</td></tr>
-          <tr><td>2</td><td><span class="ob an">Sampah Anorganik</span></td><td style="color:#aaa;font-style:italic">Tulis di modul...</td><td>🟡 Kuning</td></tr>
+          <tr><td>1</td><td><span class="ob or">Sampah Organik</span></td><td style="color:var(--text3);font-style:italic">Tulis di modul...</td><td>🟢 Hijau</td></tr>
+          <tr><td>2</td><td><span class="ob an">Sampah Anorganik</span></td><td style="color:var(--text3);font-style:italic">Tulis di modul...</td><td>🟡 Kuning</td></tr>
         </table>
       </div>
     </div>
@@ -334,7 +737,10 @@ header p{color:rgba(255,255,255,.85);font-size:14px;margin-top:5px;font-weight:6
 
 <!-- ======== PERTEMUAN 2 ======== -->
 <div id="p2" class="tp">
-  <div class="ph p2"><div class="pnum">2</div><div><h2>Pertemuan Kedua</h2><p>Cerita "Jumat Bersih", melengkapi laporan, dan latihan menulis laporan sendiri</p></div></div>
+  <div class="ph p2">
+    <div class="pnum">2</div>
+    <div><h2>Pertemuan Kedua</h2><p>Cerita "Jumat Bersih", melengkapi laporan, dan latihan menulis laporan sendiri</p></div>
+  </div>
   <div class="ib y" style="margin-bottom:16px">💡 <strong>Petunjuk:</strong> Klik setiap nomor untuk membuka materi. Kerjakan semua latihan di modul ya! 📝</div>
   <div class="sl">
 
@@ -363,7 +769,7 @@ header p{color:rgba(255,255,255,.85);font-size:14px;margin-top:5px;font-weight:6
           <li><span class="sc2">4</span><span>Tambahkan <strong>hasil dan kesimpulan</strong></span></li>
           <li><span class="sc2">5</span><span>Gunakan <strong>kalimat efektif</strong> dan tanda baca yang benar</span></li>
         </ul>
-        <div class="ib o" style="margin-top:11px"><h4>💡 Ingat Struktur Laporan!</h4><p style="font-weight:700;font-size:13px">📌 Judul → 📅 Waktu &amp; Tempat → 🎯 Tujuan → 👥 Peserta → 📝 Jalannya Kegiatan → ✅ Hasil → 💡 Kesimpulan</p></div>
+        <div class="ib o" style="margin-top:12px"><h4>💡 Ingat Struktur Laporan!</h4><p style="font-weight:600;font-size:12px">📌 Judul → 📅 Waktu &amp; Tempat → 🎯 Tujuan → 👥 Peserta → 📝 Jalannya Kegiatan → ✅ Hasil → 💡 Kesimpulan</p></div>
       </div>
     </div>
 
@@ -374,13 +780,13 @@ header p{color:rgba(255,255,255,.85);font-size:14px;margin-top:5px;font-weight:6
         <div class="ib y">✍️ <strong>Petunjuk:</strong> Berdasarkan cerita "Jumat Bersih", lengkapi tabel laporan di modul halaman 51! Panduan di bawah untuk membantumu:</div>
         <div class="lt">
           <h4>📋 Panduan Laporan "Jumat Bersih"</h4>
-          <div class="lr"><span class="ll">📌 Judul</span><span class="lv" style="color:#c0392b;font-weight:700">← Buat sendiri di modul!</span></div>
-          <div class="lr"><span class="ll">📅 Waktu &amp; Tempat</span><span class="lv" style="color:#777">Petunjuk: Hari apa? Di mana? Cari di cerita!</span></div>
-          <div class="lr"><span class="ll">🎯 Tujuan</span><span class="lv" style="color:#777">Petunjuk: Kenapa diadakan Jumat Bersih?</span></div>
-          <div class="lr"><span class="ll">👥 Peserta</span><span class="lv" style="color:#777">Petunjuk: Siapa saja yang ikut? (Ingat nama gurunya!)</span></div>
-          <div class="lr"><span class="ll">📝 Jalannya Kegiatan</span><span class="lv" style="color:#777">Petunjuk: Ada 3 kelompok. Apa tugas masing-masing?</span></div>
-          <div class="lr"><span class="ll">✅ Hasil</span><span class="lv" style="color:#777">Petunjuk: Apa yang terjadi setelah satu jam?</span></div>
-          <div class="lr"><span class="ll">💡 Kesimpulan</span><span class="lv" style="color:#777">Petunjuk: Pelajaran apa yang didapat?</span></div>
+          <div class="lr"><span class="ll">📌 Judul</span><span class="lv" style="color:var(--rose);font-weight:700">← Buat sendiri di modul!</span></div>
+          <div class="lr"><span class="ll">📅 Waktu &amp; Tempat</span><span class="lv" style="color:var(--text2)">Petunjuk: Hari apa? Di mana? Cari di cerita!</span></div>
+          <div class="lr"><span class="ll">🎯 Tujuan</span><span class="lv" style="color:var(--text2)">Petunjuk: Kenapa diadakan Jumat Bersih?</span></div>
+          <div class="lr"><span class="ll">👥 Peserta</span><span class="lv" style="color:var(--text2)">Petunjuk: Siapa saja yang ikut? (Ingat nama gurunya!)</span></div>
+          <div class="lr"><span class="ll">📝 Jalannya</span><span class="lv" style="color:var(--text2)">Petunjuk: Ada 3 kelompok. Apa tugas masing-masing?</span></div>
+          <div class="lr"><span class="ll">✅ Hasil</span><span class="lv" style="color:var(--text2)">Petunjuk: Apa yang terjadi setelah satu jam?</span></div>
+          <div class="lr"><span class="ll">💡 Kesimpulan</span><span class="lv" style="color:var(--text2)">Petunjuk: Pelajaran apa yang didapat?</span></div>
         </div>
       </div>
     </div>
@@ -389,7 +795,7 @@ header p{color:rgba(255,255,255,.85);font-size:14px;margin-top:5px;font-weight:6
       <div class="sh"><div class="sn">4</div><div class="st">🌳 Tugas: Laporan "Menanam Pohon di Halaman Sekolah"</div><span class="stag tt">TUGAS</span><span class="sa">▶</span></div>
       <div class="sb">
         <div class="mb">📘 Modul Halaman 52 – Kerjakan di modul!</div>
-        <div class="ib y">🌱 <strong>Petunjuk:</strong> Buatlah laporan sederhana tentang kegiatan <strong>"Menanam Pohon di Halaman Sekolah"</strong> berdasarkan pengalaman atau pengamatanmu. Tulis di modul halaman 52 dengan struktur laporan!</div>
+        <div class="ib y">🌱 <strong>Petunjuk:</strong> Buatlah laporan sederhana tentang kegiatan <strong>"Menanam Pohon di Halaman Sekolah"</strong>. Tulis di modul halaman 52 dengan struktur laporan!</div>
         <div class="ib pu">
           <h4>🎯 Checklist sebelum dikumpulkan:</h4>
           <p>☐ Ada judul?<br>☐ Ada waktu dan tempat?<br>☐ Ada tujuan kegiatan?<br>☐ Ada peserta?<br>☐ Ada jalannya kegiatan (urut)?<br>☐ Ada hasil dan kesimpulan?<br>☐ Kalimat singkat dan jelas?</p>
@@ -410,86 +816,47 @@ header p{color:rgba(255,255,255,.85);font-size:14px;margin-top:5px;font-weight:6
             <li><span class="sc2">✓</span><span>Laporan yang baik: berisi fakta, urut, kalimat efektif</span></li>
           </ul>
         </div>
-        <div style="text-align:center;margin-top:13px;font-size:26px">🎉 Keren! Kamu sudah menyelesaikan Materi 5! 🎉</div>
+        <div class="rsm2">🎉 Keren! Kamu sudah menyelesaikan Materi 5! 🎉</div>
       </div>
     </div>
 
-  </div>
-</div>
-
-<!-- ======== REVIEW FAKTA/OPINI ======== -->
-<div id="rv" class="tp">
-  <div class="rh"><h2>🔍 Review: Fakta atau Opini?</h2><p>Sebelum games besar, ingat lagi perbedaan fakta dan opini!</p></div>
-  <div class="cg">
-    <div class="cc fk">
-      <div class="ci">✅</div><h3>FAKTA</h3>
-      <ul><li>Bisa dibuktikan kebenarannya</li><li>Berisi data, tempat, waktu, jumlah</li><li>Tidak berubah-ubah</li><li>Bersifat nyata dan benar terjadi</li></ul>
-    </div>
-    <div class="cc op">
-      <div class="ci">💭</div><h3>OPINI</h3>
-      <ul><li>Pendapat/perasaan seseorang</li><li>Tidak sama untuk semua orang</li><li>Tidak bisa dibuktikan langsung</li><li>Bersifat subjektif</li></ul>
-    </div>
-  </div>
-  <div class="ib o">
-    <h4>🔑 Kata Kunci OPINI:</h4>
-    <p><span class="kb ko">menurut saya</span><span class="kb ko">saya pikir</span><span class="kb ko">seharusnya</span><span class="kb ko">paling indah</span><span class="kb ko">terbaik</span><span class="kb ko">paling cantik</span><span class="kb ko">sangat menyenangkan</span><span class="kb ko">penting sekali</span></p>
-  </div>
-  <div class="ib g">
-    <h4>🔑 Ciri Kalimat FAKTA:</h4>
-    <p><span class="kb kf">hidup di...</span><span class="kb kf">berwarna...</span><span class="kb kf">tumbuh di...</span><span class="kb kf">memakan...</span><span class="kb kf">bertelur</span><span class="kb kf">jumlahnya...</span><span class="kb kf">terjadi pada...</span></p>
-  </div>
-  <hr style="border:none;border-top:2px dashed #e0e0e0;margin:18px 0">
-  <div style="text-align:center;margin-bottom:14px">
-    <div style="font-family:'Fredoka One';font-size:21px;color:var(--blu)">🎯 Mini Game: 10 Soal Fakta/Opini</div>
-    <div style="font-size:13px;color:#666">Klik FAKTA atau OPINI untuk menjawab!</div>
-  </div>
-  <div id="rgame">
-    <div class="rp" id="rdots"></div>
-    <div id="rcon">
-      <div class="rqc"><div class="rqn" id="rqn">Soal 1 dari 10</div><div class="rqt" id="rqt">Loading...</div></div>
-      <div class="rbg">
-        <button class="rb fbtn" id="rfk" onclick="ansRv('fakta')">✅ FAKTA</button>
-        <button class="rb obtn" id="rop" onclick="ansRv('opini')">💭 OPINI</button>
-      </div>
-      <div class="rfb" id="rfb"></div>
-    </div>
-    <div class="rsc" id="rsc">
-      <h3>🎉 Selesai!</h3>
-      <div class="rsb" id="rsb">0/10</div>
-      <p id="rsm">Pesan motivasi</p>
-      <button class="btr" onclick="initRv()">🔄 Main Lagi</button>
-    </div>
   </div>
 </div>
 
 <!-- ======== GAMES 30 SOAL ======== -->
 <div id="gm" class="tp">
-  <div id="gss" class="gd">
+  <!-- START SCREEN -->
+  <div id="gss" class="gdash">
     <div class="ss">
-      <div class="be">🎮</div>
+      <span class="be">🎮</span>
       <h2>SUPER QUIZ TIME!</h2>
       <p>30 Soal seru tentang Materi 5: Cerita &amp; Laporan</p>
       <ul class="gr">
         <li>30 soal pilihan ganda</li>
         <li>Waktu 20 detik per soal — cepat ya!</li>
         <li>Jawab benar = skor naik 🎉</li>
-        <li>Ada bonus jika jawab cepat!</li>
+        <li>Bisa berhenti kapan saja &amp; ganti tab</li>
         <li>Semangat dan jujur ya! 💪</li>
       </ul>
       <button class="bst" onclick="startG()">▶ MULAI GAME!</button>
     </div>
   </div>
+
+  <!-- PLAYING SCREEN -->
   <div id="gps" style="display:none">
-    <div class="gd">
+    <div class="skip-bar">
+      <button class="skip-btn" onclick="stopGame()">✕ Hentikan Game</button>
+    </div>
+    <div class="gdash">
       <div class="gs">
         <div class="gch">❓ Soal: <span id="gqn">1</span>/30</div>
         <div class="gch">✅ Benar: <span id="gsc">0</span></div>
         <div class="gch">❌ Salah: <span id="gwn">0</span></div>
       </div>
-      <div class="tw" style="margin-top:11px">
-        <svg class="tr" width="74" height="74" viewBox="0 0 74 74">
-          <circle class="trb" cx="37" cy="37" r="31"/>
-          <circle class="trp" id="tring" cx="37" cy="37" r="31" stroke-dasharray="194.8" stroke-dashoffset="0"/>
+      <div class="tw" style="margin-top:12px">
+        <svg class="tr" width="70" height="70" viewBox="0 0 70 70">
+          <circle class="trb" cx="35" cy="35" r="30"/>
+          <circle class="trp" id="tring" cx="35" cy="35" r="30" stroke-dasharray="188.5" stroke-dashoffset="0"/>
         </svg>
         <div class="tn" id="tnum">20</div>
       </div>
@@ -501,6 +868,8 @@ header p{color:rgba(255,255,255,.85);font-size:14px;margin-top:5px;font-weight:6
       <div class="og" id="gopt"></div>
     </div>
   </div>
+
+  <!-- RESULT SCREEN -->
   <div id="grs" class="res">
     <div class="fwk" id="rfwk">🎊🏆🎊</div>
     <div class="rtit" id="rttl">SELAMAT!</div>
@@ -519,29 +888,39 @@ header p{color:rgba(255,255,255,.85);font-size:14px;margin-top:5px;font-weight:6
 </div><!-- end cw -->
 
 <!-- FEEDBACK OVERLAY -->
-<div class="fo" id="fov"><div class="fe" id="foe">😊</div><div class="ft" id="fot">Benar!</div><div class="fs" id="fos"></div></div>
+<div class="fo" id="fov">
+  <div class="fe" id="foe">😊</div>
+  <div class="ft" id="fot">Benar!</div>
+  <div class="fs" id="fos"></div>
+</div>
+
 <!-- CONFETTI -->
 <div class="cc2" id="ccon"></div>
 
 <script>
-// ======= TAB =======
+// ===================== TAB =====================
+const TAB_ORDER = ['rv','p1','p2','gm'];
 function swT(id){
+  // if game is running, stop it first
+  if(id !== 'gm' && gc > 0 && document.getElementById('gps').style.display !== 'none'){
+    stopGame();
+  }
   document.querySelectorAll('.tp').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  const idx=['p1','p2','rv','gm'].indexOf(id);
+  const idx = TAB_ORDER.indexOf(id);
   document.querySelectorAll('.tbtn')[idx].classList.add('active');
-  if(id==='rv'&&!rvDone)initRv();
+  if(id==='rv' && !rvDone) initRv();
 }
 
-// ======= STEP TOGGLE =======
+// ===================== STEP TOGGLE =====================
 function tog(el){
-  const was=el.classList.contains('open');
+  const was = el.classList.contains('open');
   el.closest('.sl').querySelectorAll('.sc').forEach(c=>c.classList.remove('open'));
-  if(!was)el.classList.add('open');
+  if(!was) el.classList.add('open');
 }
 
-// ======= REVIEW DATA =======
+// ===================== REVIEW DATA =====================
 const rvQ=[
   {q:"Harimau Sumatra hidup di hutan Pulau Sumatra.",ans:"fakta",e:"Bisa dibuktikan → FAKTA! ✅"},
   {q:"Menurut saya, harimau Sumatra adalah hewan paling gagah di dunia.",ans:"opini",e:"'Menurut saya' = kata kunci opini 💭"},
@@ -566,7 +945,8 @@ function buildDots(){
   const c=document.getElementById('rdots');c.innerHTML='';
   rvQ.forEach((_,i)=>{
     const d=document.createElement('div');
-    d.className='rd'+(i===0?' cur':'');d.textContent=i+1;d.id='rd'+i;c.appendChild(d);
+    d.className='rd'+(i===0?' cur':'');d.textContent=i+1;d.id='rd'+i;
+    c.appendChild(d);
   });
 }
 function showRvQ(){
@@ -574,14 +954,28 @@ function showRvQ(){
   document.getElementById('rqn').textContent=`Soal ${rvc+1} dari ${rvQ.length}`;
   document.getElementById('rqt').textContent=q.q;
   document.getElementById('rfb').style.display='none';
-  ['rfk','rop'].forEach(id=>{const b=document.getElementById(id);b.disabled=false;b.classList.remove('ca','wa');});
+  ['rfk','rop'].forEach(id=>{
+    const b=document.getElementById(id);b.disabled=false;
+    b.classList.remove('ca','wa');
+  });
 }
 function ansRv(c){
   const q=rvQ[rvc];const ok=c===q.ans;
   const dot=document.getElementById('rd'+rvc);
-  document.getElementById('rfk').disabled=true;document.getElementById('rop').disabled=true;
-  if(ok){rvs++;dot.className='rd correct';document.getElementById(c==='fakta'?'rfk':'rop').classList.add('ca');const fb=document.getElementById('rfb');fb.className='rfb correct';fb.innerHTML='✅ Benar! '+q.e;fb.style.display='block';}
-  else{dot.className='rd wrong';document.getElementById(c==='fakta'?'rfk':'rop').classList.add('wa');document.getElementById(q.ans==='fakta'?'rfk':'rop').classList.add('ca');const fb=document.getElementById('rfb');fb.className='rfb wrong';fb.innerHTML='❌ Kurang tepat! '+q.e;fb.style.display='block';}
+  document.getElementById('rfk').disabled=true;
+  document.getElementById('rop').disabled=true;
+  if(ok){
+    rvs++;dot.className='rd correct';
+    document.getElementById(c==='fakta'?'rfk':'rop').classList.add('ca');
+    const fb=document.getElementById('rfb');fb.className='rfb correct';
+    fb.innerHTML='✅ Benar! '+q.e;fb.style.display='block';
+  } else {
+    dot.className='rd wrong';
+    document.getElementById(c==='fakta'?'rfk':'rop').classList.add('wa');
+    document.getElementById(q.ans==='fakta'?'rfk':'rop').classList.add('ca');
+    const fb=document.getElementById('rfb');fb.className='rfb wrong';
+    fb.innerHTML='❌ Kurang tepat! '+q.e;fb.style.display='block';
+  }
   setTimeout(()=>{
     rvc++;
     if(rvc<rvQ.length){document.getElementById('rd'+rvc).classList.add('cur');showRvQ();}
@@ -594,10 +988,10 @@ function showRvEnd(){
   document.getElementById('rsb').textContent=rvs+'/10';
   const m=['Terus berlatih ya! 💪','Lumayan! Baca lagi materinya!','Bagus! Hampir sempurna! 😊','LUAR BIASA! Kamu hebat! 🌟'];
   document.getElementById('rsm').textContent=m[Math.min(Math.floor(rvs/3),3)];
-  if(rvs>=8)confetti();
+  if(rvs>=8) confetti();
 }
 
-// ======= MAIN GAME DATA =======
+// ===================== MAIN GAME DATA =====================
 const QS=[
   {cat:"Pengertian",q:"Apa yang dimaksud dengan laporan?",o:["Cerita khayalan yang menarik","Tulisan fakta kegiatan/pengamatan secara urut dan jelas","Lagu yang dinyanyikan bersama","Gambar tentang kegiatan"],a:1},
   {cat:"Ciri Laporan",q:"Ciri laporan yang baik adalah...",o:["Berisi karangan bebas","Menggunakan bahasa puisi","Berisi fakta dan kalimat singkat jelas","Menggunakan banyak kata sifat indah"],a:2},
@@ -632,7 +1026,7 @@ const QS=[
 ];
 
 let gc=0,gsc=0,gwn=0,gtm=null,gtl=20,gans=false;
-const CIRC=194.8;
+const CIRC=188.5;
 
 function startG(){
   document.getElementById('gss').style.display='none';
@@ -640,12 +1034,21 @@ function startG(){
   document.getElementById('grs').classList.remove('show');
   gc=0;gsc=0;gwn=0;updSt();showQ();
 }
+
+function stopGame(){
+  clearInterval(gtm);
+  document.getElementById('gps').style.display='none';
+  document.getElementById('gss').style.display='block';
+  gc=0;gsc=0;gwn=0;
+}
+
 function updSt(){
   document.getElementById('gqn').textContent=gc+1;
   document.getElementById('gsc').textContent=gsc;
   document.getElementById('gwn').textContent=gwn;
   document.getElementById('pfill').style.width=((gc/QS.length)*100)+'%';
 }
+
 function showQ(){
   if(gc>=QS.length){endG();return;}
   const q=QS[gc];gans=false;
@@ -653,69 +1056,109 @@ function showQ(){
   document.getElementById('gqcat').textContent=q.cat;
   document.getElementById('gqt').textContent=q.q;
   const og=document.getElementById('gopt');og.innerHTML='';
-  q.o.forEach((opt,i)=>{const b=document.createElement('button');b.className='ob2';b.textContent=opt;b.onclick=()=>selA(i);og.appendChild(b);});
+  q.o.forEach((opt,i)=>{
+    const b=document.createElement('button');
+    b.className='ob2';b.textContent=opt;
+    b.onclick=()=>selA(i);og.appendChild(b);
+  });
   startTmr();updSt();
 }
+
 function startTmr(){
   clearInterval(gtm);gtl=20;
   const ring=document.getElementById('tring');
   document.getElementById('tnum').textContent=gtl;
-  ring.style.stroke='#ffd700';ring.style.strokeDashoffset='0';
+  ring.style.stroke='var(--amber)';
+  ring.style.strokeDashoffset='0';
   gtm=setInterval(()=>{
-    gtl--;document.getElementById('tnum').textContent=gtl;
+    gtl--;
+    document.getElementById('tnum').textContent=gtl;
     ring.style.strokeDashoffset=CIRC*(1-gtl/20);
-    if(gtl<=5)ring.style.stroke='#e74c3c';
-    else if(gtl<=10)ring.style.stroke='#f39c12';
-    if(gtl<=0){clearInterval(gtm);if(!gans)timeUp();}
+    if(gtl<=5) ring.style.stroke='var(--rose)';
+    else if(gtl<=10) ring.style.stroke='var(--cyan)';
+    if(gtl<=0){clearInterval(gtm);if(!gans) timeUp();}
   },1000);
 }
+
 function timeUp(){
   gans=true;gwn++;
   const q=QS[gc];
-  const btns=document.querySelectorAll('.ob2');btns.forEach(b=>b.disabled=true);btns[q.a].classList.add('correct');
-  showFB('⏰','Waktu Habis!','Jawaban: '+q.o[q.a],false);setTimeout(nextQ,1800);
+  const btns=document.querySelectorAll('.ob2');
+  btns.forEach(b=>b.disabled=true);
+  btns[q.a].classList.add('correct');
+  showFB('⏰','Waktu Habis!','Jawaban: '+q.o[q.a],false);
+  setTimeout(nextQ,1800);
 }
+
 function selA(idx){
-  if(gans)return;clearInterval(gtm);gans=true;
-  const q=QS[gc];const btns=document.querySelectorAll('.ob2');btns.forEach(b=>b.disabled=true);
-  if(idx===q.a){gsc++;btns[idx].classList.add('correct');showFB('🎉','BENAR!','Mantap sekali! 🌟',true);}
-  else{gwn++;btns[idx].classList.add('wrong');btns[q.a].classList.add('correct');showFB('😅','Kurang Tepat','Yuk belajar lagi! 💪',false);}
-  updSt();setTimeout(nextQ,1700);
+  if(gans) return;
+  clearInterval(gtm);gans=true;
+  const q=QS[gc];
+  const btns=document.querySelectorAll('.ob2');
+  btns.forEach(b=>b.disabled=true);
+  if(idx===q.a){
+    gsc++;btns[idx].classList.add('correct');
+    showFB('🎉','BENAR!','Mantap sekali! 🌟',true);
+  } else {
+    gwn++;btns[idx].classList.add('wrong');btns[q.a].classList.add('correct');
+    showFB('😅','Kurang Tepat','Yuk belajar lagi! 💪',false);
+  }
+  updSt();
+  setTimeout(nextQ,1700);
 }
+
 function showFB(e,t,s,ok){
   const ov=document.getElementById('fov');
-  document.getElementById('foe').textContent=e;document.getElementById('fot').textContent=t;document.getElementById('fos').textContent=s;
-  ov.style.background=ok?'rgba(39,174,96,.92)':'rgba(231,76,60,.92)';
-  ov.classList.add('show');setTimeout(()=>ov.classList.remove('show'),1200);
+  document.getElementById('foe').textContent=e;
+  document.getElementById('fot').textContent=t;
+  document.getElementById('fos').textContent=s;
+  ov.style.background=ok
+    ?'rgba(0,229,176,.92)'
+    :'rgba(255,77,109,.88)';
+  ov.classList.add('show');
+  setTimeout(()=>ov.classList.remove('show'),1200);
 }
+
 function nextQ(){gc++;showQ();}
+
 function endG(){
   clearInterval(gtm);
   document.getElementById('gps').style.display='none';
   const rs=document.getElementById('grs');rs.classList.add('show');
   const pct=Math.round((gsc/QS.length)*100);
   document.getElementById('rsco').textContent=gsc+'/30';
-  document.getElementById('rc').textContent=gsc;document.getElementById('rw').textContent=gwn;document.getElementById('rn').textContent=pct;
+  document.getElementById('rc').textContent=gsc;
+  document.getElementById('rw').textContent=gwn;
+  document.getElementById('rn').textContent=pct;
   let s='⭐',t='Semangat Terus!',m='Baca lagi materinya, kamu pasti bisa! 💪';
   if(pct>=90){s='🌟🌟🌟';t='SEMPURNA!';m='Luar biasa! Kamu menguasai materi ini! 🏆';confetti();}
   else if(pct>=75){s='⭐⭐⭐';t='HEBAT!';m='Bagus sekali! Sedikit lagi sempurna! 😊';confetti();}
   else if(pct>=60){s='⭐⭐';t='BAGUS!';m='Sudah cukup bagus! Terus berlatih ya! 💪';}
-  document.getElementById('rstr').textContent=s;document.getElementById('rttl').textContent=t;document.getElementById('rmsg').textContent=m;
+  document.getElementById('rstr').textContent=s;
+  document.getElementById('rttl').textContent=t;
+  document.getElementById('rmsg').textContent=m;
   document.getElementById('rfwk').textContent=pct>=75?'🎊🏆🎊':'📚💪📚';
 }
-function restartG(){document.getElementById('grs').classList.remove('show');document.getElementById('gss').style.display='block';}
 
-// ======= CONFETTI =======
+function restartG(){
+  document.getElementById('grs').classList.remove('show');
+  document.getElementById('gss').style.display='block';
+}
+
+// ===================== CONFETTI =====================
 function confetti(){
-  const cls=['#ffd700','#27ae60','#2980b9','#e91e8c','#e67e22','#8e44ad'];
+  const cls=['var(--amber)','var(--cyan)','var(--lav)','var(--mint)','var(--rose)','#fff'];
   const c=document.getElementById('ccon');c.innerHTML='';
-  for(let i=0;i<55;i++){
+  for(let i=0;i<60;i++){
     const p=document.createElement('div');p.className='cp';
-    p.style.cssText=`left:${Math.random()*100}%;background:${cls[Math.floor(Math.random()*cls.length)]};animation-delay:${Math.random()}s;animation-duration:${2+Math.random()*1.5}s;width:${6+Math.random()*8}px;height:${6+Math.random()*8}px;border-radius:${Math.random()>.5?'50%':'2px'};`;
+    p.style.cssText=`left:${Math.random()*100}%;background:${cls[Math.floor(Math.random()*cls.length)]};animation-delay:${Math.random()}s;animation-duration:${2+Math.random()*1.5}s;width:${5+Math.random()*8}px;height:${5+Math.random()*8}px;border-radius:${Math.random()>.5?'50%':'2px'};`;
     c.appendChild(p);
   }
-  setTimeout(()=>c.innerHTML='',4000);
+  setTimeout(()=>c.innerHTML='',5000);
 }
+
+// Init: open first tab properly
+swT('p1');
 </script>
 </body>
 </html>
